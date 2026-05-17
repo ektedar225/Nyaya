@@ -1,0 +1,2381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NyayaSetu — India's Most Trusted Legal Platform</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0D1B3E;
+  --navy-mid: #1a2d5a;
+  --navy-light: #243870;
+  --gold: #C9A84C;
+  --gold-light: #E2C97E;
+  --gold-pale: #F5E9C8;
+  --white: #FFFFFF;
+  --off-white: #F8F7F4;
+  --cream: #FDF9F1;
+  --text-dark: #1a1a2e;
+  --text-mid: #3d4a6b;
+  --text-muted: #7a8aaa;
+  --success: #2ecc71;
+  --border: rgba(201,168,76,0.2);
+  --shadow-gold: 0 8px 40px rgba(201,168,76,0.15);
+  --shadow-navy: 0 8px 40px rgba(13,27,62,0.15);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--off-white);
+  color: var(--text-dark);
+  overflow-x: hidden;
+}
+
+/* ─── SCROLLBAR ─── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--navy); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+/* ─── NAV ─── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: rgba(13,27,62,0.97);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(201,168,76,0.2);
+  padding: 0 5%;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 72px;
+  animation: slideDown 0.6s ease;
+}
+@keyframes slideDown { from{transform:translateY(-100%);opacity:0} to{transform:translateY(0);opacity:1} }
+
+.logo {
+  display: flex; align-items: center; gap: 12px;
+  text-decoration: none;
+}
+.logo-icon {
+  width: 42px; height: 42px;
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px;
+}
+.logo-text { color: var(--white); }
+.logo-text .brand { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; letter-spacing: 0.5px; }
+.logo-text .tagline { font-size: 0.62rem; color: var(--gold-light); letter-spacing: 2px; text-transform: uppercase; }
+
+.nav-links { display: flex; align-items: center; gap: 32px; }
+.nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.85rem; font-weight: 500; transition: color 0.3s; letter-spacing: 0.3px; }
+.nav-links a:hover { color: var(--gold-light); }
+
+.nav-actions { display: flex; gap: 12px; align-items: center; }
+.btn-nav-outline {
+  border: 1px solid var(--gold); color: var(--gold); background: transparent;
+  padding: 8px 20px; border-radius: 6px; font-size: 0.82rem; font-weight: 500;
+  cursor: pointer; transition: all 0.3s; font-family: 'Poppins', sans-serif;
+}
+.btn-nav-outline:hover { background: var(--gold); color: var(--navy); }
+.btn-nav-fill {
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  color: var(--navy); border: none;
+  padding: 8px 20px; border-radius: 6px; font-size: 0.82rem; font-weight: 600;
+  cursor: pointer; font-family: 'Poppins', sans-serif; transition: all 0.3s;
+}
+.btn-nav-fill:hover { transform: translateY(-1px); box-shadow: 0 4px 20px rgba(201,168,76,0.4); }
+
+/* ─── HERO ─── */
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #060e24 0%, #0D1B3E 40%, #1a2d5a 70%, #0f2040 100%);
+  position: relative; overflow: hidden;
+  display: flex; align-items: center;
+  padding: 120px 5% 80px;
+}
+
+.hero-bg-pattern {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(201,168,76,0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(201,168,76,0.06) 0%, transparent 40%),
+    radial-gradient(circle at 60% 80%, rgba(26,45,90,0.5) 0%, transparent 50%);
+}
+
+.hero-grid {
+  position: absolute; inset: 0; pointer-events: none; opacity: 0.04;
+  background-image: linear-gradient(rgba(201,168,76,1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,168,76,1) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.floating-orb {
+  position: absolute; border-radius: 50%; filter: blur(80px); pointer-events: none; animation: float 8s ease-in-out infinite;
+}
+.orb1 { width: 400px; height: 400px; background: rgba(201,168,76,0.1); top: -100px; right: -100px; animation-delay: 0s; }
+.orb2 { width: 300px; height: 300px; background: rgba(13,27,62,0.8); bottom: -50px; left: 10%; animation-delay: 3s; }
+@keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-30px)} }
+
+.hero-content { flex: 1; max-width: 640px; position: relative; z-index: 2; }
+
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(201,168,76,0.15); border: 1px solid rgba(201,168,76,0.35);
+  padding: 6px 16px; border-radius: 50px;
+  color: var(--gold-light); font-size: 0.78rem; font-weight: 500; letter-spacing: 1px;
+  margin-bottom: 24px; text-transform: uppercase;
+  animation: fadeUp 0.8s ease 0.2s both;
+}
+.badge-dot { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+@keyframes fadeUp { from{transform:translateY(30px);opacity:0} to{transform:translateY(0);opacity:1} }
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 900; color: var(--white);
+  line-height: 1.15; margin-bottom: 20px;
+  animation: fadeUp 0.8s ease 0.4s both;
+}
+.hero h1 .gold-text { color: var(--gold-light); display: block; }
+
+.hero-sub {
+  font-size: 1.05rem; color: rgba(255,255,255,0.7);
+  line-height: 1.7; margin-bottom: 36px;
+  animation: fadeUp 0.8s ease 0.6s both;
+}
+
+.search-box {
+  background: rgba(255,255,255,0.08); backdrop-filter: blur(20px);
+  border: 1px solid rgba(201,168,76,0.3); border-radius: 16px;
+  padding: 20px; margin-bottom: 28px;
+  animation: fadeUp 0.8s ease 0.7s both;
+}
+.search-row { display: flex; gap: 10px; }
+.search-input {
+  flex: 1; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 10px; padding: 14px 18px;
+  color: var(--white); font-size: 0.9rem; font-family: 'Poppins', sans-serif;
+  outline: none; transition: border-color 0.3s;
+}
+.search-input::placeholder { color: rgba(255,255,255,0.45); }
+.search-input:focus { border-color: var(--gold); }
+.search-select {
+  background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 10px; padding: 14px 16px;
+  color: var(--white); font-size: 0.85rem; font-family: 'Poppins', sans-serif;
+  outline: none; cursor: pointer; min-width: 130px;
+}
+.search-select option { background: var(--navy); }
+.btn-search {
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  color: var(--navy); border: none;
+  border-radius: 10px; padding: 14px 24px;
+  font-weight: 600; font-size: 0.9rem; cursor: pointer;
+  font-family: 'Poppins', sans-serif; white-space: nowrap;
+  transition: all 0.3s;
+}
+.btn-search:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(201,168,76,0.4); }
+
+.hero-btns { display: flex; gap: 14px; flex-wrap: wrap; animation: fadeUp 0.8s ease 0.8s both; }
+.btn-primary {
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  color: var(--navy); border: none;
+  padding: 14px 28px; border-radius: 10px;
+  font-weight: 700; font-size: 0.92rem; cursor: pointer;
+  font-family: 'Poppins', sans-serif; transition: all 0.3s;
+  display: flex; align-items: center; gap: 8px;
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(201,168,76,0.45); }
+.btn-outline-white {
+  background: transparent; border: 1.5px solid rgba(255,255,255,0.4);
+  color: var(--white); padding: 14px 28px; border-radius: 10px;
+  font-weight: 500; font-size: 0.92rem; cursor: pointer;
+  font-family: 'Poppins', sans-serif; transition: all 0.3s;
+  display: flex; align-items: center; gap: 8px;
+}
+.btn-outline-white:hover { background: rgba(255,255,255,0.1); border-color: var(--gold-light); color: var(--gold-light); }
+
+/* Stats */
+.hero-stats {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1px; background: rgba(201,168,76,0.2);
+  border: 1px solid rgba(201,168,76,0.2); border-radius: 14px;
+  margin-top: 48px; overflow: hidden;
+  animation: fadeUp 0.8s ease 1s both;
+}
+.stat-item {
+  background: rgba(255,255,255,0.04); backdrop-filter: blur(10px);
+  padding: 20px 16px; text-align: center;
+}
+.stat-num { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: var(--gold-light); display: block; }
+.stat-label { font-size: 0.72rem; color: rgba(255,255,255,0.6); margin-top: 2px; letter-spacing: 0.5px; }
+
+/* Hero visual */
+.hero-visual {
+  flex: 1; display: flex; justify-content: center; align-items: center;
+  position: relative; max-width: 500px; margin-left: 60px;
+}
+.hero-card-main {
+  background: rgba(255,255,255,0.08); backdrop-filter: blur(30px);
+  border: 1px solid rgba(201,168,76,0.3); border-radius: 24px;
+  padding: 28px; width: 340px;
+  animation: fadeUp 0.8s ease 0.5s both;
+}
+.hero-lawyer-avatar {
+  width: 80px; height: 80px; border-radius: 50%;
+  border: 3px solid var(--gold); margin-bottom: 16px;
+  background: linear-gradient(135deg, #2c4a8c, #1a3060);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2rem; overflow: hidden;
+}
+.hero-lawyer-avatar img { width:100%; height:100%; object-fit:cover; }
+.verified-tag {
+  display: inline-flex; align-items: center; gap: 4px;
+  background: rgba(46,204,113,0.15); border: 1px solid rgba(46,204,113,0.3);
+  color: #2ecc71; font-size: 0.7rem; padding: 3px 10px; border-radius: 20px;
+  margin-bottom: 8px; font-weight: 600;
+}
+.card-name { font-weight: 700; font-size: 1.1rem; color: var(--white); }
+.card-sub { font-size: 0.8rem; color: rgba(255,255,255,0.6); margin: 4px 0 12px; }
+.card-stars { color: var(--gold); font-size: 0.85rem; margin-bottom: 12px; }
+.card-stats-row { display: flex; gap: 16px; }
+.card-stat { text-align: center; }
+.card-stat-n { font-weight: 700; color: var(--gold-light); font-size: 1rem; }
+.card-stat-l { font-size: 0.68rem; color: rgba(255,255,255,0.5); }
+.card-btn {
+  width: 100%; margin-top: 16px;
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  color: var(--navy); border: none; border-radius: 8px;
+  padding: 11px; font-weight: 700; font-size: 0.85rem;
+  cursor: pointer; font-family: 'Poppins', sans-serif;
+}
+
+.floating-card {
+  position: absolute; background: rgba(255,255,255,0.12); backdrop-filter: blur(20px);
+  border: 1px solid rgba(201,168,76,0.25); border-radius: 14px; padding: 14px 18px;
+}
+.fc-top { top: -20px; right: -30px; animation: float 6s ease-in-out infinite; }
+.fc-bot { bottom: -20px; left: -30px; animation: float 7s ease-in-out infinite 2s; }
+.fc-label { font-size: 0.7rem; color: rgba(255,255,255,0.5); margin-bottom: 4px; }
+.fc-value { font-size: 0.95rem; font-weight: 700; color: var(--gold-light); }
+
+/* ─── SECTION COMMON ─── */
+section { padding: 90px 5%; }
+.section-label {
+  display: inline-flex; align-items: center; gap: 8px;
+  color: var(--gold); font-size: 0.78rem; font-weight: 600;
+  letter-spacing: 2px; text-transform: uppercase; margin-bottom: 14px;
+}
+.section-label::before { content:''; width:30px; height:2px; background: var(--gold); }
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 800; color: var(--navy); line-height: 1.2;
+  margin-bottom: 14px;
+}
+.section-sub { font-size: 1rem; color: var(--text-muted); line-height: 1.7; max-width: 560px; }
+.section-header { margin-bottom: 50px; }
+.section-header.centered { text-align: center; }
+.section-header.centered .section-label { justify-content: center; }
+.section-header.centered .section-sub { margin: 0 auto; }
+
+/* ─── PRACTICE AREAS ─── */
+.practice-section { background: var(--cream); }
+.practice-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 16px;
+}
+.practice-card {
+  background: var(--white); border: 1px solid #eee;
+  border-radius: 16px; padding: 24px 16px; text-align: center;
+  cursor: pointer; transition: all 0.35s;
+  position: relative; overflow: hidden;
+}
+.practice-card::before {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+  height: 3px; background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  transform: scaleX(0); transition: transform 0.35s;
+}
+.practice-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(13,27,62,0.12); border-color: var(--gold); }
+.practice-card:hover::before { transform: scaleX(1); }
+.practice-icon { font-size: 2.2rem; margin-bottom: 12px; display: block; }
+.practice-name { font-size: 0.82rem; font-weight: 600; color: var(--navy); }
+.practice-count { font-size: 0.72rem; color: var(--text-muted); margin-top: 4px; }
+
+/* ─── LAWYERS ─── */
+.lawyers-section { background: var(--off-white); }
+.filter-bar {
+  display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 36px;
+  background: var(--white); border: 1px solid #eee; border-radius: 14px;
+  padding: 16px;
+}
+.filter-select {
+  background: var(--off-white); border: 1px solid #ddd;
+  border-radius: 8px; padding: 10px 14px;
+  font-size: 0.82rem; color: var(--text-dark);
+  font-family: 'Poppins', sans-serif; cursor: pointer; outline: none;
+  transition: border-color 0.3s;
+}
+.filter-select:focus { border-color: var(--gold); }
+.filter-btn {
+  background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+  color: var(--white); border: none; border-radius: 8px;
+  padding: 10px 22px; font-size: 0.82rem; font-weight: 600;
+  cursor: pointer; font-family: 'Poppins', sans-serif; margin-left: auto;
+}
+
+.lawyers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+.lawyer-card {
+  background: var(--white); border: 1px solid #eee; border-radius: 20px;
+  overflow: hidden; transition: all 0.35s; cursor: pointer;
+  position: relative;
+}
+.lawyer-card:hover { transform: translateY(-8px); box-shadow: 0 24px 50px rgba(13,27,62,0.14); border-color: rgba(201,168,76,0.4); }
+.lawyer-card-top {
+  background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+  padding: 24px; display: flex; gap: 16px; align-items: flex-start;
+  position: relative;
+}
+.avail-badge {
+  position: absolute; top: 14px; right: 14px;
+  background: rgba(46,204,113,0.15); border: 1px solid rgba(46,204,113,0.3);
+  color: #2ecc71; font-size: 0.68rem; padding: 4px 10px; border-radius: 20px;
+  font-weight: 600;
+}
+.lawyer-photo {
+  width: 72px; height: 72px; border-radius: 50%;
+  border: 3px solid var(--gold); flex-shrink: 0;
+  background: linear-gradient(135deg, #2c4a8c, #3a5f9e);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.8rem; overflow: hidden;
+}
+.lawyer-photo img { width:100%; height:100%; object-fit:cover; }
+
+.lawyer-info .name { font-weight: 700; color: var(--white); font-size: 1rem; margin-bottom: 2px; }
+.lawyer-info .desig { font-size: 0.75rem; color: rgba(255,255,255,0.6); margin-bottom: 8px; }
+.lawyer-info .stars { color: var(--gold); font-size: 0.8rem; }
+.lawyer-info .rating-num { color: rgba(255,255,255,0.7); font-size: 0.75rem; margin-left: 4px; }
+
+.verified-chip {
+  display: inline-flex; align-items: center; gap: 4px;
+  background: rgba(46,204,113,0.15); border: 1px solid rgba(46,204,113,0.3);
+  color: #2ecc71; font-size: 0.67rem; padding: 3px 8px; border-radius: 20px;
+  font-weight: 600; margin-top: 6px;
+}
+
+.lawyer-card-body { padding: 20px; }
+.tags-row { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px; }
+.tag {
+  background: var(--off-white); border: 1px solid #eee;
+  color: var(--text-mid); font-size: 0.7rem; font-weight: 500;
+  padding: 4px 10px; border-radius: 20px;
+}
+.lawyer-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 18px; }
+.meta-item { font-size: 0.75rem; color: var(--text-muted); }
+.meta-item strong { display: block; color: var(--text-dark); font-weight: 600; margin-bottom: 1px; }
+.fee-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+.fee-label { font-size: 0.78rem; color: var(--text-muted); }
+.fee-amount { font-size: 1.2rem; font-weight: 700; color: var(--navy); font-family: 'Playfair Display', serif; }
+.lawyer-actions { display: flex; gap: 8px; }
+.btn-book {
+  flex: 1; background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+  color: var(--white); border: none; border-radius: 8px;
+  padding: 11px; font-size: 0.8rem; font-weight: 600;
+  cursor: pointer; font-family: 'Poppins', sans-serif; transition: all 0.3s;
+}
+.btn-book:hover { box-shadow: 0 4px 20px rgba(13,27,62,0.3); }
+.btn-wp {
+  background: #25D366; color: var(--white); border: none;
+  border-radius: 8px; padding: 11px 14px; font-size: 1rem;
+  cursor: pointer; transition: all 0.3s;
+}
+.btn-wp:hover { transform: scale(1.05); }
+.btn-call {
+  background: var(--off-white); border: 1px solid #ddd;
+  border-radius: 8px; padding: 11px 14px; font-size: 1rem;
+  cursor: pointer; transition: all 0.3s; color: var(--navy);
+}
+.btn-call:hover { border-color: var(--gold); }
+
+/* ─── FEATURES / HOW IT WORKS ─── */
+.how-section { background: var(--navy); }
+.how-section .section-title { color: var(--white); }
+.how-section .section-sub { color: rgba(255,255,255,0.6); }
+.how-section .section-label { color: var(--gold-light); }
+.how-section .section-label::before { background: var(--gold-light); }
+
+.steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.step-card {
+  background: rgba(255,255,255,0.04); backdrop-filter: blur(10px);
+  border: 1px solid rgba(201,168,76,0.15); border-radius: 20px;
+  padding: 32px 24px; position: relative; transition: all 0.35s;
+}
+.step-card:hover { background: rgba(255,255,255,0.08); border-color: rgba(201,168,76,0.35); transform: translateY(-4px); }
+.step-num {
+  position: absolute; top: 20px; right: 20px;
+  font-family: 'Playfair Display', serif; font-size: 3rem;
+  font-weight: 900; color: rgba(201,168,76,0.08); line-height: 1;
+}
+.step-icon { font-size: 2.2rem; margin-bottom: 16px; display: block; }
+.step-title { font-weight: 700; color: var(--white); font-size: 1rem; margin-bottom: 8px; }
+.step-desc { font-size: 0.82rem; color: rgba(255,255,255,0.55); line-height: 1.65; }
+.step-connector {
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gold); font-size: 1.5rem; padding-top: 40px;
+}
+
+/* ─── CENTRAL LEGAL TEAM MODAL ─── */
+.lt-modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.lt-modal-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(13, 27, 62, 0.75);
+  backdrop-filter: blur(8px);
+}
+.lt-modal-content {
+  position: relative;
+  z-index: 2;
+  background: #FFFFFF;
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  border-radius: 24px;
+  width: 100%;
+  max-width: 440px;
+  padding: 36px 28px;
+  box-shadow: 0 20px 50px rgba(13, 27, 62, 0.25);
+  animation: modalPop 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+  text-align: center;
+}
+@keyframes modalPop {
+  from { opacity: 0; transform: scale(0.95) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+.lt-modal-close {
+  position: absolute;
+  top: 20px; right: 20px;
+  background: none; border: none;
+  font-size: 24px; color: #7a8aaa;
+  cursor: pointer; transition: color 0.3s;
+  line-height: 1;
+}
+.lt-modal-close:hover { color: #0D1B3E; }
+.lt-modal-icon {
+  width: 64px; height: 64px;
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  color: #0D1B3E;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 28px; margin: 0 auto 20px;
+  box-shadow: 0 8px 20px rgba(201, 168, 76, 0.3);
+}
+.lt-modal-header h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem; color: #0D1B3E; font-weight: 800;
+  margin-bottom: 8px;
+}
+.lt-modal-header p {
+  font-size: 0.85rem; color: #7a8aaa; line-height: 1.5;
+  margin-bottom: 24px;
+}
+.lt-number-box {
+  background: #FDF9F1;
+  border: 1px dashed rgba(201, 168, 76, 0.5);
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 28px;
+}
+.lt-phone-num {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.4rem; font-weight: 700; color: #C9A84C;
+  letter-spacing: 0.5px;
+}
+.lt-action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.lt-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 20px;
+  border-radius: 10px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s;
+}
+.lt-btn-call {
+  background: linear-gradient(135deg, #0D1B3E, #1a2d5a);
+  color: #FFFFFF;
+}
+.lt-btn-call:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(13, 27, 62, 0.3);
+}
+.lt-btn-wa {
+  background: #25D366;
+  color: #FFFFFF;
+}
+.lt-btn-wa:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+}
+.svg-icon-modal {
+  width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 2;
+}
+.lt-btn-wa .svg-icon-modal {
+  fill: currentColor; stroke: none;
+}
+
+/* ─── CITIES ─── */
+.cities-section { background: var(--off-white); }
+.cities-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; }
+.city-card {
+  background: var(--white); border: 1px solid #eee; border-radius: 16px;
+  padding: 24px 20px; cursor: pointer; transition: all 0.35s;
+  display: flex; align-items: center; gap: 14px;
+}
+.city-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(13,27,62,0.1); border-color: var(--gold); }
+.city-icon { font-size: 1.8rem; }
+.city-info .city-name { font-weight: 700; color: var(--navy); font-size: 0.95rem; }
+.city-info .city-count { font-size: 0.75rem; color: var(--text-muted); }
+
+/* ─── TESTIMONIALS ─── */
+.testimonials-section { background: var(--cream); }
+.testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.testi-card {
+  background: var(--white); border: 1px solid #eee; border-radius: 20px;
+  padding: 28px; transition: all 0.35s; position: relative;
+}
+.testi-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(13,27,62,0.08); }
+.testi-card::before {
+  content: '"'; position: absolute; top: 20px; right: 24px;
+  font-family: 'Playfair Display', serif; font-size: 5rem;
+  color: rgba(201,168,76,0.12); line-height: 1;
+}
+.testi-stars { color: var(--gold); font-size: 0.85rem; margin-bottom: 14px; }
+.testi-text { font-size: 0.85rem; color: var(--text-mid); line-height: 1.7; margin-bottom: 20px; }
+.testi-person { display: flex; align-items: center; gap: 12px; }
+.testi-avatar {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+  display: flex; align-items: center; justify-content: center;
+  color: var(--white); font-weight: 700; font-size: 1rem;
+  flex-shrink: 0;
+}
+.testi-name { font-weight: 700; color: var(--navy); font-size: 0.88rem; }
+.testi-loc { font-size: 0.73rem; color: var(--text-muted); }
+
+/* ─── KNOWLEDGE HUB ─── */
+.hub-section { background: var(--off-white); }
+.hub-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.blog-card {
+  background: var(--white); border: 1px solid #eee; border-radius: 20px;
+  overflow: hidden; cursor: pointer; transition: all 0.35s;
+}
+.blog-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(13,27,62,0.1); border-color: rgba(201,168,76,0.3); }
+.blog-img {
+  height: 180px;
+  background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 3.5rem; position: relative;
+}
+.blog-cat {
+  position: absolute; top: 14px; left: 14px;
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  color: var(--navy); font-size: 0.68rem; font-weight: 700;
+  padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px;
+}
+.blog-body { padding: 22px; }
+.blog-title { font-weight: 700; color: var(--navy); font-size: 0.92rem; line-height: 1.45; margin-bottom: 8px; }
+.blog-meta { font-size: 0.73rem; color: var(--text-muted); }
+.blog-read { font-size: 0.78rem; font-weight: 600; color: var(--gold); margin-top: 14px; display: inline-flex; align-items: center; gap: 4px; }
+
+/* ─── TRUST SECTION ─── */
+.trust-section { background: var(--navy); padding: 60px 5%; }
+.trust-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px; }
+.trust-item { text-align: center; }
+.trust-badge {
+  width: 64px; height: 64px; border-radius: 14px;
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(201,168,76,0.2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.8rem; margin: 0 auto 10px;
+  transition: all 0.35s;
+}
+.trust-item:hover .trust-badge { background: rgba(201,168,76,0.1); border-color: rgba(201,168,76,0.4); transform: translateY(-3px); }
+.trust-name { font-size: 0.78rem; color: rgba(255,255,255,0.6); font-weight: 500; }
+
+/* ─── CONSULTATION MODES ─── */
+.consult-section { background: var(--cream); }
+.consult-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+.consult-card {
+  background: var(--white); border: 1px solid #eee; border-radius: 18px;
+  padding: 28px 16px; text-align: center; cursor: pointer;
+  transition: all 0.35s;
+}
+.consult-card:hover { transform: translateY(-6px); border-color: var(--gold); box-shadow: 0 16px 40px rgba(13,27,62,0.1); }
+.consult-icon {
+  font-size: 2.2rem; margin-bottom: 12px; display: block;
+  width: 60px; height: 60px; background: var(--off-white);
+  border-radius: 14px; display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 14px; font-size: 1.8rem; transition: all 0.35s;
+}
+.consult-card:hover .consult-icon { background: var(--navy); }
+.consult-name { font-weight: 700; color: var(--navy); font-size: 0.88rem; margin-bottom: 6px; }
+.consult-desc { font-size: 0.73rem; color: var(--text-muted); line-height: 1.5; }
+
+/* ─── TOP LAWYERS SHOWCASE ─── */
+.top-lawyers-section { background: var(--off-white); }
+.top-lawyers-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.top-lawyer-card {
+  background: var(--white); border-radius: 20px; overflow: hidden;
+  border: 1px solid #eee; transition: all 0.35s;
+  display: flex; align-items: center; gap: 0; padding: 0;
+}
+.top-lawyer-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(13,27,62,0.1); border-color: rgba(201,168,76,0.3); }
+.top-lawyer-accent {
+  width: 8px; background: linear-gradient(180deg, var(--gold), var(--gold-light));
+  align-self: stretch; flex-shrink: 0;
+}
+.top-lawyer-content { padding: 20px; flex: 1; display: flex; align-items: center; gap: 16px; }
+.top-lawyer-photo {
+  width: 64px; height: 64px; border-radius: 50%;
+  border: 2.5px solid var(--gold); flex-shrink: 0;
+  background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.6rem; overflow: hidden;
+}
+.top-lawyer-photo img { width:100%; height:100%; object-fit:cover; }
+.top-lawyer-info .tlname { font-weight: 700; color: var(--navy); font-size: 0.95rem; }
+.top-lawyer-info .tlrole { font-size: 0.75rem; color: var(--text-muted); margin: 2px 0 6px; }
+.top-lawyer-info .tlrating { color: var(--gold); font-size: 0.8rem; }
+.top-supreme { background: linear-gradient(135deg, var(--navy), var(--navy-mid)); }
+.top-supreme .top-lawyer-info .tlname { color: var(--white); }
+.top-supreme .top-lawyer-info .tlrole { color: rgba(255,255,255,0.6); }
+.top-supreme .top-lawyer-accent { background: linear-gradient(180deg, var(--gold-light), var(--gold)); }
+.sc-badge {
+  display: inline-flex; align-items: center; gap: 4px;
+  background: rgba(201,168,76,0.15); border: 1px solid rgba(201,168,76,0.3);
+  color: var(--gold-light); font-size: 0.67rem; padding: 3px 8px; border-radius: 20px;
+  font-weight: 600; margin-top: 6px;
+}
+
+/* ─── PAYMENT ─── */
+.payment-section { background: var(--cream); }
+.payment-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.payment-methods { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.pay-method {
+  background: var(--white); border: 1px solid #eee; border-radius: 14px;
+  padding: 20px; text-align: center; cursor: pointer;
+  transition: all 0.35s;
+}
+.pay-method:hover { border-color: var(--gold); box-shadow: 0 8px 24px rgba(13,27,62,0.08); }
+.pay-icon { font-size: 2rem; margin-bottom: 8px; }
+.pay-name { font-size: 0.78rem; font-weight: 600; color: var(--text-dark); }
+.security-note {
+  margin-top: 20px; display: flex; align-items: center; gap: 10px;
+  background: rgba(46,204,113,0.08); border: 1px solid rgba(46,204,113,0.2);
+  border-radius: 10px; padding: 14px;
+}
+.security-note span { font-size: 0.78rem; color: #2ecc71; font-weight: 500; }
+
+/* ─── CTA BANNER ─── */
+.cta-section {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 50%, #1a3a6e 100%);
+  padding: 80px 5%; text-align: center; position: relative; overflow: hidden;
+}
+.cta-section::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(201,168,76,0.12), transparent 70%);
+}
+.cta-section h2 {
+  font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--white); font-weight: 800; margin-bottom: 16px;
+  position: relative;
+}
+.cta-section p { color: rgba(255,255,255,0.7); font-size: 1rem; margin-bottom: 36px; max-width: 500px; margin-left: auto; margin-right: auto; position: relative; }
+.cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; position: relative; }
+
+/* ─── FOOTER ─── */
+footer {
+  background: #060d1e;
+  border-top: 1px solid rgba(201,168,76,0.15);
+  padding: 60px 5% 30px;
+}
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+.footer-brand .brand-desc { font-size: 0.82rem; color: rgba(255,255,255,0.5); line-height: 1.7; margin: 16px 0 20px; }
+.footer-social { display: flex; gap: 10px; }
+.social-btn {
+  width: 36px; height: 36px; border-radius: 8px;
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(255,255,255,0.6); font-size: 0.9rem; cursor: pointer;
+  transition: all 0.3s;
+}
+.social-btn:hover { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+.footer-col h4 { color: var(--white); font-size: 0.88rem; font-weight: 700; margin-bottom: 16px; }
+.footer-col a { display: block; color: rgba(255,255,255,0.5); font-size: 0.8rem; margin-bottom: 10px; text-decoration: none; transition: color 0.3s; }
+.footer-col a:hover { color: var(--gold-light); }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 24px; display: flex; justify-content: space-between; align-items: center;
+}
+.footer-bottom p { font-size: 0.75rem; color: rgba(255,255,255,0.35); }
+.footer-certifications { display: flex; gap: 14px; }
+.cert-badge {
+  background: rgba(201,168,76,0.12); border: 1px solid rgba(201,168,76,0.25);
+  color: var(--gold-light); font-size: 0.68rem; padding: 4px 12px; border-radius: 20px;
+  font-weight: 600;
+}
+
+/* ─── WHATSAPP FLOAT ─── */
+.wp-float {
+  position: fixed; bottom: 28px; right: 28px; z-index: 999;
+  width: 58px; height: 58px; border-radius: 50%;
+  background: #25D366; border: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.6rem; box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+  animation: float 3s ease-in-out infinite;
+  transition: transform 0.3s;
+}
+.wp-float:hover { transform: scale(1.1); }
+
+/* ─── MOBILE ─── */
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .hero { flex-direction: column; padding: 100px 5% 60px; }
+  .hero-visual { display: none; }
+  .hero-stats { grid-template-columns: repeat(2,1fr); }
+  .steps-grid { grid-template-columns: 1fr 1fr; }
+  .consult-grid { grid-template-columns: repeat(3,1fr); }
+  .trust-grid { grid-template-columns: repeat(3,1fr); }
+  .testi-grid { grid-template-columns: 1fr; }
+  .hub-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .top-lawyers-grid { grid-template-columns: 1fr; }
+  .payment-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .steps-grid { grid-template-columns: 1fr; }
+  .hub-grid { grid-template-columns: 1fr; }
+  .consult-grid { grid-template-columns: repeat(2,1fr); }
+  .trust-grid { grid-template-columns: repeat(2,1fr); }
+  .search-row { flex-direction: column; }
+  .hero-stats { grid-template-columns: repeat(2,1fr); }
+  .lawyers-grid { grid-template-columns: 1fr; }
+}
+
+/* Animations on scroll */
+.fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.7s, transform 0.7s; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+/* ─── IMAGE SECTIONS ─── */
+.hero-img-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(6,14,36,0.92) 0%, rgba(13,27,62,0.85) 40%, rgba(26,45,90,0.7) 100%);
+  z-index: 1;
+}
+.hero-bg-img {
+  position: absolute; inset: 0; z-index: 0;
+  background-image: url('delhi-high-court-enforces-euro-5.5-million-rs.-52-crore-arbitration-award-for-mercedes-benz.jpg');
+  background-size: cover; background-position: center;
+  filter: brightness(0.35) saturate(0.7);
+}
+.court-showcase { background: var(--navy); padding: 80px 5%; }
+.court-showcase .section-title { color: var(--white); }
+.court-showcase .section-label { color: var(--gold-light); }
+.court-showcase .section-label::before { background: var(--gold-light); }
+.courts-img-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px; margin-top: 40px;
+}
+.court-img-card {
+  border-radius: 20px; overflow: hidden;
+  position: relative; height: 280px;
+  box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+  transition: transform 0.35s;
+}
+.court-img-card:hover { transform: translateY(-6px); }
+.court-img-card img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s;
+}
+.court-img-card:hover img { transform: scale(1.05); }
+.court-img-label {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: linear-gradient(transparent, rgba(6,14,36,0.95));
+  padding: 40px 24px 20px;
+  color: var(--white); font-weight: 700; font-size: 1rem;
+}
+.court-img-label span { color: var(--gold-light); font-size: 0.78rem; display: block; font-weight: 400; margin-top: 3px; }
+.lawyer-dealing-section {
+  background: var(--cream);
+  padding: 80px 5%;
+}
+.lawyer-deal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.lawyer-deal-img {
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(13,27,62,0.2);
+  position: relative;
+}
+.lawyer-deal-img img {
+  width: 100%; display: block;
+  object-fit: cover;
+}
+.lawyer-deal-img::before {
+  content: '';
+  position: absolute; inset: 0;
+  border: 2px solid rgba(201,168,76,0.3);
+  border-radius: 24px;
+  z-index: 1;
+  pointer-events: none;
+}
+.emblem-img { width: 42px; height: 42px; object-fit: contain; border-radius: 8px; }
+.svg-icon { width: 28px; height: 28px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.trust-svg { width: 32px; height: 32px; stroke: var(--gold-light); fill: none; stroke-width: 1.8; }
+.step-svg { width: 40px; height: 40px; stroke: var(--gold); fill: none; stroke-width: 1.8; margin-bottom: 16px; display: block; }
+.practice-svg { width: 36px; height: 36px; stroke: var(--navy); fill: none; stroke-width: 1.8; margin: 0 auto 12px; display: block; }
+.consult-svg { width: 32px; height: 32px; stroke: var(--navy); fill: none; stroke-width: 1.8; }
+.consult-card:hover .consult-svg { stroke: var(--gold-light); }
+.city-svg { width: 28px; height: 28px; stroke: var(--gold); fill: none; stroke-width: 1.8; flex-shrink: 0; }
+.pay-svg { width: 36px; height: 36px; stroke: var(--navy); fill: none; stroke-width: 1.8; margin: 0 auto 8px; display: block; }
+@media (max-width: 900px) { .courts-img-grid { grid-template-columns: 1fr; } .lawyer-deal-grid { grid-template-columns: 1fr; } }
+
+/* IMAGE SLIDER */
+.img-slider { position:relative; width:100%; height:100vh; overflow:hidden; z-index:0; }
+.slider-track { display:flex; height:100%; transition:transform 0.9s cubic-bezier(0.77,0,0.175,1); will-change:transform; }
+.slide { min-width:100%; height:100%; position:relative; flex-shrink:0; }
+.slide img { width:100%; height:100%; object-fit:cover; }
+.slide-overlay { position:absolute; inset:0; background:linear-gradient(135deg,rgba(6,14,36,0.88) 0%,rgba(13,27,62,0.7) 50%,rgba(6,14,36,0.5) 100%); }
+.slide-content { position:absolute; inset:0; display:flex; flex-direction:column; justify-content:center; padding:80px 8% 60px; z-index:2; }
+.slide-badge { display:inline-flex; align-items:center; gap:8px; background:rgba(201,168,76,0.18); border:1px solid rgba(201,168,76,0.4); padding:7px 18px; border-radius:50px; color:var(--gold-light); font-size:0.78rem; font-weight:600; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:22px; width:fit-content; }
+.slide-badge .dot { width:7px; height:7px; background:var(--gold); border-radius:50%; animation:pulse 2s infinite; }
+.slide h2 { font-family:"Playfair Display",serif; font-size:clamp(2.2rem,5vw,3.8rem); color:#fff; font-weight:900; line-height:1.15; margin-bottom:16px; max-width:700px; }
+.slide h2 .gold { color:var(--gold-light); }
+.slide p { font-size:1rem; color:rgba(255,255,255,0.75); line-height:1.7; max-width:560px; margin-bottom:28px; }
+.slide-offer { display:inline-flex; align-items:center; gap:14px; background:rgba(201,168,76,0.15); border:1px solid rgba(201,168,76,0.35); border-radius:14px; padding:14px 22px; margin-bottom:28px; width:fit-content; }
+.offer-pct { font-family:"Playfair Display",serif; font-size:2.4rem; font-weight:900; color:var(--gold); line-height:1; }
+.offer-txt .o1 { font-size:0.92rem; font-weight:700; color:#fff; }
+.offer-txt .o2 { font-size:0.75rem; color:rgba(255,255,255,0.55); margin-top:2px; }
+.offer-timer { background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); border-radius:10px; padding:10px 16px; text-align:center; }
+.timer-val { font-family:"Playfair Display",serif; font-size:1.4rem; font-weight:700; color:var(--gold-light); letter-spacing:2px; }
+.timer-lbl { font-size:0.62rem; color:rgba(255,255,255,0.5); text-transform:uppercase; letter-spacing:1px; }
+.slide-btns { display:flex; gap:14px; flex-wrap:wrap; }
+.btn-slide-primary { background:linear-gradient(135deg,var(--gold),var(--gold-light)); color:var(--navy); border:none; padding:14px 30px; border-radius:10px; font-weight:700; font-size:0.92rem; cursor:pointer; font-family:"Poppins",sans-serif; transition:all 0.3s; }
+.btn-slide-primary:hover { transform:translateY(-2px); box-shadow:0 8px 28px rgba(201,168,76,0.45); }
+.btn-slide-outline { background:transparent; border:1.5px solid rgba(255,255,255,0.4); color:#fff; padding:14px 30px; border-radius:10px; font-weight:500; font-size:0.92rem; cursor:pointer; font-family:"Poppins",sans-serif; transition:all 0.3s; }
+.btn-slide-outline:hover { border-color:var(--gold-light); color:var(--gold-light); }
+.slider-dots { position:absolute; bottom:28px; left:50%; transform:translateX(-50%); display:flex; gap:8px; z-index:10; }
+.sdot { width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,0.35); cursor:pointer; transition:all 0.3s; border:none; }
+.sdot.active { background:var(--gold); width:28px; border-radius:4px; }
+.slider-arrow { position:absolute; top:50%; transform:translateY(-50%); z-index:10; width:48px; height:48px; border-radius:50%; background:rgba(255,255,255,0.1); backdrop-filter:blur(10px); border:1px solid rgba(201,168,76,0.3); color:var(--gold-light); font-size:1.4rem; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:all 0.3s; }
+.slider-arrow:hover { background:rgba(201,168,76,0.2); }
+.slider-arrow.prev { left:24px; }
+.slider-arrow.next { right:24px; }
+/* OFFER STRIP */
+.offer-strip { background:linear-gradient(90deg,#b8860b,var(--gold),#e2a500,var(--gold-light),#b8860b); background-size:300% 100%; animation:goldShift 4s linear infinite; padding:12px 5%; display:flex; align-items:center; justify-content:center; gap:40px; flex-wrap:wrap; }
+@keyframes goldShift { 0%{background-position:0%} 100%{background-position:300%} }
+.offer-strip span { color:var(--navy); font-size:0.82rem; font-weight:700; letter-spacing:0.5px; }
+.offer-strip .sep { color:rgba(13,27,62,0.4); }
+/* EXPERTISE SECTION */
+.expertise-section { background:var(--navy); padding:80px 5%; }
+.expertise-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; margin-top:48px; }
+.exp-card { background:rgba(255,255,255,0.04); border:1px solid rgba(201,168,76,0.15); border-radius:20px; padding:32px 24px; position:relative; overflow:hidden; transition:all 0.35s; }
+.exp-card:hover { background:rgba(255,255,255,0.08); border-color:rgba(201,168,76,0.4); transform:translateY(-6px); }
+.exp-card::before { content:""; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,var(--gold),var(--gold-light)); }
+.exp-num { font-family:"Playfair Display",serif; font-size:2.8rem; font-weight:900; color:var(--gold); line-height:1; margin-bottom:8px; }
+.exp-title { font-size:0.9rem; font-weight:700; color:#fff; margin-bottom:6px; }
+.exp-desc { font-size:0.78rem; color:rgba(255,255,255,0.5); line-height:1.6; }
+/* SERVICE TYPES */
+.services-section { background:var(--off-white); padding:80px 5%; }
+.services-tabs { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:36px; }
+.stab { background:var(--white); border:1px solid #eee; border-radius:10px; padding:10px 20px; font-size:0.82rem; font-weight:600; color:var(--text-mid); cursor:pointer; transition:all 0.3s; font-family:"Poppins",sans-serif; }
+.stab.active,.stab:hover { background:var(--navy); color:var(--gold-light); border-color:var(--navy); }
+.services-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:20px; }
+.service-card { background:var(--white); border:1px solid #eee; border-radius:18px; padding:24px; cursor:pointer; transition:all 0.35s; position:relative; }
+.service-card:hover { transform:translateY(-5px); box-shadow:0 20px 40px rgba(13,27,62,0.1); border-color:rgba(201,168,76,0.4); }
+.service-card .offer-tag { position:absolute; top:16px; right:16px; background:linear-gradient(135deg,#e74c3c,#c0392b); color:#fff; font-size:0.68rem; font-weight:700; padding:5px 12px; border-radius:20px; letter-spacing:0.5px; }
+.service-card .offer-tag.gold { background:linear-gradient(135deg,var(--gold),var(--gold-light)); color:var(--navy); }
+.service-card .offer-tag.green { background:linear-gradient(135deg,#27ae60,#2ecc71); }
+.svc-icon { width:52px; height:52px; background:var(--off-white); border-radius:14px; display:flex; align-items:center; justify-content:center; margin-bottom:14px; }
+.svc-icon svg { width:26px; height:26px; stroke:var(--navy); fill:none; stroke-width:1.8; }
+.svc-name { font-weight:700; color:var(--navy); font-size:0.95rem; margin-bottom:4px; }
+.svc-sub { font-size:0.75rem; color:var(--text-muted); margin-bottom:14px; line-height:1.5; }
+.svc-price { display:flex; align-items:baseline; gap:8px; margin-bottom:12px; }
+.svc-orig { font-size:0.85rem; color:var(--text-muted); text-decoration:line-through; }
+.svc-disc { font-size:1.2rem; font-weight:700; color:var(--navy); font-family:"Playfair Display",serif; }
+.svc-save { font-size:0.7rem; font-weight:700; color:#27ae60; background:rgba(39,174,96,0.1); padding:3px 8px; border-radius:20px; }
+.svc-types { display:flex; gap:6px; flex-wrap:wrap; }
+.svc-type { font-size:0.68rem; background:var(--off-white); border:1px solid #eee; border-radius:20px; padding:3px 10px; color:var(--text-mid); font-weight:500; }
+@media(max-width:900px){ .expertise-grid{grid-template-columns:repeat(2,1fr);} }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<!-- OFFER STRIP -->
+<div class="offer-strip" style="position:fixed;top:72px;left:0;right:0;z-index:999;">
+  <span>TODAY ONLY: 40% OFF First Consultation</span>
+  <span class="sep">|</span>
+  <span>Family Law — 35% OFF This Week</span>
+  <span class="sep">|</span>
+  <span>Property Disputes — FREE First Call</span>
+  <span class="sep">|</span>
+  <span>Corporate Packages — Save Rs.5,000</span>
+  <span class="sep">|</span>
+  <span>Criminal Defence — 30% OFF Bail Applications</span>
+</div>
+
+<!-- IMAGE SLIDER -->
+<div class="img-slider" style="margin-top:108px;" id="heroSlider">
+  <div class="slider-track" id="sliderTrack">
+
+    <!-- Slide 1 -->
+    <div class="slide">
+      <img src="delhi-high-court-enforces-euro-5.5-million-rs.-52-crore-arbitration-award-for-mercedes-benz.jpg" alt="Delhi High Court">
+      <div class="slide-overlay"></div>
+      <div class="slide-content">
+        <div class="slide-badge"><span class="dot"></span>India's #1 Legal Platform</div>
+        <h2>Expert Legal Defence at <span class="gold">Delhi High Court</span></h2>
+        <p>Our Senior Advocates have 20+ years of experience arguing before the Delhi High Court. Trusted by 50,000+ clients for criminal, civil and corporate matters.</p>
+        <div class="slide-offer">
+          <div class="offer-pct">40%</div>
+          <div class="offer-txt"><div class="o1">OFF Today's Consultation</div><div class="o2">Limited slots — Book before midnight</div></div>
+          <div class="offer-timer"><div class="timer-val" id="timer1">08:24:00</div><div class="timer-lbl">Offer Ends In</div></div>
+        </div>
+        <div class="slide-btns">
+          <button class="btn-slide-primary">Book Now — Save Rs.600</button>
+          <button class="btn-slide-outline">View Delhi Lawyers</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="slide">
+      <img src="allahbad _court.jpg" alt="Allahabad High Court">
+      <div class="slide-overlay"></div>
+      <div class="slide-content">
+        <div class="slide-badge"><span class="dot"></span>Asia's Largest High Court</div>
+        <h2>Property &amp; Civil Experts at <span class="gold">Allahabad High Court</span></h2>
+        <p>Settle property disputes, inheritance cases, and land matters with our verified advocates who practice daily at the Allahabad High Court — UP's apex legal authority.</p>
+        <div class="slide-offer">
+          <div class="offer-pct">35%</div>
+          <div class="offer-txt"><div class="o1">OFF Property Dispute Consult</div><div class="o2">Valid for Lucknow &amp; Allahabad clients</div></div>
+          <div class="offer-timer"><div class="timer-val">23:59:59</div><div class="timer-lbl">Week Offer</div></div>
+        </div>
+        <div class="slide-btns">
+          <button class="btn-slide-primary">Find Property Lawyers</button>
+          <button class="btn-slide-outline">Free Case Evaluation</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="slide">
+      <img src="kanpur_court.jpg" alt="Kanpur Court">
+      <div class="slide-overlay"></div>
+      <div class="slide-content">
+        <div class="slide-badge"><span class="dot"></span>185+ Verified Advocates</div>
+        <h2>Trusted Kanpur Advocates <span class="gold">Ready for Your Case</span></h2>
+        <p>From cheque bounce cases to family disputes — our Kanpur-based advocates are highly experienced in local courts, Allahabad HC, and UP tribunals. Hindi-speaking experts available 24/7.</p>
+        <div class="slide-offer">
+          <div class="offer-pct">FREE</div>
+          <div class="offer-txt"><div class="o1">First 15-Min Consultation</div><div class="o2">For Kanpur &amp; nearby districts</div></div>
+          <div class="offer-timer"><div class="timer-val">TODAY</div><div class="timer-lbl">Only</div></div>
+        </div>
+        <div class="slide-btns">
+          <button class="btn-slide-primary">Kanpur Lawyers</button>
+          <button class="btn-slide-outline">Call Now — Free</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 4 -->
+    <div class="slide">
+      <img src="lawyer_cabin.jpg" alt="Lawyer Office">
+      <div class="slide-overlay"></div>
+      <div class="slide-content">
+        <div class="slide-badge"><span class="dot"></span>Premium In-Office Consultations</div>
+        <h2>Visit Your Lawyer <span class="gold">In a Private, Secure Setting</span></h2>
+        <p>Sometimes your case demands a face-to-face meeting. Book a private in-office consultation with a Senior Advocate in a fully confidential, professionally equipped law chamber.</p>
+        <div class="slide-offer">
+          <div class="offer-pct">30%</div>
+          <div class="offer-txt"><div class="o1">OFF In-Office Sessions</div><div class="o2">Saturday &amp; Sunday special rate</div></div>
+          <div class="offer-timer"><div class="timer-val">Weekend</div><div class="timer-lbl">Special</div></div>
+        </div>
+        <div class="slide-btns">
+          <button class="btn-slide-primary">Book Office Visit</button>
+          <button class="btn-slide-outline">View Chambers</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 5 -->
+    <div class="slide">
+      <img src="lawyer_dealing.webp" alt="Lawyer Consultation">
+      <div class="slide-overlay"></div>
+      <div class="slide-content">
+        <div class="slide-badge"><span class="dot"></span>One-on-One Expert Advice</div>
+        <h2>Personal Guidance from <span class="gold">India's Top Advocates</span></h2>
+        <p>Our advocates are not just legal professionals — they are your strategic partners. With deep expertise, decades of experience, and a commitment to justice, every consultation is thorough, clear, and actionable.</p>
+        <div class="slide-offer">
+          <div class="offer-pct">40%</div>
+          <div class="offer-txt"><div class="o1">OFF First Video Consultation</div><div class="o2">Secure encrypted call — from your home</div></div>
+          <div class="offer-timer"><div class="timer-val">TODAY</div><div class="timer-lbl">Flash Deal</div></div>
+        </div>
+        <div class="slide-btns">
+          <button class="btn-slide-primary">Book Video Call</button>
+          <button class="btn-slide-outline">Meet Our Lawyers</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 6 -->
+    <div class="slide" style="background:linear-gradient(135deg,#060e24,#0d1b3e,#1a2d5a);">
+      <div class="slide-overlay" style="background:linear-gradient(135deg,rgba(6,14,36,0.6),rgba(13,27,62,0.4));"></div>
+      <div class="slide-content">
+        <div class="slide-badge"><span class="dot"></span>Criminal &amp; Bail Matters</div>
+        <h2>Strong Criminal Defence — <span class="gold">Fight for Your Rights</span></h2>
+        <p>Arrested? Received a summons? Our criminal defence specialists have a 92% bail success rate across all major Indian courts. Emergency legal support available 24/7 — response within 30 minutes.</p>
+        <div class="slide-offer">
+          <div class="offer-pct">30%</div>
+          <div class="offer-txt"><div class="o1">OFF Bail Application Consult</div><div class="o2">Emergency slots available now</div></div>
+          <div class="offer-timer"><div class="timer-val">24/7</div><div class="timer-lbl">Available</div></div>
+        </div>
+        <div class="slide-btns">
+          <button class="btn-slide-primary">Emergency Help Now</button>
+          <button class="btn-slide-outline">Criminal Lawyers</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 7 -->
+    <div class="slide" style="background:linear-gradient(135deg,#0f2040,#1a3a6e,#243870);">
+      <div class="slide-overlay" style="background:linear-gradient(135deg,rgba(6,14,36,0.5),rgba(13,27,62,0.3));"></div>
+      <div class="slide-content">
+        <div class="slide-badge"><span class="dot"></span>Corporate &amp; Business Law</div>
+        <h2>Protect Your Business with <span class="gold">Expert Corporate Counsel</span></h2>
+        <p>Startups, SMEs, and large enterprises trust NyayaSetu for contracts, compliance, M&amp;A, GST disputes, and employment law. Our corporate advocates have advised 3,000+ Indian businesses.</p>
+        <div class="slide-offer">
+          <div class="offer-pct">25%</div>
+          <div class="offer-txt"><div class="o1">OFF Corporate Law Package</div><div class="o2">Includes 3-month legal support</div></div>
+          <div class="offer-timer"><div class="timer-val">Rs.999</div><div class="timer-lbl">Starting At</div></div>
+        </div>
+        <div class="slide-btns">
+          <button class="btn-slide-primary">Get Corporate Package</button>
+          <button class="btn-slide-outline">View Packages</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 8 -->
+    <div class="slide" style="background:linear-gradient(135deg,#1a0a0a,#3d1515,#2a0d0d);">
+      <div class="slide-overlay" style="background:linear-gradient(135deg,rgba(6,14,36,0.55),rgba(61,21,21,0.3));"></div>
+      <div class="slide-content">
+        <div class="slide-badge"><span class="dot"></span>Family Law Specialists</div>
+        <h2>Compassionate Family Law <span class="gold">Guidance When It Matters Most</span></h2>
+        <p>Divorce, child custody, maintenance, domestic violence, and matrimonial property — our empathetic family law specialists handle sensitive cases with professionalism, discretion, and deep legal expertise.</p>
+        <div class="slide-offer">
+          <div class="offer-pct">FREE</div>
+          <div class="offer-txt"><div class="o1">First Consultation for Women</div><div class="o2">Special initiative — no hidden charges</div></div>
+          <div class="offer-timer"><div class="timer-val">ALWAYS</div><div class="timer-lbl">Our Promise</div></div>
+        </div>
+        <div class="slide-btns">
+          <button class="btn-slide-primary">Talk to Family Lawyer</button>
+          <button class="btn-slide-outline">Know Your Rights</button>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end track -->
+
+  <button class="slider-arrow prev" onclick="moveSlide(-1)">&#8249;</button>
+  <button class="slider-arrow next" onclick="moveSlide(1)">&#8250;</button>
+  <div class="slider-dots" id="sliderDots"></div>
+</div><!-- end slider -->
+
+<nav>
+  <a href="#" class="logo">
+    <div class="logo-icon"><img class="emblem-img" src="Satyamev-Jayate-Indian-National-Emblem-Wallpaper-Mural-M.jpg" alt="National Emblem"></div>
+    <div class="logo-text">
+      <div class="brand">NyayaSetu</div>
+      <div class="tagline">India's Legal Bridge</div>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="#lawyers">Find Lawyers</a>
+    <a href="#practice">Practice Areas</a>
+    <a href="#cities">Cities</a>
+    <a href="#hub">Legal Hub</a>
+    <a href="#consult">Consultations</a>
+  </div>
+  <div class="nav-actions">
+    <button class="btn-nav-outline">Login</button>
+    <button class="btn-nav-fill">Register as Lawyer</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home" style="display:none;">
+  <div class="hero-bg-img"></div>
+  <div class="hero-img-overlay"></div>
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-grid"></div>
+  <div class="floating-orb orb1"></div>
+  <div class="floating-orb orb2"></div>
+
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      India's #1 Legal Platform · Trusted by 50,000+ Clients
+    </div>
+    <h1>
+      Find the Right Lawyer,
+      <span class="gold-text">Instantly & Confidently</span>
+    </h1>
+    <p class="hero-sub">
+      Connect with 5,000+ verified lawyers across India. Get expert legal guidance for family disputes, property matters, criminal cases, business law, and more — from the comfort of your home.
+    </p>
+
+    <div class="search-box">
+      <div class="search-row">
+        <input class="search-input" type="text" placeholder="Describe your legal issue — e.g., property dispute, divorce, cheque bounce...">
+        <select class="search-select">
+          <option value="">All Cities</option>
+          <option>Delhi</option><option>Mumbai</option><option>Bangalore</option>
+          <option>Hyderabad</option><option>Chennai</option><option>Kolkata</option>
+          <option>Lucknow</option><option>Kanpur</option>
+        </select>
+        <button class="btn-search">Search</button>
+      </div>
+    </div>
+
+    <div class="hero-btns">
+      <button class="btn-primary">Book Consultation</button>
+      <button class="btn-outline-white">Talk to a Lawyer Now</button>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat-item">
+        <span class="stat-num">50K+</span>
+        <span class="stat-label">Clients Helped</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">5,000+</span>
+        <span class="stat-label">Verified Lawyers</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">98%</span>
+        <span class="stat-label">Satisfaction Rate</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">28</span>
+        <span class="stat-label">States Covered</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="hero-card-main" onclick="window.location.href='fahim-uddin.html'">
+      <div class="hero-lawyer-avatar">
+        <img src="lawyer_dealing.webp" alt="Senior Lawyer">
+      </div>
+      <div class="verified-tag">Bar Council Verified</div>
+      <div class="card-name">Adv. Fahim Uddin</div>
+      <div class="card-sub">Senior Advocate · Supreme Court of India</div>
+      <div class="card-stars">★★★★★ <span style="color:rgba(255,255,255,0.6);font-size:0.78rem">(347 Reviews)</span></div>
+      <div class="card-stats-row">
+        <div class="card-stat"><div class="card-stat-n">22</div><div class="card-stat-l">Years Exp.</div></div>
+        <div class="card-stat"><div class="card-stat-n">94%</div><div class="card-stat-l">Success Rate</div></div>
+        <div class="card-stat"><div class="card-stat-n">1,200+</div><div class="card-stat-l">Cases Won</div></div>
+      </div>
+      <button class="card-btn" onclick="event.stopPropagation(); window.location.href='fahim-uddin.html'">Book Consultation — Rs.2,500</button>
+    </div>
+    <div class="floating-card fc-top">
+      <div class="fc-label">Response Time</div>
+      <div class="fc-value">Under 2 Hours</div>
+    </div>
+    <div class="floating-card fc-bot">
+      <div class="fc-label">Consultation</div>
+      <div class="fc-value">100% Confidential</div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BADGES -->
+<div class="trust-section fade-in">
+  <div class="trust-grid">
+    <div class="trust-item">
+      <div class="trust-badge"><svg class="trust-svg" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+      <div class="trust-name">Bar Council Registered</div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-badge"><svg class="trust-svg" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
+      <div class="trust-name">End-to-End Encrypted</div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-badge"><svg class="trust-svg" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+      <div class="trust-name">Govt. Verified IDs</div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-badge"><svg class="trust-svg" viewBox="0 0 24 24"><path d="M4 22h16a2 2 0 002-2V4a2 2 0 00-2-2H8a2 2 0 00-2 2v2"/><path d="M2 20a2 2 0 004 0V8a2 2 0 00-4 0v12z"/></svg></div>
+      <div class="trust-name">Media Recognised</div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-badge"><svg class="trust-svg" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <div class="trust-name">ISO 27001 Certified</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- COURTS SHOWCASE -->
+<section class="court-showcase fade-in">
+  <div class="section-header centered">
+    <div class="section-label">India's Finest Courts</div>
+    <h2 class="section-title">Justice Delivered Across India</h2>
+    <p class="section-sub" style="color:rgba(255,255,255,0.6);">From the Supreme Court to District Courts — NyayaSetu connects you with verified lawyers practising in every major court across the country.</p>
+  </div>
+  <div class="courts-img-grid">
+    <div class="court-img-card">
+      <img src="delhi-high-court-enforces-euro-5.5-million-rs.-52-crore-arbitration-award-for-mercedes-benz.jpg" alt="Delhi High Court">
+      <div class="court-img-label">Delhi High Court<span>One of India's busiest High Courts · 680+ registered lawyers</span></div>
+    </div>
+    <div class="court-img-card">
+      <img src="allahbad _court.jpg" alt="Allahabad High Court">
+      <div class="court-img-label">Allahabad High Court<span>Asia's largest High Court · Uttar Pradesh jurisdiction</span></div>
+    </div>
+    <div class="court-img-card">
+      <img src="kanpur_court.jpg" alt="Kanpur District Court">
+      <div class="court-img-label">Kanpur District Court<span>185+ verified lawyers · Civil &amp; criminal matters</span></div>
+    </div>
+    <div class="court-img-card" style="background:linear-gradient(135deg,var(--navy-mid),var(--navy-light));display:flex;align-items:center;justify-content:center;">
+      <img src="lawyer_cabin.jpg" alt="Lawyer's Office">
+      <div class="court-img-label">In-Office Consultations<span>Book a personal visit at any registered advocate's office</span></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- EXPERTISE SECTION -->
+<section class="expertise-section fade-in">
+  <div class="section-header centered">
+    <div class="section-label" style="color:var(--gold-light);"><span style="background:var(--gold-light);display:inline-block;width:30px;height:2px;margin-right:10px;vertical-align:middle;"></span>Why Choose NyayaSetu</div>
+    <h2 class="section-title" style="color:var(--white);">Decades of Expertise. Thousands of Victories.</h2>
+    <p class="section-sub" style="color:rgba(255,255,255,0.6);">Our advocates bring deep domain knowledge, proven courtroom experience, and an unwavering commitment to your case — backed by India's most rigorous verification process.</p>
+  </div>
+  <div class="expertise-grid">
+    <div class="exp-card">
+      <div class="exp-num">22+</div>
+      <div class="exp-title">Years Average Experience</div>
+      <div class="exp-desc">Every lawyer on NyayaSetu has a minimum of 8 years of active practice. Our top advocates average 22 years of courtroom expertise.</div>
+    </div>
+    <div class="exp-card">
+      <div class="exp-num">94%</div>
+      <div class="exp-title">Client Success Rate</div>
+      <div class="exp-desc">Our verified advocates maintain an industry-leading success rate. From bail applications to complex civil suits — we deliver results.</div>
+    </div>
+    <div class="exp-card">
+      <div class="exp-num">48Hr</div>
+      <div class="exp-title">Fastest Case Response</div>
+      <div class="exp-desc">Time is critical in legal matters. Our advocates guarantee a detailed legal response within 48 hours of your first consultation.</div>
+    </div>
+    <div class="exp-card">
+      <div class="exp-num">100%</div>
+      <div class="exp-title">Confidentiality Assured</div>
+      <div class="exp-desc">All consultations are protected under attorney-client privilege. Every communication is end-to-end encrypted and legally privileged.</div>
+    </div>
+  </div>
+  <!-- Trust pills -->
+  <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-top:48px;">
+    <div style="background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.25);border-radius:50px;padding:10px 24px;display:flex;align-items:center;gap:10px;">
+      <svg style="width:18px;height:18px;stroke:var(--gold);fill:none;stroke-width:2;" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      <span style="color:rgba(255,255,255,0.8);font-size:0.82rem;font-weight:500;">Bar Council Verified</span>
+    </div>
+    <div style="background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.25);border-radius:50px;padding:10px 24px;display:flex;align-items:center;gap:10px;">
+      <svg style="width:18px;height:18px;stroke:var(--gold);fill:none;stroke-width:2;" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+      <span style="color:rgba(255,255,255,0.8);font-size:0.82rem;font-weight:500;">SSL Encrypted Platform</span>
+    </div>
+    <div style="background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.25);border-radius:50px;padding:10px 24px;display:flex;align-items:center;gap:10px;">
+      <svg style="width:18px;height:18px;stroke:var(--gold);fill:none;stroke-width:2;" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+      <span style="color:rgba(255,255,255,0.8);font-size:0.82rem;font-weight:500;">No Hidden Charges — Ever</span>
+    </div>
+    <div style="background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.25);border-radius:50px;padding:10px 24px;display:flex;align-items:center;gap:10px;">
+      <svg style="width:18px;height:18px;stroke:var(--gold);fill:none;stroke-width:2;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      <span style="color:rgba(255,255,255,0.8);font-size:0.82rem;font-weight:500;">24/7 Emergency Support</span>
+    </div>
+    <div style="background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.25);border-radius:50px;padding:10px 24px;display:flex;align-items:center;gap:10px;">
+      <svg style="width:18px;height:18px;stroke:var(--gold);fill:none;stroke-width:2;" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+      <span style="color:rgba(255,255,255,0.8);font-size:0.82rem;font-weight:500;">5,000+ Verified Advocates</span>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES WITH DISCOUNTS -->
+<section class="services-section fade-in">
+  <div class="section-header fade-in">
+    <div class="section-label">Legal Services &amp; Pricing</div>
+    <h2 class="section-title">Transparent Fees. Exclusive Offers.</h2>
+    <p class="section-sub">Choose from our curated legal service packages — all with discounted introductory pricing. No surprise charges, no hidden fees, ever.</p>
+  </div>
+  <div class="services-tabs">
+    <button class="stab active">All Services</button>
+    <button class="stab">Family Law</button>
+    <button class="stab">Property</button>
+    <button class="stab">Criminal</button>
+    <button class="stab">Corporate</button>
+    <button class="stab">Cyber Law</button>
+    <button class="stab">Labour</button>
+    <button class="stab">Taxation</button>
+  </div>
+  <div class="services-grid">
+
+    <div class="service-card">
+      <span class="offer-tag">40% OFF TODAY</span>
+      <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+      <div class="svc-name">Divorce Consultation</div>
+      <div class="svc-sub">Mutual &amp; contested divorce, child custody, alimony, and matrimonial property — complete guidance by senior family law advocates.</div>
+      <div class="svc-price">
+        <span class="svc-orig">Rs.2,500</span>
+        <span class="svc-disc">Rs.1,499</span>
+        <span class="svc-save">Save Rs.1,001</span>
+      </div>
+      <div class="svc-types">
+        <span class="svc-type">Mutual Divorce</span><span class="svc-type">Contested</span><span class="svc-type">Alimony</span><span class="svc-type">Custody</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <span class="offer-tag green">FREE FIRST CALL</span>
+      <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+      <div class="svc-name">Property Dispute</div>
+      <div class="svc-sub">Resolve land disputes, inheritance conflicts, illegal possession, builder fraud, and registration issues with Allahabad HC-experienced advocates.</div>
+      <div class="svc-price">
+        <span class="svc-orig">Rs.1,800</span>
+        <span class="svc-disc">Rs.999</span>
+        <span class="svc-save">Save Rs.801</span>
+      </div>
+      <div class="svc-types">
+        <span class="svc-type">Land Disputes</span><span class="svc-type">Inheritance</span><span class="svc-type">Builder Fraud</span><span class="svc-type">RERA</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <span class="offer-tag">30% OFF</span>
+      <div class="svc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+      <div class="svc-name">Criminal Defence</div>
+      <div class="svc-sub">Expert bail applications, FIR quashing, anticipatory bail, Section 498A, cheque bounce (NI Act), and IPC matters handled urgently.</div>
+      <div class="svc-price">
+        <span class="svc-orig">Rs.3,500</span>
+        <span class="svc-disc">Rs.2,450</span>
+        <span class="svc-save">Save Rs.1,050</span>
+      </div>
+      <div class="svc-types">
+        <span class="svc-type">Bail Application</span><span class="svc-type">FIR Quashing</span><span class="svc-type">498A</span><span class="svc-type">POCSO</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <span class="offer-tag gold">25% OFF PACKAGE</span>
+      <div class="svc-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div>
+      <div class="svc-name">Corporate Legal Package</div>
+      <div class="svc-sub">3-month retainer covering contracts, compliance, employment disputes, IP protection, GST notices, and startup incorporation.</div>
+      <div class="svc-price">
+        <span class="svc-orig">Rs.15,000</span>
+        <span class="svc-disc">Rs.11,249</span>
+        <span class="svc-save">Save Rs.3,751</span>
+      </div>
+      <div class="svc-types">
+        <span class="svc-type">Contracts</span><span class="svc-type">Compliance</span><span class="svc-type">GST Notices</span><span class="svc-type">IP</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <span class="offer-tag">35% OFF</span>
+      <div class="svc-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+      <div class="svc-name">Cyber Crime &amp; IT Law</div>
+      <div class="svc-sub">Online fraud, social media harassment, data breach, hacking complaints, IT Act 2000 cases, and digital evidence filing — handled by cyber law specialists.</div>
+      <div class="svc-price">
+        <span class="svc-orig">Rs.2,200</span>
+        <span class="svc-disc">Rs.1,430</span>
+        <span class="svc-save">Save Rs.770</span>
+      </div>
+      <div class="svc-types">
+        <span class="svc-type">Online Fraud</span><span class="svc-type">Harassment</span><span class="svc-type">Data Breach</span><span class="svc-type">IT Act</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <span class="offer-tag green">FREE CONSULTATION</span>
+      <div class="svc-icon"><svg viewBox="0 0 24 24"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg></div>
+      <div class="svc-name">Labour &amp; Employment</div>
+      <div class="svc-sub">Wrongful termination, unpaid salary, gratuity disputes, PF/ESIC issues, and workplace harassment — our labour advocates get results fast.</div>
+      <div class="svc-price">
+        <span class="svc-orig">Rs.1,500</span>
+        <span class="svc-disc">Rs.799</span>
+        <span class="svc-save">Save Rs.701</span>
+      </div>
+      <div class="svc-types">
+        <span class="svc-type">Wrongful Firing</span><span class="svc-type">Salary Dispute</span><span class="svc-type">Gratuity</span><span class="svc-type">PF/ESIC</span>
+      </div>
+    </div>
+
+  </div>
+  <div style="text-align:center;margin-top:40px;">
+    <button class="btn-nav-fill" style="font-size:0.9rem;padding:14px 36px;border-radius:10px;">View All 50+ Legal Services with Pricing</button>
+  </div>
+</section>
+
+<!-- PRACTICE AREAS -->
+<section class="practice-section" id="practice">
+  <div class="section-header centered fade-in">
+    <div class="section-label">Browse by Category</div>
+    <h2 class="section-title">Find a Lawyer for Every Legal Need</h2>
+    <p class="section-sub">From personal family matters to complex corporate disputes — we have verified specialists for every area of Indian law.</p>
+  </div>
+  <div class="practice-grid fade-in">
+    <div class="practice-card"><svg class="practice-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg><div class="practice-name">Family & Divorce</div><div class="practice-count">620+ Lawyers</div></div>
+    <div class="practice-card"><svg class="practice-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg><div class="practice-name">Property & Real Estate</div><div class="practice-count">485+ Lawyers</div></div>
+    <div class="practice-card"><svg class="practice-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg><div class="practice-name">Criminal Defence</div><div class="practice-count">530+ Lawyers</div></div>
+    <div class="practice-card"><svg class="practice-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg><div class="practice-name">Corporate & Business</div><div class="practice-count">410+ Lawyers</div></div>
+    <div class="practice-card"><svg class="practice-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg><div class="practice-name">Banking & Finance</div><div class="practice-count">290+ Lawyers</div></div>
+    <div class="practice-card"><svg class="practice-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg><div class="practice-name">Labour & Employment</div><div class="practice-count">340+ Lawyers</div></div>
+    <div class="practice-card"><svg class="practice-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg><div class="practice-name">Medical Negligence</div><div class="practice-count">180+ Lawyers</div></div>
+    <div class="practice-card"><svg class="practice-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg><div class="practice-name">Consumer Rights</div><div class="practice-count">270+ Lawyers</div></div>
+    <div class="practice-card"><svg class="practice-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg><div class="practice-name">Cyber Crime & IT</div><div class="practice-count">195+ Lawyers</div></div>
+    <div class="practice-card"><svg class="practice-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg><div class="practice-name">GST & Taxation</div><div class="practice-count">320+ Lawyers</div></div>
+    <div class="practice-card"><svg class="practice-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg><div class="practice-name">Visa & Immigration</div><div class="practice-count">150+ Lawyers</div></div>
+    <div class="practice-card"><svg class="practice-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg><div class="practice-name">Startup & Contracts</div><div class="practice-count">230+ Lawyers</div></div>
+    <div class="practice-card"><svg class="practice-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg><div class="practice-name">Cheque Bounce</div><div class="practice-count">380+ Lawyers</div></div>
+    <div class="practice-card"><svg class="practice-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg><div class="practice-name">Land & Agriculture</div><div class="practice-count">220+ Lawyers</div></div>
+    <div class="practice-card"><svg class="practice-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg><div class="practice-name">Intellectual Property</div><div class="practice-count">165+ Lawyers</div></div>
+    <div class="practice-card"><svg class="practice-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg><div class="practice-name">Constitutional Law</div><div class="practice-count">120+ Lawyers</div></div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section" id="how">
+  <div class="section-header centered fade-in">
+    <div class="section-label">Simple Process</div>
+    <h2 class="section-title" style="color:var(--white)">Get Legal Help in 4 Easy Steps</h2>
+    <p class="section-sub" style="color:rgba(255,255,255,0.6)">From describing your issue to speaking with your lawyer — the entire process takes less than 10 minutes.</p>
+  </div>
+  <div class="steps-grid fade-in">
+    <div class="step-card">
+      <div class="step-num">01</div>
+      <svg class="step-svg" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <div class="step-title">Describe Your Issue</div>
+      <div class="step-desc">Select your legal category or search for key terms. Our simple legal directory helps you identify the right legal specialization even if you don't know the exact legal terms.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">02</div>
+      <svg class="step-svg" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      <div class="step-title">Browse Verified Lawyers</div>
+      <div class="step-desc">Filter by city, language, experience, fees, and specialisation. Every lawyer is bar council verified with full profile transparency.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">03</div>
+      <svg class="step-svg" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      <div class="step-title">Book Your Consultation</div>
+      <div class="step-desc">Choose your preferred mode — video call, audio call, chat, or office visit. Pay securely via UPI, card, or net banking.</div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">04</div>
+      <svg class="step-svg" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+      <div class="step-title">Get Expert Advice</div>
+      <div class="step-desc">Speak confidentially with your lawyer, get a detailed legal opinion, and receive a plan of action for your case.</div>
+    </div>
+  </div>
+</section>
+
+<!-- LAWYERS LISTING -->
+<section class="lawyers-section" id="lawyers">
+  <div class="section-header fade-in">
+    <div class="section-label">Verified Professionals</div>
+    <h2 class="section-title">Top-Rated Lawyers Near You</h2>
+    <p class="section-sub">All lawyers are individually verified by our team. Profiles include real credentials, actual client reviews, and transparent fee structures.</p>
+  </div>
+
+  <div class="filter-bar fade-in">
+    <select class="filter-select"><option>All Practice Areas</option><option>Family & Divorce</option><option>Property Law</option><option>Criminal</option><option>Corporate</option><option>Cyber Crime</option></select>
+    <select class="filter-select"><option>All Cities</option><option>Delhi</option><option>Mumbai</option><option>Bangalore</option><option>Kanpur</option><option>Lucknow</option></select>
+    <select class="filter-select"><option>Any Language</option><option>Hindi</option><option>English</option><option>Tamil</option><option>Telugu</option><option>Bengali</option></select>
+    <select class="filter-select"><option>Any Fee</option><option>Under ₹1,000</option><option>₹1,000–₹3,000</option><option>₹3,000–₹7,000</option><option>₹7,000+</option></select>
+    <select class="filter-select"><option>Sort By</option><option>Highest Rated</option><option>Most Experienced</option><option>Lowest Fee</option><option>Available Now</option></select>
+    <button class="filter-btn">Apply Filters</button>
+  </div>
+
+  <div class="lawyers-grid fade-in">
+
+    <!-- Lawyer 1 -->
+    <div class="lawyer-card" onclick="window.location.href='priya-sharma.html'">
+      <div class="lawyer-card-top">
+        <div class="avail-badge">Available</div>
+        <div class="lawyer-photo"><img src="lawyer_cabin.jpg" alt="Lawyer" style="width:100%;height:100%;object-fit:cover;"></div>
+        <div class="lawyer-info">
+          <div class="name">Adv. Priya Sharma</div>
+          <div class="desig">Senior Advocate · Delhi High Court</div>
+          <div class="stars">★★★★★ <span class="rating-num">4.9 (218)</span></div>
+          <div class="verified-chip">Bar Council Verified</div>
+        </div>
+      </div>
+      <div class="lawyer-card-body">
+        <div class="tags-row">
+          <span class="tag">Family Law</span><span class="tag">Divorce</span><span class="tag">Child Custody</span>
+        </div>
+        <div class="lawyer-meta">
+          <div class="meta-item"><strong>18 Years</strong>Experience</div>
+          <div class="meta-item"><strong>Delhi, NCR</strong>Location</div>
+          <div class="meta-item"><strong>Hindi, English</strong>Languages</div>
+          <div class="meta-item"><strong>92%</strong>Success Rate</div>
+        </div>
+        <div class="fee-row">
+          <span class="fee-label">Consultation Fee</span>
+          <span class="fee-amount">₹1,500 / session</span>
+        </div>
+        <div class="lawyer-actions">
+          <button class="btn-book" onclick="event.stopPropagation(); window.location.href='#'">Book Consultation</button>
+          <button class="btn-wp" onclick="event.stopPropagation(); window.location.href='https://wa.me/919999999999'">Chat</button>
+          <button class="btn-call" onclick="event.stopPropagation(); window.location.href='tel:+919999999999'">Call</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lawyer 2 -->
+    <div class="lawyer-card" onclick="window.location.href='vikram-mehta.html'">
+      <div class="lawyer-card-top">
+        <div class="avail-badge">Available</div>
+        <div class="lawyer-photo"><img src="lawyer_dealing.webp" alt="Lawyer" style="width:100%;height:100%;object-fit:cover;"></div>
+        <div class="lawyer-info">
+          <div class="name">Adv. Vikram Mehta</div>
+          <div class="desig">Criminal Defence Specialist · Bombay HC</div>
+          <div class="stars">★★★★★ <span class="rating-num">4.8 (305)</span></div>
+          <div class="verified-chip">Bar Council Verified</div>
+        </div>
+      </div>
+      <div class="lawyer-card-body">
+        <div class="tags-row">
+          <span class="tag">Criminal Law</span><span class="tag">Bail</span><span class="tag">IPC</span>
+        </div>
+        <div class="lawyer-meta">
+          <div class="meta-item"><strong>24 Years</strong>Experience</div>
+          <div class="meta-item"><strong>Mumbai</strong>Location</div>
+          <div class="meta-item"><strong>Hindi, Marathi, English</strong>Languages</div>
+          <div class="meta-item"><strong>89%</strong>Success Rate</div>
+        </div>
+        <div class="fee-row">
+          <span class="fee-label">Consultation Fee</span>
+          <span class="fee-amount">₹3,000 / session</span>
+        </div>
+        <div class="lawyer-actions">
+          <button class="btn-book" onclick="event.stopPropagation(); window.location.href='#'">Book Consultation</button>
+          <button class="btn-wp" onclick="event.stopPropagation(); window.location.href='https://wa.me/919999999999'">Chat</button>
+          <button class="btn-call" onclick="event.stopPropagation(); window.location.href='tel:+919999999999'">Call</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lawyer 3 -->
+    <div class="lawyer-card" onclick="window.location.href='ananya-krishnan.html'">
+      <div class="lawyer-card-top">
+        <div class="lawyer-photo"><img src="lawyer_cabin.jpg" alt="Lawyer" style="width:100%;height:100%;object-fit:cover;"></div>
+        <div class="lawyer-info">
+          <div class="name">Adv. Ananya Krishnan</div>
+          <div class="desig">Corporate & Startup Counsel · Bangalore</div>
+          <div class="stars">★★★★½ <span class="rating-num">4.7 (186)</span></div>
+          <div class="verified-chip">Bar Council Verified</div>
+        </div>
+      </div>
+      <div class="lawyer-card-body">
+        <div class="tags-row">
+          <span class="tag">Corporate Law</span><span class="tag">Startups</span><span class="tag">Contracts</span>
+        </div>
+        <div class="lawyer-meta">
+          <div class="meta-item"><strong>12 Years</strong>Experience</div>
+          <div class="meta-item"><strong>Bangalore</strong>Location</div>
+          <div class="meta-item"><strong>English, Kannada</strong>Languages</div>
+          <div class="meta-item"><strong>95%</strong>Success Rate</div>
+        </div>
+        <div class="fee-row">
+          <span class="fee-label">Consultation Fee</span>
+          <span class="fee-amount">₹2,200 / session</span>
+        </div>
+        <div class="lawyer-actions">
+          <button class="btn-book" onclick="event.stopPropagation(); window.location.href='#'">Book Consultation</button>
+          <button class="btn-wp" onclick="event.stopPropagation(); window.location.href='https://wa.me/919999999999'">Chat</button>
+          <button class="btn-call" onclick="event.stopPropagation(); window.location.href='tel:+919999999999'">Call</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lawyer 4 -->
+    <div class="lawyer-card" onclick="window.location.href='mohammad-irfan.html'">
+      <div class="lawyer-card-top">
+        <div class="avail-badge">Available</div>
+        <div class="lawyer-photo"><img src="lawyer_dealing.webp" alt="Lawyer" style="width:100%;height:100%;object-fit:cover;"></div>
+        <div class="lawyer-info">
+          <div class="name">Adv. Mohammad Irfan</div>
+          <div class="desig">Property & Civil Lawyer · Lucknow</div>
+          <div class="stars">★★★★★ <span class="rating-num">4.9 (274)</span></div>
+          <div class="verified-chip">Bar Council Verified</div>
+        </div>
+      </div>
+      <div class="lawyer-card-body">
+        <div class="tags-row">
+          <span class="tag">Property</span><span class="tag">Civil Disputes</span><span class="tag">Land</span>
+        </div>
+        <div class="lawyer-meta">
+          <div class="meta-item"><strong>20 Years</strong>Experience</div>
+          <div class="meta-item"><strong>Lucknow, Kanpur</strong>Location</div>
+          <div class="meta-item"><strong>Hindi, Urdu, English</strong>Languages</div>
+          <div class="meta-item"><strong>91%</strong>Success Rate</div>
+        </div>
+        <div class="fee-row">
+          <span class="fee-label">Consultation Fee</span>
+          <span class="fee-amount">₹1,200 / session</span>
+        </div>
+        <div class="lawyer-actions">
+          <button class="btn-book" onclick="event.stopPropagation(); window.location.href='#'">Book Consultation</button>
+          <button class="btn-wp" onclick="event.stopPropagation(); window.location.href='https://wa.me/919999999999'">Chat</button>
+          <button class="btn-call" onclick="event.stopPropagation(); window.location.href='tel:+919999999999'">Call</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lawyer 5 -->
+    <div class="lawyer-card" onclick="window.location.href='sunitha-reddy.html'">
+      <div class="lawyer-card-top">
+        <div class="lawyer-photo"><img src="lawyer_cabin.jpg" alt="Lawyer" style="width:100%;height:100%;object-fit:cover;"></div>
+        <div class="lawyer-info">
+          <div class="name">Adv. Sunitha Reddy</div>
+          <div class="desig">Cyber Crime & IT Law Expert · Hyderabad</div>
+          <div class="stars">★★★★★ <span class="rating-num">4.8 (142)</span></div>
+          <div class="verified-chip">Bar Council Verified</div>
+        </div>
+      </div>
+      <div class="lawyer-card-body">
+        <div class="tags-row">
+          <span class="tag">Cyber Crime</span><span class="tag">Data Privacy</span><span class="tag">IT Act</span>
+        </div>
+        <div class="lawyer-meta">
+          <div class="meta-item"><strong>9 Years</strong>Experience</div>
+          <div class="meta-item"><strong>Hyderabad</strong>Location</div>
+          <div class="meta-item"><strong>Telugu, English, Hindi</strong>Languages</div>
+          <div class="meta-item"><strong>88%</strong>Success Rate</div>
+        </div>
+        <div class="fee-row">
+          <span class="fee-label">Consultation Fee</span>
+          <span class="fee-amount">₹1,800 / session</span>
+        </div>
+        <div class="lawyer-actions">
+          <button class="btn-book" onclick="event.stopPropagation(); window.location.href='#'">Book Consultation</button>
+          <button class="btn-wp" onclick="event.stopPropagation(); window.location.href='https://wa.me/919999999999'">Chat</button>
+          <button class="btn-call" onclick="event.stopPropagation(); window.location.href='tel:+919999999999'">Call</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lawyer 6 -->
+    <div class="lawyer-card" onclick="window.location.href='arjun-datta.html'">
+      <div class="lawyer-card-top">
+        <div class="avail-badge">Available</div>
+        <div class="lawyer-photo"><img src="lawyer_dealing.webp" alt="Lawyer" style="width:100%;height:100%;object-fit:cover;"></div>
+        <div class="lawyer-info">
+          <div class="name">Adv. Arjun Datta</div>
+          <div class="desig">Labour & Employment Specialist · Kolkata</div>
+          <div class="stars">★★★★½ <span class="rating-num">4.6 (198)</span></div>
+          <div class="verified-chip">Bar Council Verified</div>
+        </div>
+      </div>
+      <div class="lawyer-card-body">
+        <div class="tags-row">
+          <span class="tag">Labour Law</span><span class="tag">Employment</span><span class="tag">HR Disputes</span>
+        </div>
+        <div class="lawyer-meta">
+          <div class="meta-item"><strong>15 Years</strong>Experience</div>
+          <div class="meta-item"><strong>Kolkata</strong>Location</div>
+          <div class="meta-item"><strong>Bengali, Hindi, English</strong>Languages</div>
+          <div class="meta-item"><strong>87%</strong>Success Rate</div>
+        </div>
+        <div class="fee-row">
+          <span class="fee-label">Consultation Fee</span>
+          <span class="fee-amount">₹900 / session</span>
+        </div>
+        <div class="lawyer-actions">
+          <button class="btn-book" onclick="event.stopPropagation(); window.location.href='arjun-datta.html'">Book Consultation</button>
+          <button class="btn-wp" onclick="event.stopPropagation(); window.location.href='https://wa.me/918948143948?text=Hello%20Advocate%20Sir%2C%20I%20need%20legal%20help'">Chat</button>
+          <button class="btn-call" onclick="event.stopPropagation(); window.location.href='tel:+918948143948'">Call</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lawyer 7 -->
+    <div class="lawyer-card" onclick="window.location.href='fahim-uddin.html'">
+      <div class="lawyer-card-top">
+        <div class="avail-badge">Available</div>
+        <div class="lawyer-photo"><img src="Fahim .jpg" alt="Lawyer" style="width:100%;height:100%;object-fit:cover;"></div>
+        <div class="lawyer-info">
+          <div class="name">Adv. Fahim Uddin</div>
+          <div class="desig">Senior MACT Lawyer · Kanpur</div>
+          <div class="stars">★★★★★ <span class="rating-num">4.9 (347)</span></div>
+          <div class="verified-chip">Bar Council Verified</div>
+        </div>
+      </div>
+      <div class="lawyer-card-body">
+        <div class="tags-row">
+          <span class="tag">MACT Expert</span><span class="tag">Accident Claims</span><span class="tag">Insurance Disputes</span>
+        </div>
+        <div class="lawyer-meta">
+          <div class="meta-item"><strong>15+ Years</strong>Experience</div>
+          <div class="meta-item"><strong>Kanpur, UP</strong>Location</div>
+          <div class="meta-item"><strong>Hindi, English</strong>Languages</div>
+          <div class="meta-item"><strong>96%</strong>Success Rate</div>
+        </div>
+        <div class="fee-row">
+          <span class="fee-label">Consultation Fee</span>
+          <span class="fee-amount">₹1,000 / session</span>
+        </div>
+        <div class="lawyer-actions">
+          <button class="btn-book" onclick="event.stopPropagation(); window.location.href='fahim-uddin.html'">Book Consultation</button>
+          <button class="btn-wp" onclick="event.stopPropagation(); window.location.href='https://wa.me/918948143948?text=Hello%20Advocate%20Sir%2C%20I%20need%20legal%20help'">Chat</button>
+          <button class="btn-call" onclick="event.stopPropagation(); window.location.href='tel:+918948143948'">Call</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center; margin-top:40px">
+    <button class="btn-nav-fill" style="font-size:0.9rem; padding:14px 36px; border-radius:10px">View All 5,000+ Lawyers →</button>
+  </div>
+</section>
+
+<!-- CONSULTATION MODES -->
+<section class="consult-section" id="consult">
+  <div class="section-header centered fade-in">
+    <div class="section-label">Flexible Access</div>
+    <h2 class="section-title">Choose Your Consultation Mode</h2>
+    <p class="section-sub">Get legal help the way that suits you best — at home, at office, or on the go.</p>
+  </div>
+  <div class="consult-grid fade-in">
+    <div class="consult-card">
+      <div class="consult-icon"><svg class="consult-svg" viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
+      <div class="consult-name">Video Consultation</div>
+      <div class="consult-desc">Face-to-face meeting from home via secure encrypted video call</div>
+    </div>
+    <div class="consult-card">
+      <div class="consult-icon"><svg class="consult-svg" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.37a16 16 0 006.72 6.72l1.73-1.73a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+      <div class="consult-name">Audio Call</div>
+      <div class="consult-desc">Speak directly with your lawyer over a secure private phone call</div>
+    </div>
+    <div class="consult-card">
+      <div class="consult-icon"><svg class="consult-svg" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+      <div class="consult-name">Chat Consultation</div>
+      <div class="consult-desc">Get written legal advice via confidential encrypted chat</div>
+    </div>
+    <div class="consult-card">
+      <div class="consult-icon"><svg class="consult-svg" viewBox="0 0 24 24"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg></div>
+      <div class="consult-name">Office Visit</div>
+      <div class="consult-desc">Book an in-person appointment at the lawyer's registered office</div>
+    </div>
+    <div class="consult-card">
+      <div class="consult-icon"><svg class="consult-svg" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+      <div class="consult-name">Emergency Support</div>
+      <div class="consult-desc">24/7 urgent legal support for arrests, raids, or immediate crises</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- LAWYER DEALING SECTION -->
+<section class="lawyer-dealing-section fade-in">
+  <div class="lawyer-deal-grid">
+    <div class="lawyer-deal-img">
+      <img src="lawyer_dealing.webp" alt="Lawyer consulting client">
+    </div>
+    <div>
+      <div class="section-label">Expert Guidance</div>
+      <h2 class="section-title">One-on-One Legal Consultation — Just for You</h2>
+      <p class="section-sub" style="margin-bottom:28px;">Our verified lawyers give you their complete attention. Every consultation is private, structured, and focused entirely on resolving your specific legal situation.</p>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:16px;">
+        <li style="display:flex;align-items:flex-start;gap:14px;">
+          <span style="width:24px;height:24px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
+            <svg style="width:12px;height:12px;stroke:var(--navy);fill:none;stroke-width:3;" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          <span style="font-size:0.9rem;color:var(--text-mid);line-height:1.6;"><strong style="color:var(--navy);">Complete case analysis</strong> — Your lawyer reviews all facts before giving advice</span>
+        </li>
+        <li style="display:flex;align-items:flex-start;gap:14px;">
+          <span style="width:24px;height:24px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
+            <svg style="width:12px;height:12px;stroke:var(--navy);fill:none;stroke-width:3;" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          <span style="font-size:0.9rem;color:var(--text-mid);line-height:1.6;"><strong style="color:var(--navy);">Written legal opinion</strong> — Receive a detailed written summary after your session</span>
+        </li>
+        <li style="display:flex;align-items:flex-start;gap:14px;">
+          <span style="width:24px;height:24px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
+            <svg style="width:12px;height:12px;stroke:var(--navy);fill:none;stroke-width:3;" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          <span style="font-size:0.9rem;color:var(--text-mid);line-height:1.6;"><strong style="color:var(--navy);">Strict confidentiality</strong> — All communications are legally protected and encrypted</span>
+        </li>
+        <li style="display:flex;align-items:flex-start;gap:14px;">
+          <span style="width:24px;height:24px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
+            <svg style="width:12px;height:12px;stroke:var(--navy);fill:none;stroke-width:3;" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          </span>
+          <span style="font-size:0.9rem;color:var(--text-mid);line-height:1.6;"><strong style="color:var(--navy);">Follow-up support</strong> — Ask follow-up questions within 48 hours at no extra charge</span>
+        </li>
+      </ul>
+      <div style="margin-top:32px;display:flex;gap:14px;flex-wrap:wrap;">
+        <button class="btn-primary" style="padding:14px 28px;">Book a Consultation</button>
+        <button class="btn-nav-outline" style="padding:14px 28px;border-radius:10px;font-size:0.92rem;">Learn How It Works</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOP LAWYERS SHOWCASE -->
+<section class="top-lawyers-section">
+  <div class="section-header fade-in">
+    <div class="section-label">Elite Professionals</div>
+    <h2 class="section-title">Top Lawyers in India</h2>
+    <p class="section-sub">Hand-picked senior advocates and specialists with proven track records in India's highest courts.</p>
+  </div>
+  <div class="top-lawyers-grid fade-in">
+    <div class="top-lawyer-card top-supreme">
+      <div class="top-lawyer-accent"></div>
+      <div class="top-lawyer-content">
+        <div class="top-lawyer-photo" style="background:linear-gradient(135deg,var(--navy),var(--navy-mid));display:flex;align-items:center;justify-content:center;color:var(--gold);font-weight:700;font-size:1.2rem;">A</div>
+        <div class="top-lawyer-info">
+          <div class="tlname">Sr. Adv. Ramesh Gupta</div>
+          <div class="tlrole" style="color:rgba(255,255,255,0.6)">Supreme Court of India</div>
+          <div class="tlrating">★★★★★ 4.9 · 380+ cases</div>
+          <div class="sc-badge">Supreme Court</div>
+        </div>
+      </div>
+    </div>
+    <div class="top-lawyer-card">
+      <div class="top-lawyer-accent"></div>
+      <div class="top-lawyer-content">
+        <div class="top-lawyer-photo" style="background:linear-gradient(135deg,var(--navy-mid),var(--navy-light));display:flex;align-items:center;justify-content:center;color:var(--gold);font-weight:700;font-size:1.2rem;">A</div>
+        <div class="top-lawyer-info">
+          <div class="tlname">Adv. Nalini Iyer</div>
+          <div class="tlrole">Madras High Court · IP & Copyright</div>
+          <div class="tlrating">★★★★★ 4.8 · 210+ cases</div>
+        </div>
+      </div>
+    </div>
+    <div class="top-lawyer-card">
+      <div class="top-lawyer-accent"></div>
+      <div class="top-lawyer-content">
+        <div class="top-lawyer-photo" style="background:linear-gradient(135deg,var(--navy),var(--navy-mid));display:flex;align-items:center;justify-content:center;color:var(--gold);font-weight:700;font-size:1.2rem;">A</div>
+        <div class="top-lawyer-info">
+          <div class="tlname">Adv. Karan Sehgal</div>
+          <div class="tlrole">Delhi HC · Corporate & M&A</div>
+          <div class="tlrating">★★★★★ 4.9 · 145+ cases</div>
+        </div>
+      </div>
+    </div>
+    <div class="top-lawyer-card top-supreme">
+      <div class="top-lawyer-accent"></div>
+      <div class="top-lawyer-content">
+        <div class="top-lawyer-photo" style="background:linear-gradient(135deg,var(--navy-mid),var(--navy-light));display:flex;align-items:center;justify-content:center;color:var(--gold);font-weight:700;font-size:1.2rem;">A</div>
+        <div class="top-lawyer-info">
+          <div class="tlname">Sr. Adv. Fatima Khan</div>
+          <div class="tlrole" style="color:rgba(255,255,255,0.6)">Supreme Court · Constitutional</div>
+          <div class="tlrating">★★★★★ 4.9 · 520+ cases</div>
+          <div class="sc-badge">Supreme Court</div>
+        </div>
+      </div>
+    </div>
+    <div class="top-lawyer-card">
+      <div class="top-lawyer-accent"></div>
+      <div class="top-lawyer-content">
+        <div class="top-lawyer-photo" style="background:linear-gradient(135deg,var(--navy),var(--navy-mid));display:flex;align-items:center;justify-content:center;color:var(--gold);font-weight:700;font-size:1.2rem;">A</div>
+        <div class="top-lawyer-info">
+          <div class="tlname">Adv. Deepak Nair</div>
+          <div class="tlrole">Kerala HC · Banking & Finance</div>
+          <div class="tlrating">★★★★½ 4.7 · 190+ cases</div>
+        </div>
+      </div>
+    </div>
+    <div class="top-lawyer-card">
+      <div class="top-lawyer-accent"></div>
+      <div class="top-lawyer-content">
+        <div class="top-lawyer-photo" style="background:linear-gradient(135deg,var(--navy-mid),var(--navy-light));display:flex;align-items:center;justify-content:center;color:var(--gold);font-weight:700;font-size:1.2rem;">A</div>
+        <div class="top-lawyer-info">
+          <div class="tlname">Adv. Reena Malhotra</div>
+          <div class="tlrole">Punjab & Haryana HC · Criminal</div>
+          <div class="tlrating">★★★★★ 4.8 · 290+ cases</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CITIES -->
+<section class="cities-section" id="cities">
+  <div class="section-header centered fade-in">
+    <div class="section-label">Pan-India Network</div>
+    <h2 class="section-title">Find Lawyers in Your City</h2>
+    <p class="section-sub">NyayaSetu covers all major cities and towns across India with local language support and city-specific legal expertise.</p>
+  </div>
+  <div class="cities-grid fade-in">
+    <div class="city-card"><svg class="city-svg" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><div class="city-info"><div class="city-name">Delhi</div><div class="city-count">680+ Lawyers</div></div></div>
+    <div class="city-card"><svg class="city-svg" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><div class="city-info"><div class="city-name">Mumbai</div><div class="city-count">590+ Lawyers</div></div></div>
+    <div class="city-card"><svg class="city-svg" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg><div class="city-info"><div class="city-name">Bangalore</div><div class="city-count">420+ Lawyers</div></div></div>
+    <div class="city-card"><svg class="city-svg" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><div class="city-info"><div class="city-name">Hyderabad</div><div class="city-count">380+ Lawyers</div></div></div>
+    <div class="city-card"><svg class="city-svg" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><div class="city-info"><div class="city-name">Chennai</div><div class="city-count">340+ Lawyers</div></div></div>
+    <div class="city-card"><svg class="city-svg" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><div class="city-info"><div class="city-name">Kolkata</div><div class="city-count">290+ Lawyers</div></div></div>
+    <div class="city-card"><svg class="city-svg" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><div class="city-info"><div class="city-name">Lucknow</div><div class="city-count">265+ Lawyers</div></div></div>
+    <div class="city-card"><svg class="city-svg" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><div class="city-info"><div class="city-name">Kanpur</div><div class="city-count">185+ Lawyers</div></div></div>
+    <div class="city-card"><svg class="city-svg" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><div class="city-info"><div class="city-name">Pune</div><div class="city-count">240+ Lawyers</div></div></div>
+    <div class="city-card"><svg class="city-svg" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><div class="city-info"><div class="city-name">Jaipur</div><div class="city-count">200+ Lawyers</div></div></div>
+    <div class="city-card"><svg class="city-svg" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><div class="city-info"><div class="city-name">Kochi</div><div class="city-count">155+ Lawyers</div></div></div>
+    <div class="city-card"><svg class="city-svg" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><div class="city-info"><div class="city-name">Chandigarh</div><div class="city-count">170+ Lawyers</div></div></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-section">
+  <div class="section-header centered fade-in">
+    <div class="section-label">Real Stories</div>
+    <h2 class="section-title">What Our Clients Say</h2>
+    <p class="section-sub">Real testimonials from real people who found the legal help they needed through NyayaSetu.</p>
+  </div>
+  <div class="testi-grid fade-in">
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">I was going through a very painful property dispute with my relatives. Finding Adv. Irfan on NyayaSetu was life-changing. He explained everything clearly in Hindi and resolved the case in 6 months. Highly recommend this platform.</p>
+      <div class="testi-person">
+        <div class="testi-avatar">R</div>
+        <div><div class="testi-name">Ramesh Tiwari</div><div class="testi-loc">Kanpur, UP · Property Dispute</div></div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">I needed urgent help when my company got a legal notice. Booked Adv. Ananya via NyayaSetu at 9pm and she responded within the hour. Her corporate law expertise saved us lakhs. The platform is truly professional.</p>
+      <div class="testi-person">
+        <div class="testi-avatar">S</div>
+        <div><div class="testi-name">Siddharth Rao</div><div class="testi-loc">Bangalore · Startup Legal</div></div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">As a woman going through divorce, I was scared and confused. Adv. Priya Sharma was not just my lawyer — she was my guide. NyayaSetu's platform helped me find the right expert easily. Truly a lifesaver.</p>
+      <div class="testi-person">
+        <div class="testi-avatar">M</div>
+        <div><div class="testi-name">Meena Gupta</div><div class="testi-loc">Delhi · Family Law</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEGAL KNOWLEDGE HUB -->
+<section class="hub-section" id="hub">
+  <div class="section-header fade-in">
+    <div class="section-label">Legal Knowledge Hub</div>
+    <h2 class="section-title">Understand Your Rights</h2>
+    <p class="section-sub">Free legal guides, articles, and case studies written by our expert lawyers to help every Indian understand their rights.</p>
+  </div>
+  <div class="hub-grid fade-in">
+    <div class="blog-card">
+      <div class="blog-img" style="background-image:url('lawyer_dealing.webp');background-size:cover;background-position:center;">
+        <div class="blog-cat">Family Law</div>
+      </div>
+      <div class="blog-body">
+        <div class="blog-title">Complete Guide to Divorce Process in India — Mutual vs Contested</div>
+        <div class="blog-meta">By Adv. Priya Sharma · 8 min read</div>
+        <div class="blog-read">Read Article →</div>
+      </div>
+    </div>
+    <div class="blog-card">
+      <div class="blog-img" style="background-image:url('kanpur_court.jpg');background-size:cover;background-position:center;">
+        <div class="blog-cat">Property Law</div>
+      </div>
+      <div class="blog-body">
+        <div class="blog-title">How to Resolve Property Disputes with Siblings — Your Legal Rights</div>
+        <div class="blog-meta">By Adv. M. Irfan · 10 min read</div>
+        <div class="blog-read">Read Article →</div>
+      </div>
+    </div>
+    <div class="blog-card">
+      <div class="blog-img" style="background-image:url('lawyer_cabin.jpg');background-size:cover;background-position:center;">
+        <div class="blog-cat">Startup Law</div>
+      </div>
+      <div class="blog-body">
+        <div class="blog-title">Legal Documents Every Indian Startup Must Have Before Launching</div>
+        <div class="blog-meta">By Adv. Ananya Krishnan · 12 min read</div>
+        <div class="blog-read">Read Article →</div>
+      </div>
+    </div>
+    <div class="blog-card">
+      <div class="blog-img" style="background:linear-gradient(135deg,var(--navy),var(--navy-mid));">
+        <div class="blog-cat">Cyber Crime</div>
+      </div>
+      <div class="blog-body">
+        <div class="blog-title">Victim of Online Fraud? Here's Exactly What to Do Under IT Act 2000</div>
+        <div class="blog-meta">By Adv. Sunitha Reddy · 7 min read</div>
+        <div class="blog-read">Read Article →</div>
+      </div>
+    </div>
+    <div class="blog-card">
+      <div class="blog-img" style="background:linear-gradient(135deg,var(--navy-mid),var(--navy-light));">
+        <div class="blog-cat">Taxation</div>
+      </div>
+      <div class="blog-body">
+        <div class="blog-title">GST Notice Received? Step-by-Step Legal Response Guide for Businesses</div>
+        <div class="blog-meta">By Adv. K. Sehgal · 9 min read</div>
+        <div class="blog-read">Read Article →</div>
+      </div>
+    </div>
+    <div class="blog-card">
+      <div class="blog-img" style="background:linear-gradient(135deg,#1a3a6e,var(--navy-mid));">
+        <div class="blog-cat">Consumer Rights</div>
+      </div>
+      <div class="blog-body">
+        <div class="blog-title">Consumer Forum Complaint: How to File & Win — Complete 2025 Guide</div>
+        <div class="blog-meta">By NyayaSetu Team · 11 min read</div>
+        <div class="blog-read">Read Article →</div>
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:36px">
+    <button class="btn-nav-fill" style="font-size:0.88rem;padding:12px 32px;border-radius:10px">Browse All 200+ Legal Articles →</button>
+  </div>
+</section>
+
+<!-- PAYMENT -->
+<section class="payment-section">
+  <div class="payment-grid fade-in">
+    <div>
+      <div class="section-label">Secure Payments</div>
+      <h2 class="section-title">Pay Securely, Your Way</h2>
+      <p class="section-sub" style="margin-bottom:30px">All transactions on NyayaSetu are 100% secure, encrypted, and compliant with RBI guidelines. Choose from India's most trusted payment methods.</p>
+      <div class="payment-methods">
+        <div class="pay-method"><svg class="pay-svg" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg><div class="pay-name">UPI / GPay</div></div>
+        <div class="pay-method"><svg class="pay-svg" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg><div class="pay-name">Razorpay</div></div>
+        <div class="pay-method"><svg class="pay-svg" viewBox="0 0 24 24"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg><div class="pay-name">Net Banking</div></div>
+        <div class="pay-method"><svg class="pay-svg" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg><div class="pay-name">Paytm</div></div>
+        <div class="pay-method"><svg class="pay-svg" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg><div class="pay-name">Credit Card</div></div>
+        <div class="pay-method"><svg class="pay-svg" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg><div class="pay-name">Debit Card</div></div>
+      </div>
+      <div class="security-note">
+        <span style="font-size:1.2rem"></span>
+        <span>All payments are SSL encrypted · Instant refund if lawyer cancels · Zero hidden charges</span>
+      </div>
+    </div>
+    <div style="background:var(--white); border:1px solid #eee; border-radius:24px; padding:36px;">
+      <h3 style="font-family:'Playfair Display',serif; font-size:1.4rem; color:var(--navy); margin-bottom:24px">Book Your First Consultation</h3>
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <input style="background:var(--off-white);border:1px solid #ddd;border-radius:10px;padding:14px 18px;font-size:0.88rem;font-family:'Poppins',sans-serif;outline:none;color:var(--text-dark)" placeholder="Full Name *">
+        <input style="background:var(--off-white);border:1px solid #ddd;border-radius:10px;padding:14px 18px;font-size:0.88rem;font-family:'Poppins',sans-serif;outline:none;color:var(--text-dark)" placeholder="Mobile Number *" type="tel">
+        <select style="background:var(--off-white);border:1px solid #ddd;border-radius:10px;padding:14px 18px;font-size:0.88rem;font-family:'Poppins',sans-serif;outline:none;color:var(--text-dark)">
+          <option>Select Legal Issue</option>
+          <option>Family / Divorce</option><option>Property Dispute</option>
+          <option>Criminal Matter</option><option>Business/Corporate</option>
+          <option>Cyber Crime</option><option>Other</option>
+        </select>
+        <select style="background:var(--off-white);border:1px solid #ddd;border-radius:10px;padding:14px 18px;font-size:0.88rem;font-family:'Poppins',sans-serif;outline:none;color:var(--text-dark)">
+          <option>Select Your City</option>
+          <option>Delhi</option><option>Mumbai</option><option>Kanpur</option><option>Lucknow</option>
+        </select>
+        <button class="btn-primary" style="width:100%;justify-content:center;padding:16px">Find & Book My Lawyer</button>
+        <p style="text-align:center;font-size:0.72rem;color:var(--text-muted)"> 100% Confidential · Verified Lawyers Only</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>Your Legal Problem Deserves Expert Attention</h2>
+  <p>Don't wait and worry alone. India's best lawyers are just one click away. Get confidential, professional legal help right now.</p>
+  <div class="cta-btns">
+    <button class="btn-primary" style="font-size:1rem; padding:16px 36px">Book Consultation Now</button>
+    <button class="btn-outline-white" style="font-size:1rem; padding:16px 36px">Call Emergency Legal Help</button>
+  </div>
+  <div style="margin-top:30px; display:flex; justify-content:center; gap:30px; flex-wrap:wrap;">
+    <span style="color:rgba(255,255,255,0.5);font-size:0.78rem">No Registration Required</span>
+    <span style="color:rgba(255,255,255,0.5);font-size:0.78rem">Speak in Hindi or English</span>
+    <span style="color:rgba(255,255,255,0.5);font-size:0.78rem">Available 24/7</span>
+    <span style="color:rgba(255,255,255,0.5);font-size:0.78rem">100% Confidential</span>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#" class="logo" style="margin-bottom:4px; display:inline-flex">
+        <div class="logo-icon"><img class="emblem-img" src="Satyamev-Jayate-Indian-National-Emblem-Wallpaper-Mural-M.jpg" alt="National Emblem"></div>
+        <div class="logo-text">
+          <div class="brand">NyayaSetu</div>
+          <div class="tagline">India's Legal Bridge</div>
+        </div>
+      </a>
+      <p class="brand-desc">India's most trusted online legal platform connecting citizens with verified, experienced lawyers across all states and practice areas. Justice should be accessible to every Indian.</p>
+      <div class="footer-social">
+        <div class="social-btn">f</div>
+        <div class="social-btn">in</div>
+        <div class="social-btn">X</div>
+        <div class="social-btn">▶</div>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>For Clients</h4>
+      <a href="#">Find a Lawyer</a>
+      <a href="#">AI Legal Assistant</a>
+      <a href="#">Emergency Support</a>
+      <a href="#">Book Consultation</a>
+      <a href="#">Track My Case</a>
+      <a href="#">Client Reviews</a>
+    </div>
+    <div class="footer-col">
+      <h4>Practice Areas</h4>
+      <a href="#">Family & Divorce</a>
+      <a href="#">Property Law</a>
+      <a href="#">Criminal Defence</a>
+      <a href="#">Corporate Law</a>
+      <a href="#">Cyber Crime</a>
+      <a href="#">Consumer Rights</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="#">About NyayaSetu</a>
+      <a href="#">Register as Lawyer</a>
+      <a href="#">Legal Knowledge Hub</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Contact Us</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 NyayaSetu Legal Technologies Pvt. Ltd. · CIN: U74999UP2025PTC000001 · All Rights Reserved</p>
+    <div class="footer-certifications">
+      <div class="cert-badge">SSL Secured</div>
+      <div class="cert-badge">ISO 27001</div>
+      <div class="cert-badge">Bar Council Approved</div>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<button class="wp-float" title="Chat on WhatsApp" id="global-wp-float">
+  <svg style="width:28px;height:28px;fill:white;" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</button>
+
+<script>
+// Intersection Observer for fade-in
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// Animated counters
+function animateCounter(el, target, suffix='') {
+  let start = 0;
+  const duration = 2000;
+  const step = target / (duration / 16);
+  const timer = setInterval(() => {
+    start += step;
+    if (start >= target) { start = target; clearInterval(timer); }
+    el.textContent = Math.floor(start).toLocaleString('en-IN') + suffix;
+  }, 16);
+}
+
+// Smooth search
+document.querySelector('.btn-search').addEventListener('click', () => {
+  document.getElementById('lawyers').scrollIntoView({ behavior: 'smooth' });
+});
+
+// Nav scroll effect
+window.addEventListener('scroll', () => {
+  const nav = document.querySelector('nav');
+  if (window.scrollY > 50) {
+    nav.style.background = 'rgba(13,27,62,0.99)';
+  } else {
+    nav.style.background = 'rgba(13,27,62,0.97)';
+  }
+});
+</script>
+
+<script>
+// ─── CENTRALIZED LEGAL TEAM MODAL HANDLER ───
+(function() {
+  if (!document.getElementById('legal-team-modal')) {
+    const modalHTML = `
+      <div id="legal-team-modal" class="lt-modal" style="display: none;">
+        <div class="lt-modal-overlay"></div>
+        <div class="lt-modal-content">
+          <button class="lt-modal-close" id="lt-modal-close-btn">&times;</button>
+          <div class="lt-modal-header">
+            <div class="lt-modal-icon">📞</div>
+            <h3>Contact Legal Team</h3>
+            <p>Connect instantly with our central legal helpline for immediate assistance.</p>
+          </div>
+          <div class="lt-modal-body">
+            <div class="lt-number-box">
+              <span class="lt-phone-num">+91 89481 43948</span>
+            </div>
+            <div class="lt-action-buttons">
+              <a href="tel:+918948143948" class="lt-btn lt-btn-call">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon-modal"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.37a16 16 0 006.72 6.72l1.73-1.73a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                Call Central Team
+              </a>
+              <a href="https://wa.me/918948143948?text=Hello%20Advocate%20Sir%2C%20I%20need%20legal%20help" class="lt-btn lt-btn-wa" target="_blank">
+                <svg viewBox="0 0 24 24" fill="white" class="svg-icon-modal" style="width:20px;height:20px;fill:white;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                Chat on WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = modalHTML;
+    document.body.appendChild(tempDiv.firstElementChild);
+  }
+
+  const modal = document.getElementById('legal-team-modal');
+  const closeBtn = document.getElementById('lt-modal-close-btn');
+  const overlay = modal.querySelector('.lt-modal-overlay');
+
+  function showModal(e) {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    modal.style.display = 'flex';
+  }
+
+  function hideModal() {
+    modal.style.display = 'none';
+  }
+
+  closeBtn.addEventListener('click', hideModal);
+  overlay.addEventListener('click', hideModal);
+
+  window.showLegalTeamModal = showModal;
+
+  function setupClicks() {
+    const selectors = [
+      '.btn-wp', '.btn-call', '.wp-float',
+      'a[href*="tel:"]', 'a[href*="wa.me"]',
+      'button[onclick*="tel:"]', 'button[onclick*="wa.me"]',
+      '.contact-card'
+    ];
+    
+    selectors.forEach(sel => {
+      document.querySelectorAll(sel).forEach(el => {
+        el.removeAttribute('onclick');
+        if (el.tagName === 'A') {
+          el.removeAttribute('href');
+          el.style.cursor = 'pointer';
+        }
+        el.addEventListener('click', function(e) {
+          if (el.closest('.lt-modal-content')) return;
+          showModal(e);
+        });
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupClicks);
+  } else {
+    setupClicks();
+  }
+  
+  setTimeout(setupClicks, 500);
+  setTimeout(setupClicks, 2000);
+})();
+</script>
+
+<script>
+// ─── IMAGE SLIDER ───
+(function(){
+  const track = document.getElementById('sliderTrack');
+  const dotsContainer = document.getElementById('sliderDots');
+  if(!track) return;
+  const slides = track.querySelectorAll('.slide');
+  let cur = 0, total = slides.length, timer;
+
+  // Build dots
+  slides.forEach((_,i) => {
+    const d = document.createElement('button');
+    d.className = 'sdot' + (i===0?' active':'');
+    d.onclick = () => goTo(i);
+    dotsContainer.appendChild(d);
+  });
+
+  function goTo(n) {
+    cur = (n + total) % total;
+    track.style.transform = 'translateX(-' + cur*100 + '%)';
+    dotsContainer.querySelectorAll('.sdot').forEach((d,i) => d.classList.toggle('active', i===cur));
+  }
+
+  window.moveSlide = function(dir) { goTo(cur + dir); resetAuto(); };
+
+  function resetAuto() { clearInterval(timer); timer = setInterval(() => goTo(cur+1), 5500); }
+  resetAuto();
+
+  // Countdown timer
+  function updateTimer() {
+    const now = new Date();
+    const midnight = new Date(); midnight.setHours(23,59,59,999);
+    let diff = Math.floor((midnight - now)/1000);
+    const h = String(Math.floor(diff/3600)).padStart(2,'0');
+    const m = String(Math.floor((diff%3600)/60)).padStart(2,'0');
+    const s = String(diff%60).padStart(2,'0');
+    document.querySelectorAll('.timer-val').forEach(el => {
+      if(el.id === 'timer1' || el.textContent.includes(':')) el.textContent = h+':'+m+':'+s;
+    });
+  }
+  setInterval(updateTimer, 1000);
+  updateTimer();
+
+  // Touch swipe
+  let tx = 0;
+  track.addEventListener('touchstart', e => tx = e.touches[0].clientX);
+  track.addEventListener('touchend', e => {
+    const dx = tx - e.changedTouches[0].clientX;
+    if(Math.abs(dx) > 50) { goTo(cur + (dx>0?1:-1)); resetAuto(); }
+  });
+})();
+
+// ─── SERVICE TABS ───
+document.querySelectorAll('.stab').forEach(btn => {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.stab').forEach(b => b.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+</script>
+</body>
+
+</html>
