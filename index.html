@@ -87,6 +87,111 @@ nav {
 }
 .btn-nav-fill:hover { transform: translateY(-1px); box-shadow: 0 4px 20px rgba(201,168,76,0.4); }
 
+/* ─── BURGER MENU & MOBILE DRAWER ─── */
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 26px;
+  height: 18px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+  padding: 0;
+}
+.burger-menu span {
+  width: 100%;
+  height: 2.2px;
+  background: var(--white);
+  border-radius: 4px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-origin: left center;
+}
+.burger-menu.open span:nth-child(1) { transform: rotate(45deg) translate(2px, 0); }
+.burger-menu.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.burger-menu.open span:nth-child(3) { transform: rotate(-45deg) translate(2px, 0); }
+
+.mobile-drawer {
+  position: fixed;
+  top: 0; right: -105%;
+  width: 300px; height: 100vh;
+  background: linear-gradient(180deg, var(--navy) 0%, var(--navy-mid) 100%);
+  z-index: 9999;
+  box-shadow: -15px 0 40px rgba(13,27,62,0.6);
+  display: flex;
+  flex-direction: column;
+  padding: 40px 30px;
+  transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  border-left: 1px solid rgba(201,168,76,0.2);
+}
+.mobile-drawer.open { right: 0; }
+.drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 48px;
+}
+.drawer-close {
+  background: none; border: none;
+  font-size: 32px; color: var(--gold-light);
+  cursor: pointer; transition: color 0.3s;
+  line-height: 1;
+}
+.drawer-close:hover { color: var(--white); }
+.drawer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  margin-bottom: auto;
+}
+.drawer-links a {
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 500;
+  transition: all 0.3s;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  padding-bottom: 8px;
+}
+.drawer-links a:hover {
+  color: var(--gold-light);
+  padding-left: 6px;
+  border-bottom-color: var(--gold-light);
+}
+.drawer-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 40px;
+}
+.drawer-actions .btn-nav-outline,
+.drawer-actions .btn-nav-fill {
+  width: 100%;
+  padding: 12px;
+  text-align: center;
+  font-size: 0.9rem;
+  border-radius: 8px;
+}
+
+.drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(6, 14, 36, 0.7);
+  backdrop-filter: blur(8px);
+  z-index: 9998;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+.drawer-backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
 /* ─── HERO ─── */
 .hero {
   min-height: 100vh;
@@ -761,6 +866,8 @@ footer {
 /* ─── MOBILE ─── */
 @media (max-width: 900px) {
   .nav-links { display: none; }
+  .nav-actions { display: none; }
+  .burger-menu { display: flex; }
   .hero { flex-direction: column; padding: 100px 5% 60px; }
   .hero-visual { display: none; }
   .hero-stats { grid-template-columns: repeat(2,1fr); }
@@ -773,7 +880,28 @@ footer {
   .top-lawyers-grid { grid-template-columns: 1fr; }
   .payment-grid { grid-template-columns: 1fr; }
 }
+@media (max-width: 768px) {
+  .img-slider { height: auto; min-height: 520px; margin-top: 108px; }
+  .slide-content { padding: 40px 6% 30px; }
+  .slide h2 { font-size: clamp(1.4rem, 6vw, 2rem) !important; line-height: 1.25; margin-bottom: 12px; }
+  .slide p { font-size: 0.85rem !important; line-height: 1.5; margin-bottom: 16px; }
+  .slide-offer { padding: 8px 14px !important; gap: 10px !important; margin-bottom: 20px !important; }
+  .offer-pct { font-size: 1.8rem !important; }
+  .offer-txt .o1 { font-size: 0.8rem !important; }
+  .offer-txt .o2 { font-size: 0.65rem !important; }
+  .offer-timer { padding: 6px 10px !important; }
+  .timer-val { font-size: 1rem !important; }
+  .timer-lbl { font-size: 0.55rem !important; }
+  .slide-btns { gap: 10px; width: 100%; }
+  .btn-slide-primary, .btn-slide-outline { padding: 10px 18px !important; font-size: 0.8rem !important; border-radius: 8px !important; text-align: center; flex: 1; min-width: 120px; }
+  .slider-arrow { width: 36px; height: 36px; font-size: 1.1rem; }
+  .slider-arrow.prev { left: 10px; }
+  .slider-arrow.next { right: 10px; }
+}
 @media (max-width: 600px) {
+  .logo-text .tagline { display: none; }
+  .logo-text .brand { font-size: 1.2rem; }
+  .logo-icon { width: 36px; height: 36px; font-size: 18px; }
   .steps-grid { grid-template-columns: 1fr; }
   .hub-grid { grid-template-columns: 1fr; }
   .consult-grid { grid-template-columns: repeat(2,1fr); }
@@ -781,6 +909,12 @@ footer {
   .search-row { flex-direction: column; }
   .hero-stats { grid-template-columns: repeat(2,1fr); }
   .lawyers-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .consult-grid { grid-template-columns: 1fr; }
+  .trust-grid { grid-template-columns: 1fr; }
+  .slide-btns { flex-direction: column; }
+  .btn-slide-primary, .btn-slide-outline { width: 100%; flex: none; }
 }
 
 /* Animations on scroll */
@@ -899,10 +1033,48 @@ footer {
 .slider-arrow.prev { left:24px; }
 .slider-arrow.next { right:24px; }
 /* OFFER STRIP */
-.offer-strip { background:linear-gradient(90deg,#b8860b,var(--gold),#e2a500,var(--gold-light),#b8860b); background-size:300% 100%; animation:goldShift 4s linear infinite; padding:12px 5%; display:flex; align-items:center; justify-content:center; gap:40px; flex-wrap:wrap; }
+.offer-strip {
+  background: linear-gradient(90deg,#b8860b,var(--gold),#e2a500,var(--gold-light),#b8860b);
+  background-size: 300% 100%;
+  animation: goldShift 4s linear infinite;
+  padding: 0;
+  height: 36px;
+  overflow: hidden;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 72px;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  box-shadow: 0 4px 12px rgba(13,27,62,0.15);
+}
 @keyframes goldShift { 0%{background-position:0%} 100%{background-position:300%} }
-.offer-strip span { color:var(--navy); font-size:0.82rem; font-weight:700; letter-spacing:0.5px; }
-.offer-strip .sep { color:rgba(13,27,62,0.4); }
+
+.offer-strip-inner {
+  display: inline-flex;
+  align-items: center;
+  animation: marqueeTicker 24s linear infinite;
+  padding-left: 100%;
+}
+.offer-strip span {
+  color: var(--navy);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 0 20px;
+  white-space: nowrap;
+}
+.offer-strip .sep {
+  color: rgba(13,27,62,0.4);
+  font-weight: 700;
+}
+
+@keyframes marqueeTicker {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-100%, 0, 0); }
+}
 /* EXPERTISE SECTION */
 .expertise-section { background:var(--navy); padding:80px 5%; }
 .expertise-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; margin-top:48px; }
@@ -940,16 +1112,28 @@ footer {
 
 <!-- NAV -->
 <!-- OFFER STRIP -->
-<div class="offer-strip" style="position:fixed;top:72px;left:0;right:0;z-index:999;">
-  <span>TODAY ONLY: 40% OFF First Consultation</span>
-  <span class="sep">|</span>
-  <span>Family Law — 35% OFF This Week</span>
-  <span class="sep">|</span>
-  <span>Property Disputes — FREE First Call</span>
-  <span class="sep">|</span>
-  <span>Corporate Packages — Save Rs.5,000</span>
-  <span class="sep">|</span>
-  <span>Criminal Defence — 30% OFF Bail Applications</span>
+<div class="offer-strip">
+  <div class="offer-strip-inner">
+    <span>TODAY ONLY: 40% OFF First Consultation</span>
+    <span class="sep">|</span>
+    <span>Family Law — 35% OFF This Week</span>
+    <span class="sep">|</span>
+    <span>Property Disputes — FREE First Call</span>
+    <span class="sep">|</span>
+    <span>Corporate Packages — Save Rs.5,000</span>
+    <span class="sep">|</span>
+    <span>Criminal Defence — 30% OFF Bail Applications</span>
+    <span class="sep">|</span>
+    <span>TODAY ONLY: 40% OFF First Consultation</span>
+    <span class="sep">|</span>
+    <span>Family Law — 35% OFF This Week</span>
+    <span class="sep">|</span>
+    <span>Property Disputes — FREE First Call</span>
+    <span class="sep">|</span>
+    <span>Corporate Packages — Save Rs.5,000</span>
+    <span class="sep">|</span>
+    <span>Criminal Defence — 30% OFF Bail Applications</span>
+  </div>
 </div>
 
 <!-- IMAGE SLIDER -->
@@ -1139,7 +1323,38 @@ footer {
     <button class="btn-nav-outline">Login</button>
     <button class="btn-nav-fill">Register as Lawyer</button>
   </div>
+  <button class="burger-menu" id="burgerBtn">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 </nav>
+
+<!-- MOBILE DRAWER -->
+<div class="mobile-drawer" id="mobileDrawer">
+  <div class="drawer-header">
+    <a href="#" class="logo">
+      <div class="logo-icon"><img class="emblem-img" src="Satyamev-Jayate-Indian-National-Emblem-Wallpaper-Mural-M.jpg" alt="National Emblem"></div>
+      <div class="logo-text">
+        <div class="brand" style="color:var(--white);">NyayaSetu</div>
+      </div>
+    </a>
+    <button class="drawer-close" id="drawerClose">&times;</button>
+  </div>
+  <div class="drawer-links">
+    <a href="#lawyers">Find Lawyers</a>
+    <a href="#practice">Practice Areas</a>
+    <a href="#cities">Cities</a>
+    <a href="#hub">Legal Hub</a>
+    <a href="#consult">Consultations</a>
+  </div>
+  <div class="drawer-actions">
+    <button class="btn-nav-outline">Login</button>
+    <button class="btn-nav-fill">Register as Lawyer</button>
+  </div>
+</div>
+
+<div class="drawer-backdrop" id="drawerBackdrop"></div>
 
 <!-- HERO -->
 <section class="hero" id="home" style="display:none;">
@@ -2375,6 +2590,39 @@ document.querySelectorAll('.stab').forEach(btn => {
     this.classList.add('active');
   });
 });
+
+// ─── MOBILE DRAWER INTERACTIONS ───
+(function() {
+  const burgerBtn = document.getElementById('burgerBtn');
+  const mobileDrawer = document.getElementById('mobileDrawer');
+  const drawerClose = document.getElementById('drawerClose');
+  const drawerBackdrop = document.getElementById('drawerBackdrop');
+  
+  if (!burgerBtn || !mobileDrawer) return;
+  
+  function toggleDrawer() {
+    burgerBtn.classList.toggle('open');
+    mobileDrawer.classList.toggle('open');
+    drawerBackdrop.classList.toggle('open');
+    document.body.style.overflow = mobileDrawer.classList.contains('open') ? 'hidden' : '';
+  }
+  
+  function closeDrawer() {
+    burgerBtn.classList.remove('open');
+    mobileDrawer.classList.remove('open');
+    drawerBackdrop.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  
+  burgerBtn.addEventListener('click', toggleDrawer);
+  if (drawerClose) drawerClose.addEventListener('click', closeDrawer);
+  if (drawerBackdrop) drawerBackdrop.addEventListener('click', closeDrawer);
+  
+  // Close drawer when links are clicked
+  mobileDrawer.querySelectorAll('.drawer-links a').forEach(link => {
+    link.addEventListener('click', closeDrawer);
+  });
+})();
 </script>
 </body>
 
