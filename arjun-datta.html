@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adv. Arjun Datta — Labour Law Expert | FHM-Legal-Solution</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0D1B3E;--navy-mid:#1a2d5a;--navy-light:#243870;--gold:#C9A84C;--gold-light:#E2C97E;--white:#FFFFFF;--off-white:#F8F7F4;--cream:#FDF9F1;--text-dark:#1a1a2e;--text-mid:#3d4a6b;--text-muted:#7a8aaa;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Poppins',sans-serif;background:var(--off-white);color:var(--text-dark);overflow-x:hidden;}
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--navy)}::-webkit-scrollbar-thumb{background:var(--gold);border-radius:3px}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(13,27,62,0.97);backdrop-filter:blur(20px);border-bottom:1px solid rgba(201,168,76,0.2);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:72px;}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.logo-icon{width:auto;height:42px;background:transparent;border-radius:0;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.logo-icon img{height:100%;width:auto;object-fit:contain;}
+.logo-text{color:#fff;}.logo-text .brand{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;}
+.logo-text .tagline{font-size:0.62rem;color:var(--gold-light);letter-spacing:2px;text-transform:uppercase;}
+.nav-links{display:flex;align-items:center;gap:32px;}
+.nav-links a{color:rgba(255,255,255,0.8);text-decoration:none;font-size:0.85rem;font-weight:500;transition:color 0.3s;}
+.nav-links a:hover{color:var(--gold-light);}
+.btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--navy);border:none;padding:9px 22px;border-radius:7px;font-size:0.82rem;font-weight:700;cursor:pointer;font-family:'Poppins',sans-serif;transition:all 0.3s;}
+.btn-gold:hover{transform:translateY(-1px);box-shadow:0 4px 20px rgba(201,168,76,0.4);}
+/* HERO */
+.profile-hero{min-height:100vh;background:linear-gradient(135deg,#060e24 0%,#0D1B3E 45%,#1a2d5a 100%);position:relative;overflow:hidden;display:flex;align-items:center;padding:120px 5% 80px;}
+.hero-grid{position:absolute;inset:0;opacity:0.04;background-image:linear-gradient(rgba(201,168,76,1) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,1) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;}
+.hero-orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;}
+.orb1{width:500px;height:500px;background:rgba(201,168,76,0.08);top:-150px;right:-100px;}
+.orb2{width:300px;height:300px;background:rgba(26,45,90,0.6);bottom:-50px;left:5%;}
+.hero-left{flex:1;max-width:600px;position:relative;z-index:2;}
+.back-btn{display:inline-flex;align-items:center;gap:8px;color:rgba(255,255,255,0.6);text-decoration:none;font-size:0.82rem;margin-bottom:28px;transition:color 0.3s;}
+.back-btn:hover{color:var(--gold-light);}
+.back-btn svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;}
+.avail-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(46,204,113,0.12);border:1px solid rgba(46,204,113,0.3);padding:6px 16px;border-radius:50px;color:#2ecc71;font-size:0.75rem;font-weight:600;margin-bottom:18px;}
+.avail-dot{width:7px;height:7px;background:#2ecc71;border-radius:50%;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
+.hero-name{font-family:'Playfair Display',serif;font-size:clamp(2rem,4.5vw,3.2rem);font-weight:900;color:#fff;line-height:1.15;margin-bottom:10px;}
+.hero-name span{color:var(--gold-light);}
+.hero-title{font-size:1rem;color:rgba(255,255,255,0.65);margin-bottom:6px;}
+.hero-sub-title{font-size:0.88rem;color:var(--gold-light);font-weight:600;letter-spacing:0.5px;margin-bottom:24px;}
+.hero-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px;}
+.htag{background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.3);color:var(--gold-light);font-size:0.72rem;padding:5px 14px;border-radius:20px;font-weight:600;}
+.hero-desc{font-size:0.92rem;color:rgba(255,255,255,0.72);line-height:1.75;margin-bottom:32px;}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
+.btn-primary-lg{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--navy);border:none;padding:15px 32px;border-radius:10px;font-weight:700;font-size:0.95rem;cursor:pointer;font-family:'Poppins',sans-serif;transition:all 0.3s;}
+.btn-primary-lg:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(201,168,76,0.45);}
+.btn-outline-lg{background:transparent;border:1.5px solid rgba(255,255,255,0.35);color:#fff;padding:15px 32px;border-radius:10px;font-weight:500;font-size:0.95rem;cursor:pointer;font-family:'Poppins',sans-serif;transition:all 0.3s;}
+.btn-outline-lg:hover{border-color:var(--gold-light);color:var(--gold-light);}
+/* HERO STATS */
+.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(201,168,76,0.2);border:1px solid rgba(201,168,76,0.2);border-radius:14px;margin-top:40px;overflow:hidden;}
+.hstat{background:rgba(255,255,255,0.04);padding:18px 14px;text-align:center;}
+.hstat-n{font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:700;color:var(--gold-light);display:block;}
+.hstat-l{font-size:0.68rem;color:rgba(255,255,255,0.55);margin-top:2px;letter-spacing:0.5px;}
+/* HERO RIGHT - PHOTO */
+.hero-right{flex:1;display:flex;justify-content:center;align-items:flex-end;position:relative;z-index:2;max-width:420px;margin-left:60px;}
+.lawyer-photo-wrap{position:relative;}
+.lawyer-photo-frame{width:360px;height:440px;border-radius:24px;overflow:hidden;border:3px solid rgba(201,168,76,0.4);box-shadow:0 30px 80px rgba(0,0,0,0.5);position:relative;}
+.lawyer-photo-frame img{width:100%;height:100%;object-fit:cover;object-position:top;}
+.photo-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(6,14,36,0.95));padding:24px 20px;}
+.photo-name{color:#fff;font-weight:700;font-size:1rem;}
+.photo-bar-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(201,168,76,0.2);border:1px solid rgba(201,168,76,0.4);color:var(--gold-light);font-size:0.7rem;padding:4px 12px;border-radius:20px;margin-top:6px;font-weight:600;}
+.floating-badge{position:absolute;background:rgba(255,255,255,0.1);backdrop-filter:blur(20px);border:1px solid rgba(201,168,76,0.25);border-radius:14px;padding:12px 16px;}
+.fb1{top:-20px;right:-30px;}
+.fb2{bottom:100px;left:-40px;}
+.fb-label{font-size:0.65rem;color:rgba(255,255,255,0.5);margin-bottom:3px;}
+.fb-val{font-size:0.9rem;font-weight:700;color:var(--gold-light);}
+/* SECTIONS */
+section{padding:80px 5%;}
+.section-label{display:inline-flex;align-items:center;gap:8px;color:var(--gold);font-size:0.78rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;}
+.section-label::before{content:'';width:30px;height:2px;background:var(--gold);}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,3vw,2.6rem);font-weight:800;color:var(--navy);line-height:1.2;margin-bottom:12px;}
+.section-sub{font-size:0.95rem;color:var(--text-muted);line-height:1.7;max-width:580px;}
+.section-header{margin-bottom:48px;}
+/* ABOUT */
+.about-section{background:var(--cream);}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
+.about-text p{font-size:0.9rem;color:var(--text-mid);line-height:1.8;margin-bottom:16px;}
+.quote-box{background:var(--white);border-left:4px solid var(--gold);border-radius:0 14px 14px 0;padding:20px 24px;margin-top:24px;box-shadow:0 4px 20px rgba(13,27,62,0.06);}
+.quote-box p{font-size:0.9rem;font-style:italic;color:var(--text-mid);line-height:1.7;}
+.quote-box .q-attr{font-size:0.78rem;color:var(--gold);font-weight:700;margin-top:10px;}
+.why-list{display:flex;flex-direction:column;gap:16px;}
+.why-item{display:flex;align-items:flex-start;gap:14px;background:var(--white);border:1px solid #eee;border-radius:14px;padding:18px;transition:all 0.3s;}
+.why-item:hover{border-color:rgba(201,168,76,0.4);box-shadow:0 8px 24px rgba(13,27,62,0.08);transform:translateX(4px);}
+.why-icon{width:40px;height:40px;background:linear-gradient(135deg,var(--gold),var(--gold-light));border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.why-icon svg{width:20px;height:20px;stroke:var(--navy);fill:none;stroke-width:2;}
+.why-txt .wt{font-weight:700;color:var(--navy);font-size:0.88rem;margin-bottom:3px;}
+.why-txt .wd{font-size:0.78rem;color:var(--text-muted);line-height:1.5;}
+/* PRACTICE AREAS */
+.practice-section{background:var(--navy);}
+.practice-section .section-title{color:#fff;}
+.practice-section .section-label{color:var(--gold-light);}
+.practice-section .section-label::before{background:var(--gold-light);}
+.practice-grid-2{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px;}
+.pa-card{background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,0.15);border-radius:18px;padding:28px 22px;transition:all 0.35s;position:relative;overflow:hidden;}
+.pa-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold-light));transform:scaleX(0);transition:transform 0.35s;}
+.pa-card:hover{background:rgba(255,255,255,0.07);border-color:rgba(201,168,76,0.35);transform:translateY(-4px);}
+.pa-card:hover::before{transform:scaleX(1);}
+.pa-num{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;color:rgba(201,168,76,0.12);position:absolute;top:12px;right:16px;line-height:1;}
+.pa-icon{margin-bottom:14px;}
+.pa-icon svg{width:32px;height:32px;stroke:var(--gold);fill:none;stroke-width:1.8;}
+.pa-name{font-weight:700;color:#fff;font-size:0.95rem;margin-bottom:6px;}
+.pa-desc{font-size:0.78rem;color:rgba(255,255,255,0.5);line-height:1.6;}
+/* FEES */
+.fees-section{background:var(--off-white);}
+.fees-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.fee-card{background:var(--white);border:1px solid #eee;border-radius:20px;padding:32px 24px;text-align:center;transition:all 0.35s;position:relative;overflow:hidden;}
+.fee-card.featured{background:linear-gradient(135deg,var(--navy),var(--navy-mid));border-color:rgba(201,168,76,0.4);}
+.fee-card.featured .fee-name{color:#fff;}
+.fee-card.featured .fee-type{color:rgba(255,255,255,0.6);}
+.fee-card.featured .fee-amount{color:var(--gold-light);}
+.fee-card.featured .fee-orig{color:rgba(255,255,255,0.4);}
+.fee-card.featured .fee-inc li{color:rgba(255,255,255,0.7);}
+.best-badge{position:absolute;top:16px;right:16px;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--navy);font-size:0.65rem;font-weight:700;padding:5px 12px;border-radius:20px;letter-spacing:0.5px;}
+.fee-name{font-weight:700;color:var(--navy);font-size:1rem;margin-bottom:4px;}
+.fee-type{font-size:0.78rem;color:var(--text-muted);margin-bottom:20px;}
+.fee-orig{font-size:0.85rem;color:var(--text-muted);text-decoration:line-through;margin-bottom:4px;}
+.fee-amount{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--navy);margin-bottom:4px;}
+.fee-save{display:inline-block;background:rgba(39,174,96,0.1);color:#27ae60;font-size:0.72rem;font-weight:700;padding:4px 12px;border-radius:20px;margin-bottom:20px;}
+.fee-inc{list-style:none;text-align:left;display:flex;flex-direction:column;gap:10px;margin-bottom:24px;}
+.fee-inc li{font-size:0.8rem;color:var(--text-mid);display:flex;align-items:center;gap:8px;}
+.fee-inc li::before{content:'';width:6px;height:6px;background:var(--gold);border-radius:50%;flex-shrink:0;}
+.fee-btn{width:100%;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--navy);border:none;border-radius:10px;padding:13px;font-weight:700;font-size:0.88rem;cursor:pointer;font-family:'Poppins',sans-serif;transition:all 0.3s;}
+.fee-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(201,168,76,0.4);}
+/* ACHIEVEMENTS */
+.achieve-section{background:var(--cream);}
+.achieve-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
+.ach-card{background:var(--white);border:1px solid #eee;border-radius:18px;padding:28px;display:flex;gap:18px;transition:all 0.35s;}
+.ach-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(13,27,62,0.1);border-color:rgba(201,168,76,0.3);}
+.ach-icon{width:56px;height:56px;background:linear-gradient(135deg,rgba(201,168,76,0.15),rgba(201,168,76,0.05));border:1px solid rgba(201,168,76,0.3);border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.ach-icon svg{width:26px;height:26px;stroke:var(--gold);fill:none;stroke-width:1.8;}
+.ach-title{font-weight:700;color:var(--navy);font-size:0.95rem;margin-bottom:6px;}
+.ach-desc{font-size:0.8rem;color:var(--text-muted);line-height:1.6;}
+/* REVIEWS */
+.reviews-section{background:var(--navy);}
+.reviews-section .section-title{color:#fff;}
+.reviews-section .section-label{color:var(--gold-light);}
+.reviews-section .section-label::before{background:var(--gold-light);}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.rv-card{background:rgba(255,255,255,0.05);border:1px solid rgba(201,168,76,0.15);border-radius:20px;padding:28px;position:relative;transition:all 0.35s;}
+.rv-card:hover{background:rgba(255,255,255,0.08);border-color:rgba(201,168,76,0.3);transform:translateY(-4px);}
+.rv-card::before{content:'"';position:absolute;top:14px;right:20px;font-family:'Playfair Display',serif;font-size:5rem;color:rgba(201,168,76,0.1);line-height:1;}
+.rv-stars{color:var(--gold);font-size:0.9rem;margin-bottom:12px;}
+.rv-text{font-size:0.83rem;color:rgba(255,255,255,0.7);line-height:1.7;margin-bottom:20px;}
+.rv-person{display:flex;align-items:center;gap:12px;}
+.rv-avatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-light));display:flex;align-items:center;justify-content:center;color:var(--navy);font-weight:700;font-size:1rem;flex-shrink:0;}
+.rv-name{font-weight:700;color:#fff;font-size:0.85rem;}
+.rv-case{font-size:0.72rem;color:rgba(255,255,255,0.45);margin-top:2px;}
+/* CTA */
+.cta-section{background:linear-gradient(135deg,var(--navy),var(--navy-mid));padding:80px 5%;text-align:center;position:relative;overflow:hidden;}
+.cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(201,168,76,0.1),transparent 65%);}
+.cta-section h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);color:#fff;font-weight:800;margin-bottom:14px;position:relative;}
+.cta-section p{color:rgba(255,255,255,0.7);font-size:0.95rem;margin-bottom:36px;max-width:500px;margin-left:auto;margin-right:auto;position:relative;}
+.contact-cards{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;position:relative;}
+.contact-card{background:rgba(255,255,255,0.08);backdrop-filter:blur(10px);border:1px solid rgba(201,168,76,0.25);border-radius:16px;padding:24px 32px;display:flex;flex-direction:column;align-items:center;gap:8px;cursor:pointer;transition:all 0.3s;min-width:160px;}
+.contact-card:hover{background:rgba(201,168,76,0.15);border-color:rgba(201,168,76,0.5);transform:translateY(-4px);}
+.contact-card svg{width:28px;height:28px;stroke:var(--gold);fill:none;stroke-width:1.8;}
+.contact-card .cc-label{font-size:0.72rem;color:rgba(255,255,255,0.55);text-transform:uppercase;letter-spacing:1px;}
+.contact-card .cc-val{font-weight:700;color:#fff;font-size:0.92rem;}
+/* FOOTER */
+footer{background:#060d1e;border-top:1px solid rgba(201,168,76,0.15);padding:30px 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;}
+footer p{font-size:0.75rem;color:rgba(255,255,255,0.35);}
+footer a{color:var(--gold-light);text-decoration:none;font-size:0.78rem;}
+.wp-float{position:fixed;bottom:28px;right:28px;z-index:999;width:58px;height:58px;border-radius:50%;background:#25D366;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.4);animation:floatY 3s ease-in-out infinite;}
+@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@media(max-width:900px){
+  nav {
+    height: 60px;
+    padding: 0 4%;
+  }
+  .logo-text .tagline {
+    display: none;
+  }
+  .logo-text .brand {
+    font-size: 1.05rem;
+  }
+  .logo-icon {
+    height: 32px;
+  }
+  .nav-links {
+    display: none;
+  }
+  .btn-gold {
+    padding: 6px 14px;
+    font-size: 0.72rem;
+  }
+  .profile-hero{
+    flex-direction:column;
+    padding: 100px 5% 40px;
+    min-height: auto;
+  }
+  .hero-left {
+    max-width: 100%;
+  }
+  .hero-right{
+    display:flex !important;
+    margin-left:0;
+    margin-top:40px;
+    max-width:100%;
+    width:100%;
+    justify-content:center;
+  }
+  .lawyer-photo-frame {
+    width: 280px;
+    height: 340px;
+    border-radius: 16px;
+  }
+  .floating-badge {
+    display: none;
+  }
+  .about-grid{
+    grid-template-columns:1fr;
+    gap:30px;
+  }
+  .fees-grid{
+    grid-template-columns:1fr;
+  }
+  .achieve-grid{
+    grid-template-columns:1fr;
+  }
+  .reviews-grid{
+    grid-template-columns:1fr;
+  }
+  .hero-stats{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+.fade-in{opacity:0;transform:translateY(28px);transition:opacity 0.7s,transform 0.7s;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
+
+/* ─── CENTRAL LEGAL TEAM MODAL ─── */
+.lt-modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.lt-modal-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(13, 27, 62, 0.75);
+  backdrop-filter: blur(8px);
+}
+.lt-modal-content {
+  position: relative;
+  z-index: 2;
+  background: #FFFFFF;
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  border-radius: 24px;
+  width: 100%;
+  max-width: 440px;
+  padding: 36px 28px;
+  box-shadow: 0 20px 50px rgba(13, 27, 62, 0.25);
+  animation: modalPop 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+  text-align: center;
+}
+@keyframes modalPop {
+  from { opacity: 0; transform: scale(0.95) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+.lt-modal-close {
+  position: absolute;
+  top: 20px; right: 20px;
+  background: none; border: none;
+  font-size: 24px; color: #7a8aaa;
+  cursor: pointer; transition: color 0.3s;
+  line-height: 1;
+}
+.lt-modal-close:hover { color: #0D1B3E; }
+.lt-modal-icon {
+  width: 64px; height: 64px;
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  color: #0D1B3E;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 28px; margin: 0 auto 20px;
+  box-shadow: 0 8px 20px rgba(201, 168, 76, 0.3);
+}
+.lt-modal-header h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem; color: #0D1B3E; font-weight: 800;
+  margin-bottom: 8px;
+}
+.lt-modal-header p {
+  font-size: 0.85rem; color: #7a8aaa; line-height: 1.5;
+  margin-bottom: 24px;
+}
+.lt-number-box {
+  background: #FDF9F1;
+  border: 1px dashed rgba(201, 168, 76, 0.5);
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 28px;
+}
+.lt-phone-num {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.4rem; font-weight: 700; color: #C9A84C;
+  letter-spacing: 0.5px;
+}
+.lt-action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.lt-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 20px;
+  border-radius: 10px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s;
+}
+.lt-btn-call {
+  background: linear-gradient(135deg, #0D1B3E, #1a2d5a);
+  color: #FFFFFF;
+}
+.lt-btn-call:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(13, 27, 62, 0.3);
+}
+.lt-btn-wa {
+  background: #25D366;
+  color: #FFFFFF;
+}
+.lt-btn-wa:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+}
+.svg-icon-modal {
+  width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 2;
+}
+.lt-btn-wa .svg-icon-modal {
+  fill: currentColor; stroke: none;
+}
+
+</style>
+</head>
+<body>
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="logo">
+    <div class="logo-icon"><img src="fhm_logo.png" alt="FHM-Legal-Solution Logo"></div>
+    <div class="logo-text"><div class="brand">FHM-Legal-Solution</div><div class="tagline">India's Legal Bridge</div></div>
+  </a>
+  <div class="nav-links">
+    <a href="index.html#lawyers">Find Lawyers</a>
+    <a href="index.html#practice">Practice Areas</a>
+    <a href="index.html#cities">Cities</a>
+  </div>
+  <button class="btn-gold" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Book Consultation</button>
+</nav>
+
+<!-- HERO -->
+<section class="profile-hero">
+  <div class="hero-grid"></div>
+  <div class="hero-orb orb1"></div>
+  <div class="hero-orb orb2"></div>
+  <div class="hero-left">
+    <a href="index.html" class="back-btn"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Back to Lawyers</a>
+    <div class="avail-pill"><span class="avail-dot"></span>Available for Consultation Today</div>
+    <h1 class="hero-name">Adv. <span>Arjun Datta</span></h1>
+    <div class="hero-title">Labour & Employment Law Specialist</div>
+    <div class="hero-sub-title">Calcutta High Court & Central Industrial Tribunals &nbsp;|&nbsp; 15+ Years Experience</div>
+    <div class="hero-tags">
+      <span class="htag">Labour Specialist</span>
+      <span class="htag">Bar Council Verified</span>
+      <span class="htag">4.6★ Rating</span>
+      <span class="htag">Bengali, Hindi & English</span>
+      <span class="htag">Kolkata Specialist</span>
+    </div>
+    <p class="hero-desc">Advocate Arjun Datta is Kolkata's leading authority on labour law and employee rights, with 15 years of dedicated courtroom and tribunal experience. Representing both individual professionals in wrongful termination and salary disputes, as well as corporations on POSH compliance, contract agreements, and trade union disputes, he achieves fast, pragmatic legal resolutions.</p>
+    <div class="hero-btns">
+      <button class="btn-primary-lg" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Book Free Consultation</button>
+      <button class="btn-outline-lg" onclick="document.getElementById('fees').scrollIntoView({behavior:'smooth'})">View Fee Structure</button>
+    </div>
+    <div class="hero-stats">
+      <div class="hstat"><span class="hstat-n">15+ Years</span><span class="hstat-l">Experience</span></div>
+      <div class="hstat"><span class="hstat-n">350+</span><span class="hstat-l">Cases Handled</span></div>
+      <div class="hstat"><span class="hstat-n">87%</span><span class="hstat-l">Success Rate</span></div>
+      <div class="hstat"><span class="hstat-n">4.6★</span><span class="hstat-l">Client Rating</span></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="lawyer-photo-wrap">
+      <div class="lawyer-photo-frame">
+        <img src="lawyer_dealing.webp" alt="Advocate Arjun Datta">
+        <div class="photo-overlay">
+          <div class="photo-name">Adv. Arjun Datta</div>
+          <div class="photo-bar-badge">
+            <svg style="width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2;" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Bar Council Verified Advocate
+          </div>
+        </div>
+      </div>
+      <div class="floating-badge fb1">
+        <div class="fb-label">Labour Specialist</div>
+        <div class="fb-val">Kolkata & Industrial Bengal</div>
+      </div>
+      <div class="floating-badge fb2">
+        <div class="fb-label">Proven Success</div>
+        <div class="fb-val">350+ Employees Settled</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section fade-in" id="about">
+  <div class="section-header">
+    <div class="section-label">About the Advocate</div>
+    <h2 class="section-title">A Lawyer Who Fights for Justice — Every Single Time</h2>
+  </div>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>Advocate Arjun Datta is Kolkata's leading authority on labour law and employee rights, with 15 years of dedicated courtroom and tribunal experience. Representing both individual professionals in wrongful termination and salary disputes, as well as corporations on POSH compliance, contract agreements, and trade union disputes, he achieves fast, pragmatic legal resolutions.</p>
+      <p>Representing clients across Kolkata & Industrial Bengal and the broader high court jurisdiction, Adv. Arjun Datta brings dedicated counsel, a rich understanding of legal complexities, and a tailored client approach.</p>
+      <p></p>
+      <div class="quote-box">
+        <p>"Workplace rights are human rights. No employee should face unfair dismissal or unpaid dues, and no employer should face illegitimate union extortion. I restore fair balance with quick legal action."</p>
+        <div class="q-attr">— Adv. Arjun Datta, Labour & Employment Law Specialist</div>
+      </div>
+    </div>
+    <div class="why-list">
+      <div class="why-item">
+        <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div class="why-txt"><div class="wt">15+ Years of Premium Expertise</div><div class="wd">Dedicated exclusively to core practice areas — ensuring specialized legal mastery.</div></div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+        <div class="why-txt"><div class="wt">87% Case Success Rate</div><div class="wd">Highly favorable case resolutions, judgments, and out-of-court settlements.</div></div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <div class="why-txt"><div class="wt">Fast Legal Action — 24hr Response</div><div class="wd">Time-sensitive accident cases are handled with urgency. Available on WhatsApp and phone daily.</div></div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
+        <div class="why-txt"><div class="wt">Bengali, Hindi & English Consultations</div><div class="wd">Simple and transparent explanations of your rights in the language you prefer.</div></div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon"><svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div>
+        <div class="why-txt"><div class="wt">No Hidden Charges — Zero Surprise Fees</div><div class="wd">Complete fee transparency from day one. You know exactly what you pay and why.</div></div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon"><svg viewBox="0 0 24 24"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg></div>
+        <div class="why-txt"><div class="wt">Allahabad HC &amp; Kanpur Tribunal Expert</div><div class="wd">Practises daily before local courts, regional tribunals, and the High Court.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRACTICE AREAS -->
+<section class="practice-section fade-in">
+  <div class="section-header centered" style="text-align:center;">
+    <div class="section-label" style="justify-content:center;">Practice Areas</div>
+    <h2 class="section-title">Comprehensive MACT &amp; Accident Law Services</h2>
+    <p class="section-sub" style="color:rgba(255,255,255,0.6);margin:0 auto;">Every type of motor accident and compensation matter — handled with expertise, speed, and dedication.</p>
+  </div>
+  <div class="practice-grid-2">
+    <div class="pa-card">
+      <div class="pa-num">01</div>
+      <div class="pa-icon"><svg viewBox="0 0 24 24" style="stroke:var(--gold);fill:none;stroke-width:1.8;"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg></div>
+      <div class="pa-name">Wrongful Termination & Dismissal</div>
+      <div class="pa-desc">Defending employee rights against arbitrary terminations, unfair lay-offs, and negotiating corporate severance pay.</div>
+    </div>
+    <div class="pa-card">
+      <div class="pa-num">02</div>
+      <div class="pa-icon"><svg viewBox="0 0 24 24" style="stroke:var(--gold);fill:none;stroke-width:1.8;"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg></div>
+      <div class="pa-name">Salary & Gratuity Non-Payment</div>
+      <div class="pa-desc">Legal claims for recovery of unpaid salaries, commissions, gratuity, PF accumulations, and employee benefits.</div>
+    </div>
+    <div class="pa-card">
+      <div class="pa-num">03</div>
+      <div class="pa-icon"><svg viewBox="0 0 24 24" style="stroke:var(--gold);fill:none;stroke-width:1.8;"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg></div>
+      <div class="pa-name">Sexual Harassment at Workplace (POSH)</div>
+      <div class="pa-desc">Representing parties in POSH compliance audits, internal committee structures, and POSH tribunal litigation.</div>
+    </div>
+    <div class="pa-card">
+      <div class="pa-num">04</div>
+      <div class="pa-icon"><svg viewBox="0 0 24 24" style="stroke:var(--gold);fill:none;stroke-width:1.8;"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg></div>
+      <div class="pa-name">Trade Union & Industrial Disputes</div>
+      <div class="pa-desc">Handling collective bargaining, trade union lockouts, lay-offs, and industrial worker strikes legally.</div>
+    </div>
+    <div class="pa-card">
+      <div class="pa-num">05</div>
+      <div class="pa-icon"><svg viewBox="0 0 24 24" style="stroke:var(--gold);fill:none;stroke-width:1.8;"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg></div>
+      <div class="pa-name">Employment Contract Disputes</div>
+      <div class="pa-desc">Resolving non-compete clauses, non-disclosure agreements (NDA), and breach of service bonds.</div>
+    </div>
+    <div class="pa-card">
+      <div class="pa-num">06</div>
+      <div class="pa-icon"><svg viewBox="0 0 24 24" style="stroke:var(--gold);fill:none;stroke-width:1.8;"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg></div>
+      <div class="pa-name">Workplace Discrimination & Bullying</div>
+      <div class="pa-desc">Filing claims against systemic workplace harassment, mental torture, salary withholding, and constructive dismissal.</div>
+    </div>
+  </div>
+</section>
+</section>
+
+<!-- FEES -->
+<section class="fees-section fade-in" id="fees">
+  <div class="section-header centered" style="text-align:center;">
+    <div class="section-label" style="justify-content:center;">Transparent Fee Structure</div>
+    <h2 class="section-title">Honest Pricing. No Surprises.</h2>
+    <p class="section-sub" style="margin:0 auto;">Clear, upfront fees with special introductory discounts. Every package includes full legal support — no hidden extras.</p>
+  </div>
+  <div class="fees-grid">
+    <div class="fee-card">
+      <div class="fee-name">Initial Consultation</div>
+      <div class="fee-type">30-Minute Legal Assessment</div>
+      <div class="fee-orig">Rs. 1,500</div>
+      <div class="fee-amount">Rs. 900</div>
+      <div class="fee-save">40% OFF — Today Only</div>
+      <ul class="fee-inc">
+        <li>Full case evaluation by Adv. Arjun Datta</li>
+        <li>Claim strength assessment</li>
+        <li>Compensation estimate</li>
+        <li>Action plan for your case</li>
+        <li>Hindi or English — your choice</li>
+      </ul>
+      <button class="fee-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Book Now</button>
+    </div>
+    <div class="fee-card featured">
+      <span class="best-badge">MOST POPULAR</span>
+      <div class="fee-name">Severance & Wrongful Firing Pack</div>
+      <div class="fee-type">Legal notice, corporate escalation, and mediation of full severance settlement</div>
+      <div class="fee-orig">Rs. 12,000</div>
+      <div class="fee-amount">Rs. 8,000</div>
+      <div class="fee-save">Exclusive Platform Package</div>
+      <ul class="fee-inc">
+        <li>Complete MACT petition filing</li>
+        <li>All tribunal hearings</li>
+        <li>Insurance company negotiation</li>
+        <li>Medical evidence documentation</li>
+        <li>Case updates via WhatsApp</li>
+        <li>No win = reduced fees</li>
+      </ul>
+      <button class="fee-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get This Package</button>
+    </div>
+    <div class="fee-card">
+      <div class="fee-name">Gratuity & PF Recovery Notice</div>
+      <div class="fee-type">Notice drafting, compliance filing with Assistant Labour Commissioner (ALC)</div>
+      <div class="fee-orig">Rs. 7,500</div>
+      <div class="fee-amount">Rs. 4,500</div>
+      <div class="fee-save">Save Big</div>
+      <ul class="fee-inc">
+        <li>Insurance policy analysis</li>
+        <li>Dispute notice drafting</li>
+        <li>Consumer forum representation</li>
+        <li>High Court appeal if needed</li>
+        <li>Direct insurer negotiation</li>
+      </ul>
+      <button class="fee-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Book Now</button>
+    </div>
+  </div>
+  <p style="text-align:center;margin-top:24px;font-size:0.8rem;color:var(--text-muted);">* Consultation fees are covered by initial platforms. Special corporate discounts apply.</p>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section class="achieve-section fade-in">
+  <div class="section-header">
+    <div class="section-label">Track Record &amp; Achievements</div>
+    <h2 class="section-title">A Career Built on Landmark Results</h2>
+    <p class="section-sub">Adv. Arjun Datta has consistently delivered justice with dedication and integrity.</p>
+  </div>
+  <div class="achieve-grid">
+    <div class="ach-card">
+      <div class="ach-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <div>
+        <div class="ach-title">350+ Wrongful Termination Cases Settled</div>
+        <div class="ach-desc">Successfully negotiated severance pack enhancements and wrongful dismissal appeals for over 350 executives and workers in Kolkata.</div>
+      </div>
+    </div>
+    <div class="ach-card">
+      <div class="ach-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <div>
+        <div class="ach-title">Calcutta High Court Landmark Gratuity Award</div>
+        <div class="ach-desc">Argued and won an appeal for retired workers, securing complete pending gratuity with 12% retroactive interest from a public enterprise.</div>
+      </div>
+    </div>
+    <div class="ach-card">
+      <div class="ach-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <div>
+        <div class="ach-title">POSH Compliance Excellence Advisor</div>
+        <div class="ach-desc">Constructed internal POSH policies and acted as External Committee Member for 50+ medium to large corporations in West Bengal.</div>
+      </div>
+    </div>
+    <div class="ach-card">
+      <div class="ach-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <div>
+        <div class="ach-title">Industrial Pro-Bono Legal Coordinator</div>
+        <div class="ach-desc">Organizes monthly free legal help desks for factory workers and daily wage employees in industrial regions of Haldia & Durgapur.</div>
+      </div>
+    </div>
+  </div>
+</section>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews-section fade-in">
+  <div class="section-header centered" style="text-align:center;">
+    <div class="section-label" style="justify-content:center;">Client Testimonials</div>
+    <h2 class="section-title">What Our Clients Say</h2>
+    <p class="section-sub" style="color:rgba(255,255,255,0.6);margin:0 auto;">Real stories from real accident victims who got the justice they deserved.</p>
+  </div>
+  <div class="reviews-grid">
+    <div class="rv-card">
+      <div class="rv-stars">★★★★★</div>
+      <p class="rv-text">Company ne bina notice ke job se nikaal diya tha aur final settlement rok li thi. Arjun sir ne legal notice bhej kar company ko double compensation dene par majboor kiya. Highly supportive advocate!</p>
+      <div class="rv-person">
+        <div class="rv-avatar">A</div>
+        <div>
+          <div class="rv-name">Amitava Sen</div>
+          <div class="rv-case">Wrongful Termination — Kolkata IT Park</div>
+        </div>
+      </div>
+    </div>
+    <div class="rv-card">
+      <div class="rv-stars">★★★★★</div>
+      <p class="rv-text">Office harassment case me Arjun Datta sir ne hamari ICC proceedings me behtareen legal advice di. He ensured strict POSH compliance aur justice dilaya.</p>
+      <div class="rv-person">
+        <div class="rv-avatar">P</div>
+        <div>
+          <div class="rv-name">Priyanka Dey</div>
+          <div class="rv-case">POSH Complaint Case — Salt Lake</div>
+        </div>
+      </div>
+    </div>
+    <div class="rv-card">
+      <div class="rv-stars">★★★★★</div>
+      <p class="rv-text">Retirement ke baad gratuity nahi mil rahi thi. Arjun sir ne ALC office me matter pursue karke 3 mahine me pura paisa bank account me transfer karwaya.</p>
+      <div class="rv-person">
+        <div class="rv-avatar">S</div>
+        <div>
+          <div class="rv-name">Subrato Mondal</div>
+          <div class="rv-case">Unpaid Gratuity Recovery — Haldia</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</section>
+
+<!-- CTA / CONTACT -->
+<section class="cta-section" id="contact">
+  <h2>Ready to Fight for Your Rightful Compensation?</h2>
+  <p>Get a free 15-minute consultation with Adv. Arjun Datta today. Know your rights, know your claim value, know your next steps — at zero cost.</p>
+  <div class="contact-cards">
+    <div class="contact-card" onclick="window.location.href='tel:+918948143948'">
+      <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.37a16 16 0 006.72 6.72l1.73-1.73a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      <span class="cc-label">Call Now</span>
+      <span class="cc-val">+91 89481 43948</span>
+    </div>
+    <div class="contact-card" onclick="window.open('https://wa.me/918948143948?text=Hello%20Advocate%20Sir%2C%20I%20need%20legal%20help')">
+      <svg viewBox="0 0 24 24" style="fill:none;stroke:var(--gold);stroke-width:1.8;"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+      <span class="cc-label">WhatsApp</span>
+      <span class="cc-val">Chat Instantly</span>
+    </div>
+    <div class="contact-card">
+      <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      <span class="cc-label">Email</span>
+      <span class="cc-val">arjun@fhm-legalsolution.com</span>
+    </div>
+    <div class="contact-card">
+      <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      <span class="cc-label">Office</span>
+      <span class="cc-val">Kolkata</span>
+    </div>
+  </div>
+  <p style="margin-top:28px;font-size:0.78rem;color:rgba(255,255,255,0.4);">Free 15-min consultation available · Hindi &amp; English · Kanpur &amp; surrounding districts</p>
+</section>
+
+<footer>
+  <p>© 2025 FHM-Legal-Solution · Adv. Arjun Datta Profile Page · Bar Council Verified Advocate</p>
+  <a href="index.html">Back to FHM-Legal-Solution</a>
+</footer>
+
+<button class="wp-float" onclick="window.open('https://wa.me/918948143948?text=Hello%20Advocate%20Sir%2C%20I%20need%20legal%20help')" title="WhatsApp">
+  <svg style="width:28px;height:28px;fill:white;" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</button>
+
+<script>
+const obs = new IntersectionObserver(e => e.forEach(i => { if(i.isIntersecting) i.target.classList.add('visible'); }), {threshold:0.1});
+document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+window.addEventListener('scroll', () => {
+  document.querySelector('nav').style.background = window.scrollY > 50 ? 'rgba(13,27,62,0.99)' : 'rgba(13,27,62,0.97)';
+});
+</script>
+
+<script>
+// ─── CENTRALIZED LEGAL TEAM MODAL HANDLER ───
+(function() {
+  if (!document.getElementById('legal-team-modal')) {
+    const modalHTML = `
+      <div id="legal-team-modal" class="lt-modal" style="display: none;">
+        <div class="lt-modal-overlay"></div>
+        <div class="lt-modal-content">
+          <button class="lt-modal-close" id="lt-modal-close-btn">&times;</button>
+          <div class="lt-modal-header">
+            <div class="lt-modal-icon">📞</div>
+            <h3>Contact Legal Team</h3>
+            <p>Connect instantly with our central legal helpline for immediate assistance.</p>
+          </div>
+          <div class="lt-modal-body">
+            <div class="lt-number-box">
+              <span class="lt-phone-num">+91 89481 43948</span>
+            </div>
+            <div class="lt-action-buttons">
+              <a href="tel:+918948143948" class="lt-btn lt-btn-call">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon-modal"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.37a16 16 0 006.72 6.72l1.73-1.73a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                Call Central Team
+              </a>
+              <a href="https://wa.me/918948143948?text=Hello%20Advocate%20Sir%2C%20I%20need%20legal%20help" class="lt-btn lt-btn-wa" target="_blank">
+                <svg viewBox="0 0 24 24" fill="white" class="svg-icon-modal" style="width:20px;height:20px;fill:white;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                Chat on WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = modalHTML;
+    document.body.appendChild(tempDiv.firstElementChild);
+  }
+
+  const modal = document.getElementById('legal-team-modal');
+  const closeBtn = document.getElementById('lt-modal-close-btn');
+  const overlay = modal.querySelector('.lt-modal-overlay');
+
+  function showModal(e) {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    modal.style.display = 'flex';
+  }
+
+  function hideModal() {
+    modal.style.display = 'none';
+  }
+
+  closeBtn.addEventListener('click', hideModal);
+  overlay.addEventListener('click', hideModal);
+
+  window.showLegalTeamModal = showModal;
+
+  function setupClicks() {
+    // Disabled click interception so that direct tel: and wa.me links work natively.
+    return;
+    const selectors = [
+      '.btn-wp', '.btn-call', '.wp-float',
+      'a[href*="tel:"]', 'a[href*="wa.me"]',
+      'button[onclick*="tel:"]', 'button[onclick*="wa.me"]',
+      '.contact-card'
+    ];
+    
+    selectors.forEach(sel => {
+      document.querySelectorAll(sel).forEach(el => {
+        el.removeAttribute('onclick');
+        if (el.tagName === 'A') {
+          el.removeAttribute('href');
+          el.style.cursor = 'pointer';
+        }
+        el.addEventListener('click', function(e) {
+          if (el.closest('.lt-modal-content')) return;
+          showModal(e);
+        });
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupClicks);
+  } else {
+    setupClicks();
+  }
+  
+  setTimeout(setupClicks, 500);
+  setTimeout(setupClicks, 2000);
+})();
+</script>
+
+</body>
+</html>
