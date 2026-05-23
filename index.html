@@ -5,10 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-site-verification" content="skFBdGe623Ih692oCTJHMXpwrpGhub3FPOwmLaMtJq4" />
-  <title>FHM-Legal-Solution — India's Most Trusted Legal Platform
-
-
-  </title>
+  <title>FHM-Legal-Solution — India's Most Trusted Legal Platform</title>
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Poppins:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
@@ -2093,150 +2090,497 @@
       }
     }
 
+    /* ═══════════════════════════════════════════
+       MOBILE-SPECIFIC FIXES (max-width: 768px)
+       ALL changes below are MOBILE ONLY and do
+       NOT affect tablet/desktop layouts.
+    ═══════════════════════════════════════════ */
     @media (max-width: 768px) {
-      .img-slider {
-        height: auto;
-        min-height: 520px;
-        margin-top: 108px;
+
+      /* ── NAV: compact & no overflow ── */
+      nav {
+        height: 60px;
+        padding: 0 4%;
       }
 
-      .slide-content {
-        padding: 40px 6% 30px;
+      .logo {
+        gap: 8px;
+        max-width: calc(100vw - 80px);
+        overflow: hidden;
       }
 
-      .slide h2 {
-        font-size: clamp(1.4rem, 6vw, 2rem) !important;
-        line-height: 1.25;
-        margin-bottom: 12px;
+      .logo-icon {
+        height: 32px;
+        width: auto;
+        flex-shrink: 0;
       }
 
-      .slide p {
-        font-size: 0.85rem !important;
-        line-height: 1.5;
-        margin-bottom: 16px;
+      .logo-text .brand {
+        font-size: 1.05rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
 
-      .slide-offer {
-        padding: 8px 14px !important;
-        gap: 10px !important;
-        margin-bottom: 20px !important;
-      }
-
-      .offer-pct {
-        font-size: 1.8rem !important;
-      }
-
-      .offer-txt .o1 {
-        font-size: 0.8rem !important;
-      }
-
-      .offer-txt .o2 {
-        font-size: 0.65rem !important;
-      }
-
-      .offer-timer {
-        padding: 6px 10px !important;
-      }
-
-      .timer-val {
-        font-size: 1rem !important;
-      }
-
-      .timer-lbl {
-        font-size: 0.55rem !important;
-      }
-
-      .slide-btns {
-        gap: 10px;
-        width: 100%;
-      }
-
-      .btn-slide-primary,
-      .btn-slide-outline {
-        padding: 10px 18px !important;
-        font-size: 0.8rem !important;
-        border-radius: 8px !important;
-        text-align: center;
-        flex: 1;
-        min-width: 120px;
-      }
-
-      .slider-arrow {
-        width: 36px;
-        height: 36px;
-        font-size: 1.1rem;
-      }
-
-      .slider-arrow.prev {
-        left: 10px;
-      }
-
-      .slider-arrow.next {
-        right: 10px;
-      }
-    }
-
-    @media (max-width: 600px) {
       .logo-text .tagline {
         display: none;
       }
 
-      .logo-text .brand {
-        font-size: 1.2rem;
+      /* ── OFFER STRIP: adjust for shorter nav ── */
+      .offer-strip {
+        top: 60px;
+        height: 32px;
+        font-size: 0.72rem;
       }
 
-      .logo-icon {
-        height: 36px;
-        width: auto;
-        font-size: 18px;
+      .offer-strip span {
+        font-size: 0.72rem;
+        padding: 0 14px;
       }
 
-      .steps-grid {
-        grid-template-columns: 1fr;
+      /* ── IMAGE SLIDER: fixed height for correct child sizing ── */
+      .img-slider {
+        height: 620px;
+        max-height: 80vh;
+        margin-top: 92px !important; /* 60px nav + 32px strip */
       }
 
-      .hub-grid {
-        grid-template-columns: 1fr;
+      .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
       }
 
-      .consult-grid {
-        grid-template-columns: repeat(2, 1fr);
+      /* Content: push to top so everything is visible */
+      .slide-content {
+        justify-content: flex-start;
+        padding: 20px 5% 16px;
+        overflow-y: auto;
+        overflow-x: hidden;
       }
 
-      .trust-grid {
-        grid-template-columns: repeat(2, 1fr);
+      .slide-badge {
+        font-size: 0.65rem !important;
+        padding: 5px 12px !important;
+        margin-bottom: 10px !important;
+        letter-spacing: 0.8px !important;
       }
 
-      .search-row {
-        flex-direction: column;
+      .slide h2 {
+        font-size: clamp(1.25rem, 5.5vw, 1.75rem) !important;
+        line-height: 1.25;
+        margin-bottom: 8px;
+        max-width: 100%;
+        word-wrap: break-word;
       }
 
-      .hero-stats {
-        grid-template-columns: repeat(2, 1fr);
+      .slide p {
+        font-size: 0.76rem !important;
+        line-height: 1.48;
+        margin-bottom: 10px;
+        max-width: 100%;
+        color: rgba(255,255,255,0.78);
       }
 
-      .lawyers-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .consult-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .trust-grid {
-        grid-template-columns: 1fr;
+      /* Offer box: compact, no overflow */
+      .slide-offer {
+        display: flex;
+        align-items: center;
+        padding: 8px 12px !important;
+        gap: 10px !important;
+        margin-bottom: 12px !important;
+        width: 100%;
+        box-sizing: border-box;
+        flex-wrap: nowrap;
       }
 
+      .offer-pct {
+        font-size: 1.6rem !important;
+        flex-shrink: 0;
+      }
+
+      .offer-txt {
+        flex: 1;
+        min-width: 0;
+      }
+
+      .offer-txt .o1 {
+        font-size: 0.72rem !important;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .offer-txt .o2 {
+        font-size: 0.6rem !important;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .offer-timer {
+        padding: 5px 8px !important;
+        flex-shrink: 0;
+        min-width: 56px;
+        text-align: center;
+      }
+
+      .timer-val {
+        font-size: 0.9rem !important;
+        letter-spacing: 1px;
+      }
+
+      .timer-lbl {
+        font-size: 0.5rem !important;
+      }
+
+      /* CTA Buttons: full width, stacked */
       .slide-btns {
+        display: flex;
         flex-direction: column;
+        gap: 8px;
+        width: 100%;
       }
 
       .btn-slide-primary,
       .btn-slide-outline {
+        width: 100% !important;
+        padding: 11px 16px !important;
+        font-size: 0.82rem !important;
+        border-radius: 8px !important;
+        text-align: center;
+        flex: none !important;
+        min-width: unset !important;
+        box-sizing: border-box;
+      }
+
+      /* Slider arrows: smaller, inset */
+      .slider-arrow {
+        width: 34px;
+        height: 34px;
+        font-size: 1rem;
+      }
+
+      .slider-arrow.prev {
+        left: 8px;
+      }
+
+      .slider-arrow.next {
+        right: 8px;
+      }
+
+      /* Slider dots: centered & smaller */
+      .slider-dots {
+        bottom: 14px;
+      }
+
+      .sdot {
+        width: 6px;
+        height: 6px;
+      }
+
+      .sdot.active {
+        width: 20px;
+      }
+
+      /* ── HERO SECTION (text-based hero) ── */
+      .hero {
+        min-height: auto;
+        padding: 90px 5% 50px;
+      }
+
+      .hero h1 {
+        font-size: clamp(1.6rem, 7vw, 2.4rem) !important;
+        line-height: 1.2;
+        word-wrap: break-word;
+      }
+
+      .hero-sub {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        margin-bottom: 24px;
+      }
+
+      .hero-badge {
+        font-size: 0.68rem;
+        padding: 5px 12px;
+        margin-bottom: 16px;
+      }
+
+      .hero-btns {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .btn-primary,
+      .btn-outline-white {
         width: 100%;
-        flex: none;
+        justify-content: center;
+        padding: 13px 20px;
+        font-size: 0.88rem;
+      }
+
+      .hero-stats {
+        margin-top: 32px;
+      }
+
+      .stat-num {
+        font-size: 1.5rem;
+      }
+
+      /* ── SEARCH BOX ── */
+      .search-box {
+        padding: 14px;
+      }
+
+      .search-row {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .search-input,
+      .search-select {
+        width: 100%;
+        min-width: unset;
+      }
+
+      .btn-search {
+        width: 100%;
+      }
+
+      /* ── SECTIONS: reduce padding ── */
+      section {
+        padding: 60px 4%;
+      }
+
+      .section-title {
+        font-size: clamp(1.5rem, 5vw, 2rem);
+      }
+
+      /* ── STEPS GRID ── */
+      .steps-grid {
+        grid-template-columns: 1fr;
+      }
+
+      /* ── FOOTER ── */
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+      }
+
+      .footer-certifications {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      /* ── WHATSAPP FLOAT: smaller for mobile ── */
+      .wp-float {
+        width: 46px;
+        height: 46px;
+        bottom: 16px;
+        right: 16px;
+        font-size: 1.3rem;
+        box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+      }
+
+      /* ── LAWYERS GRID ── */
+      .lawyers-grid {
+        grid-template-columns: 1fr;
+      }
+
+      /* ── COURT / DEAL GRIDS ── */
+      .courts-img-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .lawyer-deal-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      /* ── HUB / BLOG ── */
+      .hub-grid {
+        grid-template-columns: 1fr;
+      }
+
+      /* ── PAYMENT GRID ── */
+      .payment-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .payment-methods {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      /* ── CTA SECTION ── */
+      .cta-section {
+        padding: 60px 5%;
+      }
+
+      .cta-btns {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .cta-btns .btn-primary,
+      .cta-btns .btn-outline-white {
+        width: 100%;
+        max-width: 320px;
+        justify-content: center;
+      }
+
+      /* ── EXPERTISE GRID ── */
+      .expertise-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      /* ── TRUST & CONSULT GRIDS ── */
+      .trust-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+      }
+
+      .consult-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      /* ── TESTI CARDS ── */
+      .testi-grid {
+        grid-template-columns: 1fr;
+      }
+
+      /* ── PRACTICE GRID ── */
+      .practice-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      /* ── CITIES GRID ── */
+      .cities-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      /* ── TOP LAWYERS ── */
+      .top-lawyers-grid {
+        grid-template-columns: 1fr;
+      }
+
+      /* ── PREVENT horizontal overflow globally ── */
+      body {
+        overflow-x: hidden;
+        max-width: 100vw;
+      }
+
+      /* Offer strip inner spans must NOT be constrained (marquee needs overflow) */
+      .offer-strip-inner,
+      .offer-strip-inner span {
+        max-width: none;
+        white-space: nowrap;
+      }
+
+      img:not(.emblem-img) {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+
+    /* ── Extra small phones (max-width: 480px) ── */
+    @media (max-width: 480px) {
+
+      nav {
+        height: 58px;
+        padding: 0 3.5%;
+      }
+
+      .logo-text .brand {
+        font-size: 0.95rem;
+      }
+
+      .logo-icon {
+        height: 28px;
+      }
+
+      .offer-strip {
+        top: 58px;
+      }
+
+      .img-slider {
+        height: 580px;
+        max-height: 82vh;
+        margin-top: 90px !important; /* 58px nav + 32px strip */
+      }
+
+      .slide-content {
+        padding: 16px 4.5% 14px;
+      }
+
+      .slide h2 {
+        font-size: clamp(1.1rem, 5vw, 1.5rem) !important;
+      }
+
+      .slide p {
+        font-size: 0.72rem !important;
+        margin-bottom: 8px;
+      }
+
+      .offer-pct {
+        font-size: 1.4rem !important;
+      }
+
+      .trust-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .consult-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .payment-methods {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .wp-float {
+        width: 42px;
+        height: 42px;
+        bottom: 14px;
+        right: 14px;
+        font-size: 1.2rem;
+      }
+
+      .expertise-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .practice-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .cities-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 48px 4%;
+      }
+
+      .filter-bar {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .filter-select {
+        width: 100%;
+      }
+
+      .filter-btn {
+        width: 100%;
+        margin-left: 0;
       }
     }
 
