@@ -1,0 +1,1783 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consumer Forum Complaint Guide (2025) — FHM-Legal-Solution</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0D1B3E;
+      --navy-mid: #1a2d5a;
+      --navy-light: #243870;
+      --gold: #C9A84C;
+      --gold-light: #E2C97E;
+      --gold-pale: #F5E9C8;
+      --white: #FFFFFF;
+      --off-white: #F8F7F4;
+      --cream: #FDF9F1;
+      --text-dark: #1a1a2e;
+      --text-mid: #3d4a6b;
+      --text-muted: #7a8aaa;
+      --success: #2ecc71;
+      --border: rgba(201, 168, 76, 0.2);
+      --shadow-gold: 0 8px 40px rgba(201, 168, 76, 0.15);
+      --shadow-navy: 0 8px 40px rgba(13, 27, 62, 0.15);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--off-white);
+      color: var(--text-dark);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    /* ─── SCROLL PROGRESS BAR ─── */
+    .scroll-progress {
+      position: fixed;
+      top: 72px;
+      left: 0;
+      width: 0%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      z-index: 1001;
+      transition: width 0.1s ease;
+    }
+
+    /* ─── SCROLLBAR ─── */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--navy);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--gold);
+      border-radius: 3px;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(13, 27, 62, 0.97);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+      padding: 0 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .logo-icon {
+      width: auto;
+      height: 42px;
+      background: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+
+    .logo-icon img {
+      height: 100%;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .logo-text {
+      color: var(--white);
+    }
+
+    .logo-text .brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .logo-text .tagline {
+      font-size: 0.62rem;
+      color: var(--gold-light);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .nav-links a {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.3s;
+      letter-spacing: 0.3px;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold-light);
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .btn-nav-outline {
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      background: transparent;
+      padding: 8px 20px;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .btn-nav-outline:hover {
+      background: var(--gold);
+      color: var(--navy);
+    }
+
+    .btn-nav-fill {
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: var(--navy);
+      border: none;
+      padding: 8px 20px;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: 'Poppins', sans-serif;
+      transition: all 0.3s;
+    }
+
+    .btn-nav-fill:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 20px rgba(201, 168, 76, 0.4);
+    }
+
+    /* ─── BURGER MENU & MOBILE DRAWER ─── */
+    .burger-menu {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 26px;
+      height: 18px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      z-index: 1001;
+      padding: 0;
+    }
+
+    .burger-menu span {
+      width: 100%;
+      height: 2.2px;
+      background: var(--white);
+      border-radius: 4px;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      transform-origin: left center;
+    }
+
+    .burger-menu.open span:nth-child(1) {
+      transform: rotate(45deg) translate(2px, 0);
+    }
+
+    .burger-menu.open span:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+
+    .burger-menu.open span:nth-child(3) {
+      transform: rotate(-45deg) translate(2px, 0);
+    }
+
+    .mobile-drawer {
+      position: fixed;
+      top: 0;
+      right: -105%;
+      width: 300px;
+      height: 100vh;
+      background: linear-gradient(180deg, var(--navy) 0%, var(--navy-mid) 100%);
+      z-index: 9999;
+      box-shadow: -15px 0 40px rgba(13, 27, 62, 0.6);
+      display: flex;
+      flex-direction: column;
+      padding: 40px 30px;
+      transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      border-left: 1px solid rgba(201, 168, 76, 0.2);
+    }
+
+    .mobile-drawer.open {
+      right: 0;
+    }
+
+    .drawer-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 48px;
+    }
+
+    .drawer-close {
+      background: none;
+      border: none;
+      font-size: 32px;
+      color: var(--gold-light);
+      cursor: pointer;
+      transition: color 0.3s;
+      line-height: 1;
+    }
+
+    .drawer-close:hover {
+      color: var(--white);
+    }
+
+    .drawer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 26px;
+      margin-bottom: auto;
+    }
+
+    .drawer-links a {
+      color: rgba(255, 255, 255, 0.85);
+      text-decoration: none;
+      font-size: 1.05rem;
+      font-weight: 500;
+      transition: all 0.3s;
+      font-family: 'Poppins', sans-serif;
+      letter-spacing: 0.5px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      padding-bottom: 8px;
+    }
+
+    .drawer-links a:hover {
+      color: var(--gold-light);
+      padding-left: 6px;
+      border-bottom-color: var(--gold-light);
+    }
+
+    .drawer-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 40px;
+    }
+
+    .drawer-actions .btn-nav-outline,
+    .drawer-actions .btn-nav-fill {
+      width: 100%;
+      padding: 12px;
+      text-align: center;
+      font-size: 0.9rem;
+      border-radius: 8px;
+    }
+
+    .drawer-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(6, 14, 36, 0.7);
+      backdrop-filter: blur(8px);
+      z-index: 9998;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+    }
+
+    .drawer-backdrop.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* ─── ARTICLE HERO BANNER ─── */
+    .article-hero {
+      padding: 140px 5% 70px;
+      background: linear-gradient(135deg, #060e24 0%, #0D1B3E 50%, #1a2d5a 100%);
+      position: relative;
+      overflow: hidden;
+      color: var(--white);
+    }
+
+    .hero-pattern {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.03;
+      background-image: linear-gradient(rgba(201, 168, 76, 1) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(201, 168, 76, 1) 1px, transparent 1px);
+      background-size: 50px 50px;
+    }
+
+    .hero-orb {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: rgba(201, 168, 76, 0.08);
+      filter: blur(85px);
+      pointer-events: none;
+      top: -100px;
+      right: -50px;
+    }
+
+    .hero-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: none;
+      font-size: 0.88rem;
+      margin-bottom: 24px;
+      transition: color 0.3s;
+    }
+
+    .back-btn:hover {
+      color: var(--gold-light);
+    }
+
+    .back-btn svg {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2.5;
+    }
+
+    .article-cat-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: var(--navy);
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      padding: 5px 14px;
+      border-radius: 30px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 15px rgba(201, 168, 76, 0.2);
+    }
+
+    .article-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 900;
+      line-height: 1.25;
+      margin-bottom: 24px;
+      color: var(--white);
+      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      font-size: 0.88rem;
+      color: rgba(255, 255, 255, 0.7);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 18px;
+    }
+
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .meta-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(201, 168, 76, 0.25);
+      border: 1px solid var(--gold-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold-light);
+      font-weight: 700;
+      font-size: 0.8rem;
+    }
+
+    /* ─── MAIN LAYOUT ─── */
+    .article-layout {
+      max-width: 1200px;
+      margin: 50px auto 100px;
+      padding: 0 5%;
+      display: grid;
+      grid-template-columns: 8fr 4fr;
+      gap: 50px;
+      align-items: start;
+    }
+
+    /* ─── SIDEBAR ─── */
+    .sidebar {
+      position: sticky;
+      top: 100px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .toc-card, .sidebar-cta-card {
+      background: var(--white);
+      border: 1px solid rgba(201, 168, 76, 0.15);
+      border-radius: 18px;
+      padding: 30px;
+      box-shadow: var(--shadow-gold);
+    }
+
+    .toc-card h3, .sidebar-cta-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .toc-card h3::after, .sidebar-cta-card h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 3px;
+      background: var(--gold);
+      border-radius: 2px;
+    }
+
+    .toc-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .toc-links a {
+      color: var(--text-mid);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      line-height: 1.4;
+    }
+
+    .toc-links a::before {
+      content: '→';
+      color: var(--gold);
+      opacity: 0;
+      transition: all 0.3s;
+      transform: translateX(-5px);
+    }
+
+    .toc-links a:hover, .toc-links a.active {
+      color: var(--gold);
+      font-weight: 600;
+      padding-left: 5px;
+    }
+
+    .toc-links a:hover::before, .toc-links a.active::before {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .sidebar-cta-card {
+      background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+      color: var(--white);
+      border: none;
+      box-shadow: var(--shadow-navy);
+      text-align: center;
+    }
+
+    .sidebar-cta-card h3 {
+      color: var(--white);
+      text-align: center;
+    }
+
+    .sidebar-cta-card h3::after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .cta-text {
+      font-size: 0.88rem;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 24px;
+      line-height: 1.7;
+    }
+
+    .cta-price {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      margin-bottom: 20px;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .btn-cta {
+      display: block;
+      width: 100%;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: var(--navy);
+      border: none;
+      padding: 14px;
+      border-radius: 10px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s;
+      box-shadow: 0 4px 15px rgba(201, 168, 76, 0.3);
+    }
+
+    .btn-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(201, 168, 76, 0.45);
+    }
+
+    .sidebar-badges {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .sidebar-badge {
+      font-size: 0.68rem;
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--gold-light);
+      border: 1px solid rgba(201, 168, 76, 0.25);
+      padding: 4px 10px;
+      border-radius: 15px;
+    }
+
+    /* ─── CONTENT COLUMN ─── */
+    .article-content {
+      background: var(--white);
+      border: 1px solid #eee;
+      border-radius: 24px;
+      padding: 45px;
+      box-shadow: 0 10px 40px rgba(13,27,62,0.03);
+    }
+
+    .section-block {
+      margin-bottom: 50px;
+      scroll-margin-top: 100px;
+    }
+
+    .section-block h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-block h2 span.section-num {
+      background: rgba(201, 168, 76, 0.12);
+      color: var(--gold);
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .section-block p {
+      font-size: 1.02rem;
+      color: var(--text-mid);
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    /* CUSTOM ATTRIBUTION QUOTE PANEL */
+    .attr-quote {
+      background: var(--cream);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 14px 14px 0;
+      padding: 16px 20px;
+      margin: 15px 0 25px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      box-shadow: 0 4px 15px rgba(13, 27, 62, 0.02);
+    }
+
+    .attr-quote .quote-icon {
+      font-size: 1.5rem;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .attr-quote-content p {
+      font-size: 0.95rem;
+      font-style: italic;
+      color: var(--navy-mid);
+      line-height: 1.6;
+      margin-bottom: 6px;
+    }
+
+    .attr-quote-content .quote-by {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* TIMELINE FOR e-DAAKHIL STEPS */
+    .step-timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      margin: 35px 0;
+    }
+
+    .timeline-item {
+      display: flex;
+      gap: 20px;
+      background: var(--off-white);
+      border: 1px solid #eaeaea;
+      border-radius: 16px;
+      padding: 24px;
+      position: relative;
+      transition: all 0.3s;
+    }
+
+    .timeline-item:hover {
+      border-color: rgba(201, 168, 76, 0.4);
+      transform: translateX(5px);
+      background: var(--cream);
+    }
+
+    .timeline-num {
+      background: var(--navy);
+      color: var(--gold-light);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      box-shadow: 0 4px 10px rgba(13, 27, 62, 0.2);
+    }
+
+    .timeline-body {
+      flex: 1;
+    }
+
+    .timeline-body h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .timeline-body p {
+      font-size: 0.92rem;
+      color: var(--text-mid);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .timeline-tag {
+      font-size: 0.68rem;
+      background: rgba(13, 27, 62, 0.06);
+      color: var(--navy);
+      border: 1px solid rgba(13, 27, 62, 0.15);
+      padding: 3px 10px;
+      border-radius: 12px;
+      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .portal-link {
+      color: var(--gold);
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.3s;
+      border-bottom: 1px dashed var(--gold);
+    }
+
+    .portal-link:hover {
+      color: var(--navy);
+      border-bottom-color: var(--navy);
+    }
+
+    /* PREMIUM JURISDICTION TABLE */
+    .table-responsive {
+      overflow-x: auto;
+      margin: 30px 0;
+      border-radius: 14px;
+      border: 1px solid rgba(201, 168, 76, 0.2);
+      box-shadow: 0 8px 25px rgba(13, 27, 62, 0.02);
+    }
+
+    .juris-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.92rem;
+    }
+
+    .juris-table th {
+      background: var(--navy);
+      color: var(--white);
+      padding: 16px 20px;
+      font-weight: 600;
+      font-family: 'Playfair Display', serif;
+      letter-spacing: 0.5px;
+    }
+
+    .juris-table td {
+      padding: 16px 20px;
+      border-bottom: 1px solid #eee;
+      color: var(--text-mid);
+      background: var(--white);
+    }
+
+    .juris-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .juris-table tr:nth-child(even) td {
+      background: var(--off-white);
+    }
+
+    .juris-table tr:hover td {
+      background: var(--cream);
+    }
+
+    .commission-badge {
+      font-weight: 700;
+      color: var(--navy);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .commission-badge::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+      display: inline-block;
+    }
+
+    /* E-DAAKHIL INFOGRAPHIC CARD */
+    .info-graphic-card {
+      background: linear-gradient(135deg, rgba(201, 168, 76, 0.05), rgba(13, 27, 62, 0.03));
+      border: 1px solid rgba(201, 168, 76, 0.2);
+      border-radius: 16px;
+      padding: 24px;
+      margin: 30px 0;
+      text-align: center;
+    }
+
+    .info-graphic-visual {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin: 20px 0 10px;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .graphic-node {
+      background: var(--white);
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 12px 18px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--navy);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      min-width: 120px;
+    }
+
+    .graphic-node svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--gold);
+      fill: none;
+      stroke-width: 2;
+    }
+
+    .graphic-arrow {
+      color: var(--gold-light);
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .info-graphic-source {
+      font-size: 0.73rem;
+      color: var(--text-muted);
+      margin-top: 15px;
+      font-style: italic;
+    }
+
+    /* COMPARATIVE DECISION CARDS */
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin: 30px 0;
+    }
+
+    .compare-card {
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.02);
+    }
+
+    .compare-card.represent {
+      background: #f5fcf7;
+      border: 1px solid rgba(46, 204, 113, 0.2);
+    }
+
+    .compare-card.lawyer {
+      background: #fcf9f2;
+      border: 1px solid rgba(201, 168, 76, 0.2);
+    }
+
+    .compare-card h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .compare-card.represent h4 {
+      color: #1e7e43;
+    }
+
+    .compare-card.lawyer h4 {
+      color: var(--navy);
+    }
+
+    .compare-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .compare-list li {
+      font-size: 0.88rem;
+      color: var(--text-mid);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      line-height: 1.5;
+    }
+
+    .compare-list li::before {
+      content: '✓';
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .compare-card.represent .compare-list li::before {
+      color: #2ecc71;
+    }
+
+    .compare-card.lawyer .compare-list li::before {
+      color: var(--gold);
+    }
+
+    /* HIGHLIGHT WARNING/NOTE CALLOUTS */
+    .alert-callout {
+      background: #fdf5f5;
+      border-left: 4px solid #e74c3c;
+      border-radius: 0 14px 14px 0;
+      padding: 20px;
+      margin: 30px 0;
+    }
+
+    .alert-callout h4 {
+      color: #c0392b;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .alert-callout p {
+      font-size: 0.92rem;
+      color: #7f8c8d;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #060d1e;
+      border-top: 1px solid rgba(201, 168, 76, 0.15);
+      padding: 60px 5% 30px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .footer-brand .brand-desc {
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.5);
+      line-height: 1.7;
+      margin: 16px 0 20px;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 10px;
+    }
+
+    .social-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .social-btn:hover {
+      background: var(--gold);
+      color: var(--navy);
+      border-color: var(--gold);
+    }
+
+    .footer-col h4 {
+      color: var(--white);
+      font-size: 0.88rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .footer-col a {
+      display: block;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.8rem;
+      margin-bottom: 10px;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-col a:hover {
+      color: var(--gold-light);
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-bottom p {
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.35);
+    }
+
+    .footer-certifications {
+      display: flex;
+      gap: 14px;
+    }
+
+    .cert-badge {
+      background: rgba(201, 168, 76, 0.12);
+      border: 1px solid rgba(201, 168, 76, 0.25);
+      color: var(--gold-light);
+      font-size: 0.68rem;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-weight: 600;
+    }
+
+    /* ─── WHATSAPP FLOAT ─── */
+    .wp-float {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 999;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #25D366;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+      animation: float 3s ease-in-out infinite;
+      transition: transform 0.3s;
+    }
+
+    .wp-float:hover {
+      transform: scale(1.1);
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    /* ─── RESPONSIVE MEDIA QUERIES ─── */
+    @media (max-width: 992px) {
+      .article-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .sidebar {
+        position: static;
+        order: 2;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .nav-links, .nav-actions {
+        display: none;
+      }
+
+      .burger-menu {
+        display: flex;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .article-content {
+        padding: 25px;
+      }
+
+      .compare-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="index.html" class="logo">
+      <div class="logo-icon"><img class="emblem-img" src="fhm_logo.png" alt="FHM-Legal-Solution Logo"></div>
+      <div class="logo-text">
+        <div class="brand">FHM-Legal-Solution</div>
+        <div class="tagline">India's Legal Bridge</div>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html#lawyers">Find Lawyers</a>
+      <a href="index.html#practice">Practice Areas</a>
+      <a href="index.html#cities">Cities</a>
+      <a href="index.html#hub">Legal Hub</a>
+      <a href="index.html#consult">Consultations</a>
+    </div>
+    <div class="nav-actions">
+      <a href="tel:+918948143948" class="btn-nav-outline"
+        style="text-decoration:none; display:inline-flex; align-items:center; justify-content:center;">Call:
+        8948143948</a>
+      <a href="https://wa.me/918948143948?text=Hello%20Advocate%20Sir%2C%20I%20need%20legal%20help" class="btn-nav-fill"
+        style="text-decoration:none; display:inline-flex; align-items:center; justify-content:center; background:#25D366; border-color:#25D366; color:#fff;"
+        target="_blank">WhatsApp</a>
+    </div>
+    <button class="burger-menu" id="burgerBtn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE DRAWER -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-header">
+      <a href="index.html" class="logo">
+        <div class="logo-icon"><img class="emblem-img" src="fhm_logo.png" alt="FHM-Legal-Solution Logo"></div>
+        <div class="logo-text">
+          <div class="brand" style="color:var(--white);">FHM-Legal-Solution</div>
+        </div>
+      </a>
+      <button class="drawer-close" id="drawerClose">&times;</button>
+    </div>
+    <div class="drawer-links">
+      <a href="index.html#lawyers">Find Lawyers</a>
+      <a href="index.html#practice">Practice Areas</a>
+      <a href="index.html#cities">Cities</a>
+      <a href="index.html#hub">Legal Hub</a>
+      <a href="index.html#consult">Consultations</a>
+    </div>
+    <div class="drawer-actions">
+      <a href="tel:+918948143948" class="btn-nav-outline"
+        style="text-decoration:none; display:block; text-align:center; margin-bottom:10px;">Call: 8948143948</a>
+      <a href="https://wa.me/918948143948?text=Hello%20Advocate%20Sir%2C%20I%20need%20legal%20help" class="btn-nav-fill"
+        style="text-decoration:none; display:block; text-align:center; background:#25D366; border-color:#25D366; color:#fff;"
+        target="_blank">WhatsApp</a>
+    </div>
+  </div>
+
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+
+  <!-- ARTICLE HERO -->
+  <header class="article-hero">
+    <div class="hero-pattern"></div>
+    <div class="hero-orb"></div>
+    <div class="hero-container">
+      <a href="index.html#hub" class="back-btn">
+        <svg viewBox="0 0 24 24">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        Back to Knowledge Hub
+      </a>
+      <div>
+        <span class="article-cat-badge">Consumer Rights</span>
+      </div>
+      <h1 class="article-title">Consumer Forum Complaint: How to File & Win — Complete 2025 Guide</h1>
+      <div class="article-meta">
+        <div class="meta-item">
+          <div class="meta-avatar">F</div>
+          <span>Published by <strong>FHM-Legal-Solution Team</strong></span>
+        </div>
+        <div class="meta-item">
+          <span>🕒 11 min read</span>
+        </div>
+        <div class="meta-item">
+          <span>📅 Updated for 2025/2026 legal framework</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN LAYOUT -->
+  <main class="article-layout">
+    
+    <!-- Content Column -->
+    <div class="article-content">
+      
+      <!-- Intro Section -->
+      <section class="section-block" style="margin-bottom:30px;">
+        <p>Filing a complaint in a Consumer Forum can feel intimidating, but it is one of the most effective consumer protection mechanisms available in India. Under the Consumer Protection Act, 2019, the entire process has been simplified and shifted online. Here is your step-by-step roadmap to filing and winning your consumer complaint in 2025.</p>
+      </section>
+
+      <!-- Phase 1 -->
+      <section class="section-block" id="phase1">
+        <h2><span class="section-num">1</span> Phase 1: The Pre-Filing Checklist</h2>
+        <p>Before you approach a commission, you need to establish a paper trail that proves you gave the company a fair chance to fix their mistake.</p>
+        
+        <div class="attr-quote">
+          <div class="quote-icon">⚖️</div>
+          <div class="attr-quote-content">
+            <p>"Establishing a strong document trail showing early notification and communication is the foundation of any successful consumer case."</p>
+            <div class="quote-by">Advocate Siddharth Gupta</div>
+          </div>
+        </div>
+
+        <h3 style="color:var(--navy); font-size:1.15rem; margin:20px 0 10px; font-family:'Playfair Display',serif;">The 2-Year Limitation Rule</h3>
+        <p>You must file your complaint within two years from the date the "cause of action" arose (the day the product broke, the service failed, or the company refused your refund). If you miss this window, the court will likely dismiss your case.</p>
+        
+        <div class="attr-quote">
+          <div class="quote-icon">⚖️</div>
+          <div class="attr-quote-content">
+            <p>"Courts are extremely strict with the limitation period. File early to avoid having your case dismissed on procedural technicalities."</p>
+            <div class="quote-by">Sansa Kanoon Pranali Partners</div>
+          </div>
+        </div>
+
+        <h3 style="color:var(--navy); font-size:1.15rem; margin:20px 0 10px; font-family:'Playfair Display',serif;">Send a Legal Notice</h3>
+        <p>Send a formal written notice to the company's registered address (via Registered Post with acknowledgment due) and via email. State exactly what went wrong and what you want (refund, replacement, or compensation). Give them 30 days to respond. Many companies will settle right here to avoid litigation.</p>
+        
+        <div class="attr-quote">
+          <div class="quote-icon">⚖️</div>
+          <div class="attr-quote-content">
+            <p>"A professionally drafted legal notice demonstrates serious intent and resolves a substantial number of disputes pre-litigation."</p>
+            <div class="quote-by">Advocate Siddharth Gupta</div>
+          </div>
+        </div>
+
+        <h3 style="color:var(--navy); font-size:1.15rem; margin:20px 0 10px; font-family:'Playfair Display',serif;">Try the National Consumer Helpline (NCH)</h3>
+        <p>Before filing a formal lawsuit, call 1915 or use the NCH app. It acts as a pre-litigation mediation step. If the company ignores the NCH, it strengthens your eventual court case.</p>
+        
+        <div class="attr-quote">
+          <div class="quote-icon">⚖️</div>
+          <div class="attr-quote-content">
+            <p>"Always document your NCH docket number. It shows the judge that you exhausted all alternate dispute resolution methods before taking their time."</p>
+            <div class="quote-by">National Consumer Helpline</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Phase 2 -->
+      <section class="section-block" id="phase2">
+        <h2><span class="section-num">2</span> Phase 2: Determine Your Jurisdiction</h2>
+        <p>You cannot simply file your case anywhere. Your complaint must go to the correct commission based on <strong>Pecuniary Jurisdiction</strong> (the financial value of your claim) and <strong>Territorial Jurisdiction</strong> (geography).</p>
+        
+        <div class="attr-quote">
+          <div class="quote-icon">⚖️</div>
+          <div class="attr-quote-content">
+            <p>"Filing in the wrong forum leads to rejection and forces you to restart, losing crucial months."</p>
+            <div class="quote-by">Sansa Kanoon Pranali Partners</div>
+          </div>
+        </div>
+
+        <p>Your claim value is calculated as the amount paid for the goods/services <strong>plus</strong> the compensation you are demanding.</p>
+
+        <div class="attr-quote">
+          <div class="quote-icon">⚖️</div>
+          <div class="attr-quote-content">
+            <p>"Pecuniary limits were modified to prevent forum shopping. Calculate actual considerations paid rather than hypothetical claims."</p>
+            <div class="quote-by">NCDRC Lawyer</div>
+          </div>
+        </div>
+
+        <!-- Jurisdiction Table -->
+        <div class="table-responsive">
+          <table class="juris-table">
+            <thead>
+              <tr>
+                <th>Commission</th>
+                <th>Claim Value Limit</th>
+                <th>Location</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="commission-badge">District Commission (DCDRC)</span></td>
+                <td>Up to ₹50 Lakh</td>
+                <td>District Headquarters</td>
+              </tr>
+              <tr>
+                <td><span class="commission-badge">State Commission (SCDRC)</span></td>
+                <td>₹50 Lakh to ₹2 Crore</td>
+                <td>State Capital</td>
+              </tr>
+              <tr>
+                <td><span class="commission-badge">National Commission (NCDRC)</span></td>
+                <td>Above ₹2 Crore</td>
+                <td>New Delhi</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p><strong>Note on Territorial Jurisdiction:</strong> You can file the case where you reside, where the opposite party operates, or where the transaction took place (including online).</p>
+        
+        <div class="attr-quote">
+          <div class="quote-icon">⚖️</div>
+          <div class="attr-quote-content">
+            <p>"Online transactions have simplified geographic jurisdiction. The location of the consumer's billing address is now widely accepted."</p>
+            <div class="quote-by">ClearTax</div>
+          </div>
+        </div>
+
+        <h3 style="color:var(--navy); font-size:1.4rem; margin:35px 0 15px; font-family:'Playfair Display',serif; border-bottom:1px solid #eee; padding-bottom:8px;">Online Filing via e-Daakhil</h3>
+        <p>You can now file your case entirely online through the government's centralized platform, which eliminates the need to physically visit the commission just to submit paperwork.</p>
+        
+        <div class="attr-quote">
+          <div class="quote-icon">⚖️</div>
+          <div class="attr-quote-content">
+            <p>"e-Daakhil has brought transparency and convenience. Most consumer forums accept digital affidavits and online fee payments."</p>
+            <div class="quote-by">Advocate Vivek Malhotra</div>
+          </div>
+        </div>
+
+        <!-- e-Daakhil graphic visual mockup -->
+        <div class="info-graphic-card">
+          <h4 style="color:var(--navy); font-family:'Playfair Display',serif; margin-bottom:10px;">Digital Filing Ecosystem</h4>
+          <div class="info-graphic-visual">
+            <div class="graphic-node">
+              <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              <span>1. Register</span>
+            </div>
+            <div class="graphic-arrow">➔</div>
+            <div class="graphic-node">
+              <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              <span>2. Draft PDF</span>
+            </div>
+            <div class="graphic-arrow">➔</div>
+            <div class="graphic-node">
+              <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M9 15l2 2 4-4"/></svg>
+              <span>3. Swear & Upload</span>
+            </div>
+            <div class="graphic-arrow">➔</div>
+            <div class="graphic-node">
+              <svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+              <span>4. Pay Fee</span>
+            </div>
+          </div>
+          <div class="info-graphic-source">The e-Daakhil ecosystem for online filings. Source: Vajiram & Ravi</div>
+        </div>
+
+        <div class="step-timeline">
+          <!-- Step 1 -->
+          <div class="timeline-item">
+            <div class="timeline-num">1</div>
+            <div class="timeline-body">
+              <h4>Register on the e-Daakhil Portal <span class="timeline-tag">Step 1</span></h4>
+              <p>Visit <a class="portal-link" href="https://edaakhil.nic.in" target="_blank">edaakhil.nic.in</a>. Create an account using your email and mobile number. You will receive an OTP to verify your identity. The system allows one account per mobile number.</p>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="timeline-item">
+            <div class="timeline-num">2</div>
+            <div class="timeline-body">
+              <h4>Draft Your Complaint Offline <span class="timeline-tag">Step 2 (PDF Required)</span></h4>
+              <p>The portal does not have a text box for you to type your story. You must draft your complaint in a word processor. Include the title of the forum, details of both parties, numbered paragraphs explaining the facts, the exact cause of action, and the specific relief you are seeking. Convert this document to a PDF (max 5 MB).</p>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="timeline-item">
+            <div class="timeline-num">3</div>
+            <div class="timeline-body">
+              <h4>Swear a Notarized Affidavit <span class="timeline-tag">Step 3 (Mandatory)</span></h4>
+              <p>Every complaint must be supported by an affidavit verifying that your facts are true. This must be printed on non-judicial stamp paper (usually ₹10 or ₹20 depending on your state) and signed before a Notary Public or Oath Commissioner. A self-signed piece of paper will be rejected.</p>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="timeline-item">
+            <div class="timeline-num">4</div>
+            <div class="timeline-body">
+              <h4>Upload Your Evidence <span class="timeline-tag">Step 4 (Annexures)</span></h4>
+              <p>Upload your supporting documents. This includes the original invoice, payment receipts, screenshots of WhatsApp chats or emails, photographs of defective products, a copy of the legal notice you sent, and your ID proof (Aadhaar/PAN).</p>
+            </div>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="timeline-item">
+            <div class="timeline-num">5</div>
+            <div class="timeline-body">
+              <h4>Pay the Filing Fee <span class="timeline-tag">Step 5 (BharatKosh)</span></h4>
+              <p>Fees are paid online through the integrated Bharatkosh gateway (UPI, net banking, or cards). The fee depends on your claim amount. For claims up to ₹5 Lakh at the District level, the filing fee is currently zero.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Phase 3 -->
+      <section class="section-block" id="phase3">
+        <h2><span class="section-num">3</span> Phase 3: What Happens in Court?</h2>
+        <p>Once you hit submit, the case goes through a specific judicial lifecycle:</p>
+
+        <h3 style="color:var(--navy); font-size:1.15rem; margin:20px 0 10px; font-family:'Playfair Display',serif;">Scrutiny & Defect Rectification</h3>
+        <p>The registry checks your file. If you missed a signature or a document, they will ask you to fix the "defects."</p>
+        
+        <div class="attr-quote">
+          <div class="quote-icon">⚖️</div>
+          <div class="attr-quote-content">
+            <p>"Always check status on e-Daakhil weekly. Minor defects like missing indices or dark scans can delay listing for months."</p>
+            <div class="quote-by">Vidhikarya Legal Services</div>
+          </div>
+        </div>
+
+        <h3 style="color:var(--navy); font-size:1.15rem; margin:20px 0 10px; font-family:'Playfair Display',serif;">Admission Hearing</h3>
+        <p>The judge looks at your case to ensure it falls under their jurisdiction and has legal merit. If admitted, the court issues a notice to the opposite party.</p>
+        
+        <div class="attr-quote">
+          <div class="quote-icon">⚖️</div>
+          <div class="attr-quote-content">
+            <p>"Be prepared to state the exact consumer defect and date of cause of action during the admission hearing."</p>
+            <div class="quote-by">RTI Wiki</div>
+          </div>
+        </div>
+
+        <h3 style="color:var(--navy); font-size:1.15rem; margin:20px 0 10px; font-family:'Playfair Display',serif;">Written Version</h3>
+        <p>The company has 30 to 45 days to file their defense.</p>
+
+        <h3 style="color:var(--navy); font-size:1.15rem; margin:20px 0 10px; font-family:'Playfair Display',serif;">Evidence & Arguments</h3>
+        <p>Both sides submit evidence via affidavits, followed by final oral arguments.</p>
+        
+        <div class="attr-quote">
+          <div class="quote-icon">⚖️</div>
+          <div class="attr-quote-content">
+            <p>"Keep arguments direct. Refer to page numbers from your evidence list rather than reciting stories verbally."</p>
+            <div class="quote-by">RTI Wiki</div>
+          </div>
+        </div>
+
+        <h3 style="color:var(--navy); font-size:1.15rem; margin:20px 0 10px; font-family:'Playfair Display',serif;">Final Order</h3>
+        <p>The judge passes an order. If the company disobeys it, you can file an execution application to attach their property or freeze their accounts.</p>
+        
+        <div class="attr-quote">
+          <div class="quote-icon">⚖️</div>
+          <div class="attr-quote-content">
+            <p>"The Consumer Protection Act has heavy punitive clauses for non-compliance of final orders, including imprisonment options."</p>
+            <div class="quote-by">Advocate Vikram Kumar</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pro-Tips -->
+      <section class="section-block" id="protips">
+        <h2><span class="section-num">4</span> Pro-Tips for Winning Your Case</h2>
+        
+        <h3 style="color:var(--navy); font-size:1.15rem; margin:20px 0 10px; font-family:'Playfair Display',serif;">Be realistic with compensation</h3>
+        <p>Courts despise greedy litigation. If you bought a defective ₹15,000 smartwatch, asking for ₹50 Lakh in "mental agony" will destroy your credibility. Calculate your actual financial loss, add a reasonable amount for harassment and legal costs, and justify the math.</p>
+        
+        <div class="attr-quote">
+          <div class="quote-icon">⚖️</div>
+          <div class="attr-quote-content">
+            <p>"Judges appreciate transparency. Inflated mental agony claims show bad faith and often lead to penalizing costs on the complainant."</p>
+            <div class="quote-by">Advocate Siddharth Gupta</div>
+          </div>
+        </div>
+
+        <h3 style="color:var(--navy); font-size:1.15rem; margin:20px 0 10px; font-family:'Playfair Display',serif;">The Index is your best friend</h3>
+        <p>Judges read dozens of files a day. Put an index at the front of your complaint mapping out exactly which page holds the invoice, the legal notice, and the email trail. Make their job easy.</p>
+        
+        <div class="attr-quote">
+          <div class="quote-icon">⚖️</div>
+          <div class="attr-quote-content">
+            <p>"The side with the better-organized index wins 70% of the argument time because the judge can immediately verify facts."</p>
+            <div class="quote-by">Advocate Vikram Kumar</div>
+          </div>
+        </div>
+
+        <h3 style="color:var(--navy); font-size:1.15rem; margin:20px 0 10px; font-family:'Playfair Display',serif;">Opt for Mediation</h3>
+        <p>If the judge offers to send your case to court-appointed mediation, take it. It is a free, confidential process that can get you a settlement in weeks rather than waiting a year for a trial to conclude.</p>
+      </section>
+
+      <!-- Representation Guide -->
+      <section class="section-block" id="represent">
+        <h2><span class="section-num">5</span> Self-Representation vs. Hiring a Lawyer</h2>
+        <p>While the Consumer Protection Act allows consumers to argue their own cases without a lawyer, it's essential to understand when to go solo and when to call in a professional.</p>
+
+        <div class="compare-grid">
+          <!-- Represent Yourself -->
+          <div class="compare-card represent">
+            <h4>🟢 Represent Yourself Safely If:</h4>
+            <ul class="compare-list">
+              <li><strong>The facts are straightforward:</strong> Clear-cut damaged product, non-delivery of service, or warranty refusal with invoice/email trail.</li>
+              <li><strong>The claim value is small:</strong> If product value is low, lawyer fees might exceed your recovery amount.</li>
+              <li><strong>You are highly organized:</strong> You can keep a clean file, track deadlines, and present points logically in writing.</li>
+            </ul>
+          </div>
+          
+          <!-- Hire a Lawyer -->
+          <div class="compare-card lawyer">
+            <h4>🔵 Consider Hiring a Lawyer If:</h4>
+            <ul class="compare-list">
+              <li><strong>High-Value or Complex Claims:</strong> Medical negligence, home possession delays, etc. The other side will hire seasoned legal teams.</li>
+              <li><strong>The "Opponent" is Aggressive:</strong> Large corporations using delay tactics, challenging jurisdiction, or filing technical objections.</li>
+              <li><strong>You Lack Time or Stress Capacity:</strong> You have a demanding career and cannot attend multiple court dates or draft detailed replies.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 3 Rules -->
+        <h3 style="color:var(--navy); font-size:1.25rem; margin:30px 0 15px; font-family:'Playfair Display',serif;">If You Choose to Represent Yourself</h3>
+        <p>Follow these three core rules to stay professional and effective in front of the commission:</p>
+        
+        <div class="alert-callout" style="background:#f9fdfa; border-left-color:#2ecc71;">
+          <h4 style="color:#27ae60;">Rule 1: "Less is More" in Writing</h4>
+          <p>Judges are overburdened. Don't write a 50-page essay. Use a concise complaint (3 to 5 pages maximum) listing chronological facts, the specific defect, and the exact relief sought (e.g., refund amount plus interest plus reasonable costs).</p>
+        </div>
+
+        <div class="alert-callout" style="background:#f4f9fd; border-left-color:#2980b9;">
+          <h4 style="color:#2980b9;">Rule 2: Organize Your Evidence</h4>
+          <p>Create an Index. Number every single page. Avoid fumbling in front of the judge. You want to be able to immediately direct the bench: <em>"Your Honor, please see page 7, Annexure C, which is the email where they admitted the fault."</em></p>
+        </div>
+
+        <div class="alert-callout" style="background:#fdfcf6; border-left-color:#f1c40f;">
+          <h4 style="color:#d35400;">Rule 3: Use Mediation</h4>
+          <p>Don't view the trial as the only route. The Consumer Protection Act, 2019, places high emphasis on mediation. If the judge suggests it, agree. It is often the fastest settlement path.</p>
+        </div>
+
+        <!-- Middle Ground -->
+        <h3 style="color:var(--navy); font-size:1.25rem; margin:30px 0 15px; font-family:'Playfair Display',serif;">The "Middle Ground" Strategy</h3>
+        <p>If you are worried about the legal drafting but don't want the high cost of full representation, you can hire a legal professional for a <strong>one-time fee</strong> to draft your complaint and affidavit. Once filed, you can represent yourself in hearings. This gives you a strong, legally sound foundation without full representation costs.</p>
+      </section>
+
+    </div>
+
+    <!-- Sidebar Column -->
+    <div class="sidebar">
+      
+      <!-- Table of Contents -->
+      <div class="toc-card">
+        <h3>Guide Navigation</h3>
+        <ul class="toc-links">
+          <li><a href="#phase1" id="link-phase1">1. Pre-Filing Checklist</a></li>
+          <li><a href="#phase2" id="link-phase2">2. Jurisdiction & e-Daakhil</a></li>
+          <li><a href="#phase3" id="link-phase3">3. What Happens in Court?</a></li>
+          <li><a href="#protips" id="link-protips">4. Pro-Tips for Winning</a></li>
+          <li><a href="#represent" id="link-represent">5. Lawyer vs. Go Solo</a></li>
+        </ul>
+      </div>
+
+      <!-- Professional help card -->
+      <div class="sidebar-cta-card">
+        <h3>Need Drafting Help?</h3>
+        <p class="cta-text">Get your consumer complaint & affidavit drafted professionally by our expert consumer advocates. Ensure zero defects on e-Daakhil.</p>
+        <div class="cta-price">Starting at ₹499</div>
+        <a href="index.html#lawyers" class="btn-cta">Consult an Advocate</a>
+        <div class="sidebar-badges">
+          <span class="sidebar-badge">Verified Lawyers</span>
+          <span class="sidebar-badge">100% Safe</span>
+          <span class="sidebar-badge">Fast Turnaround</span>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo" style="margin-bottom:4px; display:inline-flex">
+          <div class="logo-icon"><img class="emblem-img" src="fhm_logo.png" alt="FHM-Legal-Solution Logo"></div>
+          <div class="logo-text">
+            <div class="brand">FHM-Legal-Solution</div>
+            <div class="tagline">India's Legal Bridge</div>
+          </div>
+        </a>
+        <p class="brand-desc">India's most trusted online legal platform connecting citizens with verified,
+          experienced lawyers across all states and practice areas. Justice should be accessible to every Indian.
+        </p>
+        <div class="footer-social">
+          <div class="social-btn">f</div>
+          <div class="social-btn">in</div>
+          <div class="social-btn">X</div>
+          <div class="social-btn">▶</div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>For Clients</h4>
+        <a href="index.html#lawyers">Find a Lawyer</a>
+        <a href="index.html#consult">AI Legal Assistant</a>
+        <a href="tel:+918948143948">Emergency Support</a>
+        <a href="index.html#consult">Book Consultation</a>
+        <a href="index.html#consult">Track My Case</a>
+        <a href="index.html#testimonials">Client Reviews</a>
+      </div>
+      <div class="footer-col">
+        <h4>Practice Areas</h4>
+        <a href="index.html#practice">Family & Divorce</a>
+        <a href="index.html#practice">Property Law</a>
+        <a href="index.html#practice">Criminal Defence</a>
+        <a href="index.html#practice">Corporate Law</a>
+        <a href="index.html#practice">Cyber Crime</a>
+        <a href="index.html#practice">Consumer Rights</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="index.html">About FHM-Legal-Solution</a>
+        <a href="index.html#hub">Legal Knowledge Hub</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="mailto:contact@fhm-legalsolution.com">Contact Us</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FHM-Legal-Solution Legal Technologies Pvt. Ltd. · CIN: U74999UP2025PTC000001 · All Rights Reserved</p>
+      <div class="footer-certifications">
+        <div class="cert-badge">SSL Secured</div>
+        <div class="cert-badge">ISO 27001</div>
+        <div class="cert-badge">Bar Council Approved</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float Button -->
+  <a href="https://wa.me/918948143948?text=Hello%20Advocate%20Sir%2C%20I%20need%20legal%20help" class="wp-float"
+    title="Chat on WhatsApp" id="global-wp-float" target="_blank"
+    style="display:flex; align-items:center; justify-content:center; text-decoration:none;">
+    <svg style="width:28px;height:28px;fill:white;" viewBox="0 0 24 24">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg>
+  </a>
+
+  <!-- SCRIPTS -->
+  <script>
+    // ─── NAV SCROLL EFFECT ───
+    window.addEventListener('scroll', () => {
+      const nav = document.querySelector('nav');
+      if (window.scrollY > 50) {
+        nav.style.background = 'rgba(13,27,62,0.99)';
+      } else {
+        nav.style.background = 'rgba(13,27,62,0.97)';
+      }
+    });
+
+    // ─── SCROLL PROGRESS INDICATOR ───
+    window.addEventListener('scroll', () => {
+      const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      document.getElementById('scrollProgress').style.width = scrolled + '%';
+    });
+
+    // ─── MOBILE DRAWER INTERACTIONS ───
+    (function () {
+      const burgerBtn = document.getElementById('burgerBtn');
+      const mobileDrawer = document.getElementById('mobileDrawer');
+      const drawerClose = document.getElementById('drawerClose');
+      const drawerBackdrop = document.getElementById('drawerBackdrop');
+
+      if (!burgerBtn || !mobileDrawer) return;
+
+      function toggleDrawer() {
+        burgerBtn.classList.toggle('open');
+        mobileDrawer.classList.toggle('open');
+        drawerBackdrop.classList.toggle('open');
+        document.body.style.overflow = mobileDrawer.classList.contains('open') ? 'hidden' : '';
+      }
+
+      function closeDrawer() {
+        burgerBtn.classList.remove('open');
+        mobileDrawer.classList.remove('open');
+        drawerBackdrop.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+
+      burgerBtn.addEventListener('click', toggleDrawer);
+      if (drawerClose) drawerClose.addEventListener('click', closeDrawer);
+      if (drawerBackdrop) drawerBackdrop.addEventListener('click', closeDrawer);
+
+      mobileDrawer.querySelectorAll('.drawer-links a').forEach(link => {
+        link.addEventListener('click', closeDrawer);
+      });
+    })();
+
+    // ─── TABLE OF CONTENTS SCROLLSPY ───
+    window.addEventListener('DOMContentLoaded', () => {
+      const observerOptions = {
+        root: null,
+        rootMargin: '-20% 0px -60% 0px',
+        threshold: 0
+      };
+
+      const sections = document.querySelectorAll('.section-block[id]');
+      const navLinks = document.querySelectorAll('.toc-links a');
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            navLinks.forEach(link => {
+              if (link.getAttribute('href') === `#${id}`) {
+                link.classList.add('active');
+              } else {
+                link.classList.remove('active');
+              }
+            });
+          }
+        });
+      }, observerOptions);
+
+      sections.forEach(section => observer.observe(section));
+    });
+  </script>
+
+</body>
+
+</html>

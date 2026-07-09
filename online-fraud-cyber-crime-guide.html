@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Victim of Online Fraud? Complete IT Act & RBI Guide 2026 — FHM-Legal-Solution</title>
+  <meta name="description" content="Step-by-step legal blueprint for online fraud victims in India. How to use the 1930 helpline, NCRP portal, IT Act 2000 sections, and RBI's 2026 zero-liability rules to recover stolen money.">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0D1B3E;
+      --navy-mid: #1a2d5a;
+      --navy-light: #243870;
+      --gold: #C9A84C;
+      --gold-light: #E2C97E;
+      --gold-pale: #F5E9C8;
+      --white: #FFFFFF;
+      --off-white: #F8F7F4;
+      --cream: #FDF9F1;
+      --text-dark: #1a1a2e;
+      --text-mid: #3d4a6b;
+      --text-muted: #7a8aaa;
+      --success: #27ae60;
+      --danger: #e74c3c;
+      --warning: #f39c12;
+      --cyber-teal: #0ea5e9;
+      --cyber-purple: #7c3aed;
+      --border: rgba(201, 168, 76, 0.2);
+      --shadow-gold: 0 8px 40px rgba(201, 168, 76, 0.12);
+      --shadow-navy: 0 8px 40px rgba(13, 27, 62, 0.15);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--off-white);
+      color: var(--text-dark);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    /* ─── SCROLL PROGRESS ─── */
+    .scroll-progress {
+      position: fixed; top: 72px; left: 0;
+      width: 0%; height: 4px;
+      background: linear-gradient(90deg, #0ea5e9, #7c3aed);
+      z-index: 1001;
+      transition: width 0.1s linear;
+    }
+
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--navy); }
+    ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+    /* ─── NAVBAR ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(13, 27, 62, 0.97);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+      padding: 0 5%;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 72px;
+    }
+
+    .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .logo-icon { height: 42px; display: flex; align-items: center; }
+    .logo-icon img { height: 100%; width: auto; object-fit: contain; }
+    .logo-text .brand { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: var(--white); }
+    .logo-text .tagline { font-size: 0.62rem; color: var(--gold-light); letter-spacing: 2px; text-transform: uppercase; }
+
+    .nav-links { display: flex; align-items: center; gap: 32px; }
+    .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.85rem; font-weight: 500; transition: color 0.3s; }
+    .nav-links a:hover { color: var(--gold-light); }
+    .nav-actions { display: flex; gap: 12px; align-items: center; }
+
+    .btn-nav-outline {
+      border: 1px solid var(--gold); color: var(--gold); background: transparent;
+      padding: 8px 20px; border-radius: 6px; font-size: 0.82rem; font-weight: 500;
+      cursor: pointer; transition: all 0.3s; font-family: 'Poppins', sans-serif;
+      text-decoration: none; display: inline-flex; align-items: center; justify-content: center;
+    }
+    .btn-nav-outline:hover { background: var(--gold); color: var(--navy); }
+
+    .btn-nav-fill {
+      background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--navy);
+      border: none; padding: 8px 20px; border-radius: 6px; font-size: 0.82rem; font-weight: 600;
+      cursor: pointer; font-family: 'Poppins', sans-serif; transition: all 0.3s;
+      text-decoration: none; display: inline-flex; align-items: center; justify-content: center;
+    }
+    .btn-nav-fill:hover { transform: translateY(-1px); box-shadow: 0 4px 20px rgba(201,168,76,0.4); }
+
+    /* ─── BURGER / DRAWER ─── */
+    .burger-menu {
+      display: none; flex-direction: column; justify-content: space-between;
+      width: 26px; height: 18px; background: transparent; border: none;
+      cursor: pointer; z-index: 1001; padding: 0;
+    }
+    .burger-menu span { width: 100%; height: 2.2px; background: var(--white); border-radius: 4px; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); transform-origin: left center; }
+    .burger-menu.open span:nth-child(1) { transform: rotate(45deg) translate(2px, 0); }
+    .burger-menu.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .burger-menu.open span:nth-child(3) { transform: rotate(-45deg) translate(2px, 0); }
+
+    .mobile-drawer {
+      position: fixed; top: 0; right: -105%; width: 300px; height: 100vh;
+      background: linear-gradient(180deg, var(--navy) 0%, var(--navy-mid) 100%);
+      z-index: 9999; box-shadow: -15px 0 40px rgba(13,27,62,0.6);
+      display: flex; flex-direction: column; padding: 40px 30px;
+      transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      border-left: 1px solid rgba(201, 168, 76, 0.2);
+    }
+    .mobile-drawer.open { right: 0; }
+
+    .drawer-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 48px; }
+    .drawer-close { background: none; border: none; font-size: 32px; color: var(--gold-light); cursor: pointer; transition: color 0.3s; line-height: 1; }
+    .drawer-close:hover { color: var(--white); }
+    .drawer-links { display: flex; flex-direction: column; gap: 26px; margin-bottom: auto; }
+    .drawer-links a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 1.05rem; font-weight: 500; transition: all 0.3s; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 8px; }
+    .drawer-links a:hover { color: var(--gold-light); padding-left: 6px; }
+    .drawer-actions { display: flex; flex-direction: column; gap: 16px; margin-top: 40px; }
+    .drawer-backdrop { position: fixed; inset: 0; background: rgba(6,14,36,0.7); backdrop-filter: blur(8px); z-index: 9998; opacity: 0; pointer-events: none; transition: opacity 0.4s ease; }
+    .drawer-backdrop.open { opacity: 1; pointer-events: auto; }
+
+    /* ─── HERO ─── */
+    .article-hero {
+      padding: 140px 5% 70px;
+      background: linear-gradient(140deg, #060d1a 0%, #0a1628 40%, #0e1f3d 100%);
+      position: relative; overflow: hidden; color: var(--white);
+    }
+
+    .hero-pattern {
+      position: absolute; inset: 0; pointer-events: none; opacity: 0.025;
+      background-image: linear-gradient(rgba(14,165,233,1) 1px, transparent 1px), linear-gradient(90deg, rgba(14,165,233,1) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+
+    .hero-orb-teal {
+      position: absolute; width: 500px; height: 500px; border-radius: 50%;
+      background: rgba(14, 165, 233, 0.06); filter: blur(100px);
+      pointer-events: none; top: -150px; right: -100px;
+    }
+    .hero-orb-purple {
+      position: absolute; width: 350px; height: 350px; border-radius: 50%;
+      background: rgba(124, 58, 237, 0.08); filter: blur(80px);
+      pointer-events: none; bottom: -80px; left: 5%;
+    }
+
+    .hero-container { max-width: 1200px; margin: 0 auto; position: relative; z-index: 2; }
+
+    .back-btn { display: inline-flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.88rem; margin-bottom: 24px; transition: color 0.3s; }
+    .back-btn:hover { color: #0ea5e9; }
+    .back-btn svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2.5; }
+
+    .article-cat-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #0ea5e9, #7c3aed);
+      color: var(--white); font-size: 0.72rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 1.5px;
+      padding: 5px 14px; border-radius: 30px; margin-bottom: 20px;
+      box-shadow: 0 4px 20px rgba(14,165,233,0.3);
+    }
+
+    .article-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.9rem, 4vw, 3.1rem); font-weight: 900;
+      line-height: 1.25; margin-bottom: 24px; color: var(--white);
+      text-shadow: 0 2px 10px rgba(0,0,0,0.4);
+    }
+
+    .article-meta {
+      display: flex; align-items: center; flex-wrap: wrap;
+      gap: 20px; font-size: 0.88rem; color: rgba(255,255,255,0.7);
+      border-top: 1px solid rgba(255,255,255,0.1); padding-top: 18px;
+    }
+    .meta-item { display: flex; align-items: center; gap: 8px; }
+    .meta-avatar {
+      width: 32px; height: 32px; border-radius: 50%;
+      background: rgba(14,165,233,0.2); border: 1px solid rgba(14,165,233,0.5);
+      display: flex; align-items: center; justify-content: center;
+      color: #7dd3fc; font-weight: 700; font-size: 0.8rem;
+    }
+
+    /* ─── LAYOUT ─── */
+    .article-layout {
+      max-width: 1200px; margin: 50px auto 100px;
+      padding: 0 5%;
+      display: grid; grid-template-columns: 8fr 4fr;
+      gap: 50px; align-items: start;
+    }
+
+    /* ─── SIDEBAR ─── */
+    .sidebar { position: sticky; top: 100px; display: flex; flex-direction: column; gap: 28px; }
+
+    .toc-card, .sidebar-cta-card {
+      background: var(--white); border: 1px solid rgba(201,168,76,0.15);
+      border-radius: 18px; padding: 28px; box-shadow: var(--shadow-gold);
+    }
+
+    .toc-card h3, .sidebar-cta-card h3 {
+      font-family: 'Playfair Display', serif; font-size: 1.18rem; font-weight: 800;
+      color: var(--navy); margin-bottom: 18px; position: relative; padding-bottom: 10px;
+    }
+    .toc-card h3::after, .sidebar-cta-card h3::after {
+      content: ''; position: absolute; bottom: 0; left: 0;
+      width: 36px; height: 3px; background: #0ea5e9; border-radius: 2px;
+    }
+
+    .toc-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .toc-links a { color: var(--text-mid); text-decoration: none; font-size: 0.87rem; font-weight: 500; transition: all 0.3s; display: inline-flex; align-items: flex-start; gap: 8px; line-height: 1.45; }
+    .toc-links a::before { content: '→'; color: #0ea5e9; opacity: 0; transition: all 0.3s; transform: translateX(-5px); flex-shrink: 0; margin-top: 1px; }
+    .toc-links a:hover, .toc-links a.active { color: #0ea5e9; font-weight: 600; padding-left: 5px; }
+    .toc-links a:hover::before, .toc-links a.active::before { opacity: 1; transform: translateX(0); }
+
+    .sidebar-cta-card { background: linear-gradient(135deg, #060d1a, #0e1f3d); color: var(--white); border: none; text-align: center; }
+    .sidebar-cta-card h3 { color: var(--white); text-align: center; }
+    .sidebar-cta-card h3::after { left: 50%; transform: translateX(-50%); background: #0ea5e9; }
+
+    .helpline-big {
+      font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 900;
+      color: #7dd3fc; letter-spacing: 2px; margin: 10px 0 6px;
+    }
+    .helpline-label { font-size: 0.78rem; color: rgba(255,255,255,0.6); margin-bottom: 18px; }
+
+    .cta-text { font-size: 0.87rem; color: rgba(255,255,255,0.75); margin-bottom: 18px; line-height: 1.7; }
+
+    .btn-cta {
+      display: block; width: 100%;
+      background: linear-gradient(135deg, #0ea5e9, #7c3aed);
+      color: var(--white); border: none; padding: 13px; border-radius: 10px;
+      font-size: 0.92rem; font-weight: 700; cursor: pointer; text-decoration: none;
+      transition: all 0.3s; box-shadow: 0 4px 15px rgba(14,165,233,0.3);
+    }
+    .btn-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(14,165,233,0.5); }
+
+    .sidebar-badges { display: flex; justify-content: center; gap: 10px; margin-top: 16px; flex-wrap: wrap; }
+    .sidebar-badge { font-size: 0.68rem; background: rgba(255,255,255,0.07); color: #7dd3fc; border: 1px solid rgba(14,165,233,0.25); padding: 4px 10px; border-radius: 15px; }
+
+    /* ─── ARTICLE CONTENT ─── */
+    .article-content { background: var(--white); border: 1px solid #eee; border-radius: 24px; padding: 45px; box-shadow: 0 10px 40px rgba(13,27,62,0.03); }
+
+    .section-block { margin-bottom: 52px; scroll-margin-top: 100px; }
+
+    .section-block h2 {
+      font-family: 'Playfair Display', serif; font-size: 1.72rem; font-weight: 800;
+      color: var(--navy); margin-bottom: 24px;
+      display: flex; align-items: center; gap: 14px;
+      border-bottom: 2px solid var(--cream); padding-bottom: 14px;
+    }
+    .section-block h2 .section-num {
+      background: rgba(14,165,233,0.1); color: #0ea5e9;
+      width: 38px; height: 38px; border-radius: 9px;
+      display: inline-flex; align-items: center; justify-content: center;
+      font-size: 1rem; font-weight: 700; flex-shrink: 0;
+    }
+    .section-block h3 { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--navy); margin: 28px 0 14px; }
+    .section-block p { font-size: 1rem; color: var(--text-mid); line-height: 1.85; margin-bottom: 18px; }
+    .section-block ul, .section-block ol { margin-left: 20px; margin-bottom: 22px; font-size: 0.97rem; color: var(--text-mid); display: flex; flex-direction: column; gap: 9px; }
+
+    /* ─── GOLDEN HOUR BANNER ─── */
+    .golden-hour-banner {
+      background: linear-gradient(135deg, #7c1d1d, #991b1b);
+      border-radius: 18px; padding: 28px 32px; margin: 0 0 40px;
+      display: flex; align-items: center; gap: 24px;
+      box-shadow: 0 8px 30px rgba(220,38,38,0.25);
+    }
+    .gh-clock {
+      font-size: 3.5rem; flex-shrink: 0;
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+    @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
+    .gh-text h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 900; color: #fca5a5; margin-bottom: 8px; }
+    .gh-text p { font-size: 0.9rem; color: rgba(255,255,255,0.8); margin: 0; line-height: 1.6; }
+
+    /* ─── GOLDEN HOUR STEPS ─── */
+    .golden-steps { display: flex; flex-direction: column; gap: 0; margin: 28px 0; position: relative; }
+    .golden-steps::before {
+      content: ''; position: absolute; left: 24px; top: 46px; bottom: 46px;
+      width: 2px; background: linear-gradient(180deg, var(--danger), rgba(231,76,60,0.1));
+    }
+
+    .golden-step { display: flex; gap: 20px; padding: 18px 14px 18px 0; position: relative; }
+    .golden-step:hover .gs-body { background: var(--cream); border-color: rgba(14,165,233,0.3); }
+
+    .gs-num {
+      background: var(--danger); color: var(--white);
+      width: 48px; height: 48px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 1rem; flex-shrink: 0;
+      box-shadow: 0 4px 15px rgba(231,76,60,0.35); z-index: 1;
+    }
+
+    .gs-body {
+      flex: 1; background: var(--off-white); border: 1px solid #e5e5e5;
+      border-radius: 14px; padding: 16px 20px; transition: all 0.3s;
+    }
+    .gs-tag { display: inline-block; font-size: 0.67rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--danger); background: rgba(231,76,60,0.08); border: 1px solid rgba(231,76,60,0.2); padding: 2px 10px; border-radius: 20px; margin-bottom: 7px; }
+    .gs-body h4 { font-family: 'Playfair Display', serif; font-size: 1.06rem; font-weight: 700; color: var(--navy); margin-bottom: 5px; }
+    .gs-body p { font-size: 0.88rem; color: var(--text-mid); margin: 0; line-height: 1.6; }
+
+    .hotline-pill {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(231,76,60,0.1); border: 1px solid rgba(231,76,60,0.3);
+      color: var(--danger); font-weight: 700; font-size: 1rem;
+      padding: 4px 16px; border-radius: 30px; margin: 6px 0 0; letter-spacing: 1px;
+    }
+
+    /* ─── IT ACT TABLE ─── */
+    .table-responsive { overflow-x: auto; margin: 24px 0; border-radius: 14px; border: 1px solid rgba(14,165,233,0.15); box-shadow: 0 8px 25px rgba(13,27,62,0.02); }
+
+    .it-table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.9rem; }
+    .it-table th { background: var(--navy); color: var(--white); padding: 14px 18px; font-weight: 600; font-family: 'Playfair Display', serif; letter-spacing: 0.5px; }
+    .it-table td { padding: 13px 18px; border-bottom: 1px solid #eee; color: var(--text-mid); background: var(--white); }
+    .it-table tr:last-child td { border-bottom: none; }
+    .it-table tr:nth-child(even) td { background: var(--off-white); }
+    .it-table tr:hover td { background: var(--cream); }
+
+    .law-badge { font-weight: 700; color: #0ea5e9; background: rgba(14,165,233,0.08); padding: 3px 10px; border-radius: 6px; font-size: 0.82rem; display: inline-block; white-space: nowrap; }
+    .crime-badge { font-weight: 600; color: var(--navy); }
+
+    /* ─── RBI TIMELINE ─── */
+    .rbi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; margin: 28px 0; }
+
+    .rbi-card {
+      background: var(--white); border: 1px solid #eaeaea; border-radius: 16px;
+      padding: 22px 18px; transition: all 0.3s; text-align: center;
+    }
+    .rbi-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-gold); border-color: rgba(14,165,233,0.3); }
+    .rbi-day { font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 900; color: var(--navy); line-height: 1; }
+    .rbi-unit { font-size: 0.78rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin: 4px 0 12px; }
+    .rbi-card h4 { font-weight: 700; color: var(--navy); font-size: 0.95rem; margin-bottom: 8px; }
+    .rbi-card p { font-size: 0.82rem; color: var(--text-mid); line-height: 1.55; margin: 0; }
+    .rbi-card.highlight { background: linear-gradient(135deg, rgba(14,165,233,0.05), rgba(124,58,237,0.05)); border-color: rgba(14,165,233,0.25); }
+    .rbi-card.highlight .rbi-day { background: linear-gradient(135deg, #0ea5e9, #7c3aed); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+    /* ─── CALLOUTS ─── */
+    .alert-callout { background: #fdfaf6; border-left: 4px solid var(--gold); border-radius: 0 14px 14px 0; padding: 20px 24px; margin: 28px 0; }
+    .alert-callout.danger { background: #fff9f9; border-left-color: var(--danger); }
+    .alert-callout.success { background: #f6fdf9; border-left-color: var(--success); }
+    .alert-callout.cyber { background: #f0f9ff; border-left-color: #0ea5e9; }
+    .alert-callout h4 { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+    .alert-callout p { font-size: 0.92rem; color: var(--text-mid); margin: 0; line-height: 1.65; }
+
+    /* ─── REFUND STEPS ─── */
+    .refund-steps { display: flex; flex-direction: column; gap: 18px; margin: 28px 0; }
+    .refund-step {
+      display: flex; gap: 18px; align-items: flex-start;
+      background: var(--off-white); border: 1px solid #e5e5e5;
+      border-radius: 14px; padding: 20px 22px; transition: all 0.3s;
+    }
+    .refund-step:hover { border-color: rgba(14,165,233,0.35); transform: translateX(4px); background: var(--cream); }
+    .refund-num {
+      background: linear-gradient(135deg, #0ea5e9, #7c3aed); color: var(--white);
+      width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 1rem; flex-shrink: 0; box-shadow: 0 4px 12px rgba(14,165,233,0.3);
+    }
+    .refund-body h4 { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 5px; }
+    .refund-body p { font-size: 0.88rem; color: var(--text-mid); margin: 0; line-height: 1.6; }
+    .refund-tag { display: inline-block; font-size: 0.67rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #0ea5e9; background: rgba(14,165,233,0.08); border: 1px solid rgba(14,165,233,0.2); padding: 2px 10px; border-radius: 20px; margin-bottom: 7px; }
+
+    /* ─── COMPENSATION CALCULATOR DISPLAY ─── */
+    .compensation-box {
+      background: linear-gradient(135deg, #0c1a38, #1a2d5a); border-radius: 18px;
+      padding: 30px; margin: 28px 0; color: var(--white);
+    }
+    .compensation-box h4 { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: var(--gold-light); margin-bottom: 22px; text-align: center; }
+    .comp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .comp-item { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 16px; text-align: center; }
+    .comp-label { font-size: 0.72rem; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+    .comp-value { font-size: 1.1rem; font-weight: 700; color: var(--white); }
+    .comp-value.highlight { color: var(--gold-light); font-size: 1.4rem; }
+
+    /* ─── ESCALATION LADDER ─── */
+    .escalation-ladder { display: flex; flex-direction: column; gap: 0; margin: 28px 0; position: relative; }
+    .escalation-ladder::before { content: ''; position: absolute; left: 22px; top: 40px; bottom: 40px; width: 2px; background: linear-gradient(180deg, var(--gold), rgba(201,168,76,0.1)); }
+    .esc-step { display: flex; gap: 18px; padding: 14px 12px 14px 0; position: relative; }
+    .esc-icon { width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--gold); background: var(--white); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0; z-index: 1; }
+    .esc-body { flex: 1; }
+    .esc-body h4 { font-weight: 700; color: var(--navy); font-size: 0.97rem; margin-bottom: 3px; }
+    .esc-body p { font-size: 0.86rem; color: var(--text-muted); margin: 0; line-height: 1.55; }
+
+    /* ─── LIABILITY TABLE ─── */
+    .liability-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; border-radius: 14px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.04); margin: 24px 0; }
+    .liability-table th { background: var(--navy); color: var(--white); padding: 15px 18px; font-family: 'Playfair Display', serif; font-weight: 700; }
+    .liability-table td { padding: 14px 18px; border-bottom: 1px solid #eee; color: var(--text-mid); }
+    .liability-table tr:nth-child(even) td { background: var(--off-white); }
+    .liability-table tr:last-child td { border-bottom: none; }
+    .liability-table tr:hover td { background: var(--cream); }
+    .tag-zero { background: rgba(39,174,96,0.1); color: var(--success); font-weight: 700; font-size: 0.8rem; padding: 3px 10px; border-radius: 6px; display: inline-block; }
+    .tag-full { background: rgba(231,76,60,0.1); color: var(--danger); font-weight: 700; font-size: 0.8rem; padding: 3px 10px; border-radius: 6px; display: inline-block; }
+
+    /* ─── FOOTER ─── */
+    footer { background: #060d1e; border-top: 1px solid rgba(201,168,76,0.15); padding: 60px 5% 30px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; max-width: 1200px; margin-left: auto; margin-right: auto; }
+    .footer-brand .brand-desc { font-size: 0.82rem; color: rgba(255,255,255,0.5); line-height: 1.7; margin: 16px 0 20px; }
+    .footer-social { display: flex; gap: 10px; }
+    .social-btn { width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.6); font-size: 0.9rem; cursor: pointer; transition: all 0.3s; }
+    .social-btn:hover { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+    .footer-col h4 { color: var(--white); font-size: 0.88rem; font-weight: 700; margin-bottom: 16px; }
+    .footer-col a { display: block; color: rgba(255,255,255,0.5); font-size: 0.8rem; margin-bottom: 10px; text-decoration: none; transition: color 0.3s; }
+    .footer-col a:hover { color: var(--gold-light); }
+    .footer-bottom { max-width: 1200px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; }
+    .footer-bottom p { font-size: 0.75rem; color: rgba(255,255,255,0.35); }
+    .footer-certifications { display: flex; gap: 14px; }
+    .cert-badge { background: rgba(201,168,76,0.12); border: 1px solid rgba(201,168,76,0.25); color: var(--gold-light); font-size: 0.68rem; padding: 4px 12px; border-radius: 20px; font-weight: 600; }
+
+    /* ─── WHATSAPP FLOAT ─── */
+    .wp-float { position: fixed; bottom: 28px; right: 28px; z-index: 999; width: 58px; height: 58px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(37,211,102,0.4); animation: float 3s ease-in-out infinite; text-decoration: none; transition: transform 0.3s; }
+    .wp-float:hover { transform: scale(1.1) !important; animation: none; }
+    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 992px) { .article-layout { grid-template-columns: 1fr; gap: 40px; } .sidebar { position: static; order: 2; } }
+    @media (max-width: 900px) { .nav-links, .nav-actions { display: none; } .burger-menu { display: flex; } .footer-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 768px) { .article-content { padding: 25px; } .rbi-grid { grid-template-columns: repeat(2, 1fr); } .comp-grid { grid-template-columns: 1fr; } .golden-hour-banner { flex-direction: column; text-align: center; } .footer-bottom { flex-direction: column; gap: 15px; text-align: center; } }
+    @media (max-width: 480px) { .rbi-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+
+<body>
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- NAVBAR -->
+  <nav>
+    <a href="index.html" class="logo">
+      <div class="logo-icon"><img src="fhm_logo.png" alt="FHM-Legal-Solution Logo"></div>
+      <div class="logo-text">
+        <div class="brand">FHM-Legal-Solution</div>
+        <div class="tagline">India's Legal Bridge</div>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html#lawyers">Find Lawyers</a>
+      <a href="index.html#practice">Practice Areas</a>
+      <a href="index.html#cities">Cities</a>
+      <a href="index.html#hub">Legal Hub</a>
+      <a href="index.html#consult">Consultations</a>
+    </div>
+    <div class="nav-actions">
+      <a href="tel:+918948143948" class="btn-nav-outline">Call: 8948143948</a>
+      <a href="https://wa.me/918948143948?text=Hello%20Advocate%20Sir%2C%20I%20need%20legal%20help" class="btn-nav-fill" style="background:#25D366;color:#fff;" target="_blank">WhatsApp</a>
+    </div>
+    <button class="burger-menu" id="burgerBtn"><span></span><span></span><span></span></button>
+  </nav>
+
+  <!-- MOBILE DRAWER -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-header">
+      <a href="index.html" class="logo">
+        <div class="logo-icon"><img src="fhm_logo.png" alt="FHM-Legal-Solution Logo"></div>
+        <div class="logo-text"><div class="brand" style="color:var(--white);">FHM-Legal-Solution</div></div>
+      </a>
+      <button class="drawer-close" id="drawerClose">&times;</button>
+    </div>
+    <div class="drawer-links">
+      <a href="index.html#lawyers">Find Lawyers</a>
+      <a href="index.html#practice">Practice Areas</a>
+      <a href="index.html#cities">Cities</a>
+      <a href="index.html#hub">Legal Hub</a>
+      <a href="index.html#consult">Consultations</a>
+    </div>
+    <div class="drawer-actions">
+      <a href="tel:+918948143948" class="btn-nav-outline" style="display:block;text-align:center;margin-bottom:10px;">Call: 8948143948</a>
+      <a href="https://wa.me/918948143948" class="btn-nav-fill" style="display:block;text-align:center;background:#25D366;color:#fff;" target="_blank">WhatsApp</a>
+    </div>
+  </div>
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+
+  <!-- HERO -->
+  <header class="article-hero">
+    <div class="hero-pattern"></div>
+    <div class="hero-orb-teal"></div>
+    <div class="hero-orb-purple"></div>
+    <div class="hero-container">
+      <a href="index.html#hub" class="back-btn">
+        <svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Back to Knowledge Hub
+      </a>
+      <span class="article-cat-badge">Cyber Crime</span>
+      <h1 class="article-title">Victim of Online Fraud? Here's Exactly What to Do Under IT Act 2000</h1>
+      <div class="article-meta">
+        <div class="meta-item">
+          <div class="meta-avatar">SR</div>
+          <span>Published by <strong>Adv. Sunitha Reddy</strong></span>
+        </div>
+        <div class="meta-item"><span>🕒 15 min read</span></div>
+        <div class="meta-item"><span>📅 Updated with June 2026 RBI Directions & BNS provisions</span></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- LAYOUT -->
+  <main class="article-layout">
+
+    <!-- CONTENT -->
+    <div class="article-content">
+
+      <!-- Intro -->
+      <section class="section-block" style="margin-bottom:32px;">
+        <p>Realizing you have fallen victim to online fraud is an incredibly stressful experience, but panicking will only cost you precious time. In the digital age, <strong>speed is your greatest weapon</strong>. The Indian legal framework—primarily driven by the <strong>Information Technology (IT) Act, 2000</strong>, and supported by the newly implemented Bharatiya Nyaya Sanhita (BNS)—provides specific, actionable remedies to freeze stolen funds and penalize cybercriminals.</p>
+        <p>Here is the exact, step-by-step legal blueprint you must follow to report online fraud and protect your rights in India.</p>
+      </section>
+
+      <!-- Section 1: Golden Hour Protocol -->
+      <section class="section-block" id="golden-hour">
+        <h2><span class="section-num">1</span> The "Golden Hour" Protocol</h2>
+        <div class="golden-hour-banner">
+          <div class="gh-clock">⏱️</div>
+          <div class="gh-text">
+            <h3>Act Within the First Hour</h3>
+            <p>In cyber forensics, the first hour after money is deducted is known as the "Golden Hour." The faster you report the crime, the higher the probability that law enforcement can instruct intermediary banks to freeze the funds before the scammers siphon them out through crypto or untraceable accounts.</p>
+          </div>
+        </div>
+
+        <div class="golden-steps">
+          <div class="golden-step">
+            <div class="gs-num">1</div>
+            <div class="gs-body">
+              <div class="gs-tag">Immediate — Financial Loss</div>
+              <h4>Dial 1930 Now</h4>
+              <div class="hotline-pill">📞 1930</div>
+              <p style="margin-top:10px;">If the fraud involves a financial loss (UPI, credit card, bank transfer), call <strong>1930</strong> immediately. This connects you to the Citizen Financial Cyber Fraud Reporting and Management System. Providing your transaction details can trigger an immediate alert to the banks involved to freeze the suspect's accounts.</p>
+            </div>
+          </div>
+          <div class="golden-step">
+            <div class="gs-num">2</div>
+            <div class="gs-body">
+              <div class="gs-tag">Within 24 Hours</div>
+              <h4>Register on NCRP — cybercrime.gov.in</h4>
+              <p>Visit <strong>cybercrime.gov.in</strong> and click "Report Financial Fraud." You will need: exact transaction details, screenshots of chats or SMS alerts, and the suspected phone numbers or URLs. This generates a formal complaint reference number — keep it safe for all future follow-ups.</p>
+            </div>
+          </div>
+          <div class="golden-step">
+            <div class="gs-num">3</div>
+            <div class="gs-body">
+              <div class="gs-tag">Triggering RBI Protection</div>
+              <h4>Notify Your Bank in Writing</h4>
+              <p>Contact your bank's fraud department and forward your 1930 complaint number. Under RBI guidelines, if you report unauthorized transactions within <strong>3 working days</strong>, your liability is capped, and the bank must compensate you for the stolen amount.</p>
+            </div>
+          </div>
+          <div class="golden-step">
+            <div class="gs-num">4</div>
+            <div class="gs-body">
+              <div class="gs-tag">Critical — Do Not Delete</div>
+              <h4>Preserve All Digital Evidence</h4>
+              <p>Do not delete the scammer's messages, call logs, or emails. Under <strong>Section 63 of the Bharatiya Sakshya Adhiniyam (BSA)</strong>—which replaced the Indian Evidence Act—electronic records are primary evidence. Take screenshots and back them up to a cloud drive immediately.</p>
+            </div>
+          </div>
+          <div class="golden-step">
+            <div class="gs-num">5</div>
+            <div class="gs-body">
+              <div class="gs-tag">For Losses Above ₹10 Lakh</div>
+              <h4>Convert to an e-FIR</h4>
+              <p>If your loss is substantial or requires deep investigation, your NCRP complaint will be converted into an FIR under <strong>Section 173 of the BNSS</strong> by the jurisdictional cyber cell. You may be called to the station to physically sign the FIR within three days of its digital generation.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: IT Act Rights -->
+      <section class="section-block" id="it-act">
+        <h2><span class="section-num">2</span> Your Rights Under the IT Act, 2000</h2>
+        <p>When you file your complaint, the cyber police will register the case under specific sections of the IT Act, often paired with cheating provisions of the BNS. Knowing these sections helps you understand the gravity of the charges being pressed on your behalf:</p>
+
+        <div class="table-responsive">
+          <table class="it-table">
+            <thead>
+              <tr>
+                <th>The Crime</th>
+                <th>The Law</th>
+                <th>What It Covers</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="crime-badge">Identity Theft</span></td>
+                <td><span class="law-badge">Section 66C, IT Act</span></td>
+                <td>Using your password, PIN, or digital signature to steal funds. Punishable by up to 3 years imprisonment.</td>
+              </tr>
+              <tr>
+                <td><span class="crime-badge">Phishing / Spoofing</span></td>
+                <td><span class="law-badge">Section 66D, IT Act</span></td>
+                <td>Cheating by impersonating a legitimate entity (e.g., fake bank emails, fraudulent UPI handles).</td>
+              </tr>
+              <tr>
+                <td><span class="crime-badge">Data Theft & Hacking</span></td>
+                <td><span class="law-badge">Sections 43 & 66, IT Act</span></td>
+                <td>Gaining unauthorized access to your computer or banking network. Civil remedy + criminal prosecution.</td>
+              </tr>
+              <tr>
+                <td><span class="crime-badge">Organised Cyber Crime</span></td>
+                <td><span class="law-badge">Section 111, BNS</span></td>
+                <td>Groups running coordinated scam call centers or syndicate fraud. Attracts severe organized crime penalties.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="alert-callout cyber">
+          <h4>🌐 Extra-Territorial Jurisdiction — Section 75, IT Act</h4>
+          <p>The IT Act operates beyond India's borders. <strong>Even if the scammer is operating from outside India</strong>, they can still be prosecuted under Indian law if the crime targeted a computer system or network located within India. This is a powerful tool against international cyber fraud networks.</p>
+        </div>
+      </section>
+
+      <!-- Section 3: If Police Refuse -->
+      <section class="section-block" id="police-refusal">
+        <h2><span class="section-num">3</span> If the Police Refuse to Register Your Case</h2>
+        <p>While the digital portals have made reporting seamless, local police stations sometimes hesitate to register complex cyber cases. If your local station refuses to convert a valid complaint into an FIR, you have a clear legal escalation path:</p>
+
+        <div class="escalation-ladder">
+          <div class="esc-step">
+            <div class="esc-icon">🏠</div>
+            <div class="esc-body">
+              <h4>Step 1: Local Police Station</h4>
+              <p>File your written complaint in person. If refused, obtain a written refusal note (or document the refusal with witnesses).</p>
+            </div>
+          </div>
+          <div class="esc-step">
+            <div class="esc-icon">📮</div>
+            <div class="esc-body">
+              <h4>Step 2: Superintendent / DCP of Police</h4>
+              <p>Send your written complaint directly to the SP or Deputy Commissioner of Police (DCP) of your district via <strong>Registered Post with Acknowledgment Due</strong>. They are legally obliged to take cognizance.</p>
+            </div>
+          </div>
+          <div class="esc-step">
+            <div class="esc-icon">⚖️</div>
+            <div class="esc-body">
+              <h4>Step 3: Jurisdictional Magistrate — Section 175, BNSS</h4>
+              <p>If the SP does not act, you have the right to file a complaint directly with the Magistrate under Section 175 of the BNSS, who can legally <strong>order the police to investigate</strong> the matter. The court can direct registration of an FIR.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="alert-callout danger">
+          <h4>⚠️ Do Not Delete Evidence Before Going to Court</h4>
+          <p>Courts handling cyber cases need digital evidence intact. Deleting, overwriting, or factory resetting your device before evidence is documented by a forensic expert can <strong>permanently destroy</strong> your case and lose you any chance of recovery.</p>
+        </div>
+      </section>
+
+      <!-- Section 4: RBI Zero Liability -->
+      <section class="section-block" id="rbi-protection">
+        <h2><span class="section-num">4</span> RBI Zero-Liability Protection (Updated June 2026)</h2>
+        <p>The Reserve Bank of India (RBI) operates on a strict framework designed to protect customers from bearing the financial brunt of digital fraud. In June 2026, the RBI significantly updated these rules under the <strong>"Responsible Business Conduct" directions</strong>, expanding protections and introducing a new compensation mechanism.</p>
+
+        <h3>When Does Zero Liability Apply?</h3>
+        <div class="rbi-grid">
+          <div class="rbi-card highlight">
+            <div class="rbi-day">0</div>
+            <div class="rbi-unit">Liability</div>
+            <h4>Bank Negligence</h4>
+            <p>If the fraud happened due to a deficiency, security breach, or system malfunction on the bank's end, you are fully protected — regardless of when you report.</p>
+          </div>
+          <div class="rbi-card highlight">
+            <div class="rbi-day">5</div>
+            <div class="rbi-unit">Calendar Days</div>
+            <h4>Third-Party Breach</h4>
+            <p>If the fault lies with a payment gateway or telecom provider (not you, not the bank), report within 5 days of the transaction for full zero liability.</p>
+          </div>
+          <div class="rbi-card">
+            <div class="rbi-day">45</div>
+            <div class="rbi-unit">Calendar Days Max</div>
+            <h4>Bank Investigation Window</h4>
+            <p>Banks must resolve domestic fraudulent transactions within 45 days. Cross-border transactions get 60 days.</p>
+          </div>
+          <div class="rbi-card">
+            <div class="rbi-day">₹50K</div>
+            <div class="rbi-unit">Loss Threshold</div>
+            <h4>2026 Small-Value Compensation</h4>
+            <p>Losses up to ₹50,000 may qualify for compensation of 85% of net loss or ₹25,000 — whichever is lower.</p>
+          </div>
+        </div>
+
+        <h3>Liability Rules: What If It Was Your Fault?</h3>
+        <div class="table-responsive">
+          <table class="liability-table">
+            <thead>
+              <tr><th>Scenario</th><th>Your Liability</th><th>After Reporting?</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Bank's security failure</strong></td>
+                <td><span class="tag-zero">Zero Liability</span></td>
+                <td>Fully covered immediately, no reporting deadline.</td>
+              </tr>
+              <tr>
+                <td><strong>Third-party breach, reported within 5 days</strong></td>
+                <td><span class="tag-zero">Zero Liability</span></td>
+                <td>Bank absorbs the full loss.</td>
+              </tr>
+              <tr>
+                <td><strong>You shared OTP/PIN (customer negligence)</strong></td>
+                <td><span class="tag-full">Full Loss Until Reported</span></td>
+                <td>Transactions <em>after</em> you notify the bank are fully covered.</td>
+              </tr>
+              <tr>
+                <td><strong>Shared credentials; delayed reporting (7+ days)</strong></td>
+                <td><span class="tag-full">Full Loss</span></td>
+                <td>Bank may bear only partial liability at its discretion.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Section 5: 2026 Compensation Rule -->
+      <section class="section-block" id="compensation-2026">
+        <h2><span class="section-num">5</span> The 2026 Small-Value Compensation Rule</h2>
+        <p>A major addition to the June 2026 RBI framework is a safety net specifically for victims of smaller digital frauds. If you suffer a gross loss of <strong>up to ₹50,000</strong>, you may be eligible for the following:</p>
+
+        <div class="compensation-box">
+          <h4>2026 RBI Small-Value Fraud Compensation</h4>
+          <div class="comp-grid">
+            <div class="comp-item">
+              <div class="comp-label">Eligibility Threshold</div>
+              <div class="comp-value highlight">≤ ₹50,000</div>
+            </div>
+            <div class="comp-item">
+              <div class="comp-label">Compensation Rate</div>
+              <div class="comp-value">85% of net loss</div>
+            </div>
+            <div class="comp-item">
+              <div class="comp-label">Maximum Compensation</div>
+              <div class="comp-value highlight">₹25,000</div>
+            </div>
+            <div class="comp-item">
+              <div class="comp-label">Reporting Deadline</div>
+              <div class="comp-value">Within 5 calendar days</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="alert-callout success">
+          <h4>✅ Mandatory Reporting Channels</h4>
+          <p>To qualify, you must report to both your <strong>bank</strong> and either the <strong>NCRP portal (cybercrime.gov.in)</strong> or the <strong>1930 helpline</strong> within five calendar days of the unauthorized transaction.</p>
+        </div>
+      </section>
+
+      <!-- Section 6: How to Claim Money Back -->
+      <section class="section-block" id="claim-money">
+        <h2><span class="section-num">6</span> How to Claim Your Money Back — Step by Step</h2>
+        <p>To activate your protections and secure a refund under the RBI guidelines, you must act swiftly and follow this exact sequence:</p>
+
+        <div class="refund-steps">
+          <div class="refund-step">
+            <div class="refund-num">1</div>
+            <div class="refund-body">
+              <div class="refund-tag">Mandatory First Step</div>
+              <h4>Call 1930 & Register on NCRP</h4>
+              <p>Call the National Cyber Crime Helpline at <strong>1930</strong> and register a formal complaint on <strong>cybercrime.gov.in</strong>. This is a mandatory prerequisite for claiming compensation under the 2026 updated rules. Save your complaint reference number.</p>
+            </div>
+          </div>
+          <div class="refund-step">
+            <div class="refund-num">2</div>
+            <div class="refund-body">
+              <div class="refund-tag">Critical — 5-Day Window</div>
+              <h4>Notify Your Bank in Writing</h4>
+              <p>Contact your bank's fraud reporting channel (mandated to be available 24/7) and report the unauthorized transaction. Provide your NCRP complaint number. Doing this within five calendar days triggers your zero-liability protection for third-party breach scenarios.</p>
+            </div>
+          </div>
+          <div class="refund-step">
+            <div class="refund-num">3</div>
+            <div class="refund-body">
+              <div class="refund-tag">Credit Card Fraud Specific</div>
+              <h4>Request a Shadow Reversal</h4>
+              <p>If the fraud occurred on a credit card, the bank is legally required to provide a <strong>"shadow reversal"</strong> (a temporary credit of the disputed amount) within five calendar days of receiving your notification. This ensures you don't pay the fraudulent amount while the investigation is ongoing.</p>
+            </div>
+          </div>
+          <div class="refund-step">
+            <div class="refund-num">4</div>
+            <div class="refund-body">
+              <div class="refund-tag">Investigation Phase</div>
+              <h4>Monitor the Bank's Investigation</h4>
+              <p>The bank must investigate and determine liability—with the burden of proving customer negligence lying entirely on <em>them</em>. The bank has a maximum of <strong>45 calendar days</strong> (domestic) or <strong>60 days</strong> (cross-border) to resolve the case. Once your eligibility is confirmed, the temporary credit becomes final.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+      <div class="toc-card">
+        <h3>Guide Navigation</h3>
+        <ul class="toc-links">
+          <li><a href="#golden-hour">1. The "Golden Hour" Protocol</a></li>
+          <li><a href="#it-act">2. Rights Under IT Act 2000</a></li>
+          <li><a href="#police-refusal">3. If Police Refuse the FIR</a></li>
+          <li><a href="#rbi-protection">4. RBI Zero-Liability Rules</a></li>
+          <li><a href="#compensation-2026">5. 2026 Compensation Rule</a></li>
+          <li><a href="#claim-money">6. How to Claim Money Back</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-cta-card">
+        <h3>Cyber Crime Helpline</h3>
+        <div class="helpline-big">1930</div>
+        <div class="helpline-label">National Cyber Crime Helpline · 24/7</div>
+        <p class="cta-text">Call immediately after a financial fraud to trigger bank freeze alerts. Then consult a cyber law advocate to maximize your recovery under the IT Act.</p>
+        <a href="index.html#lawyers" class="btn-cta">Consult a Cyber Lawyer</a>
+        <div class="sidebar-badges">
+          <span class="sidebar-badge">IT Act Experts</span>
+          <span class="sidebar-badge">Bank Disputes</span>
+          <span class="sidebar-badge">FIR Assistance</span>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo" style="display:inline-flex;margin-bottom:4px;">
+          <div class="logo-icon"><img src="fhm_logo.png" alt="FHM-Legal-Solution Logo"></div>
+          <div class="logo-text">
+            <div class="brand">FHM-Legal-Solution</div>
+            <div class="tagline">India's Legal Bridge</div>
+          </div>
+        </a>
+        <p class="brand-desc">India's most trusted online legal platform connecting citizens with verified, experienced lawyers across all states and practice areas.</p>
+        <div class="footer-social">
+          <div class="social-btn">f</div>
+          <div class="social-btn">in</div>
+          <div class="social-btn">X</div>
+          <div class="social-btn">▶</div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>For Clients</h4>
+        <a href="index.html#lawyers">Find a Lawyer</a>
+        <a href="index.html#consult">AI Legal Assistant</a>
+        <a href="tel:+918948143948">Emergency Support</a>
+        <a href="index.html#consult">Book Consultation</a>
+        <a href="index.html#testimonials">Client Reviews</a>
+      </div>
+      <div class="footer-col">
+        <h4>Practice Areas</h4>
+        <a href="index.html#practice">Cyber Crime</a>
+        <a href="index.html#practice">Online Fraud</a>
+        <a href="index.html#practice">Banking Disputes</a>
+        <a href="index.html#practice">Consumer Rights</a>
+        <a href="index.html#practice">Criminal Defence</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="index.html">About FHM-Legal-Solution</a>
+        <a href="index.html#hub">Legal Knowledge Hub</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="mailto:contact@fhm-legalsolution.com">Contact Us</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 FHM-Legal-Solution Legal Technologies Pvt. Ltd. · CIN: U74999UP2025PTC000001 · All Rights Reserved</p>
+      <div class="footer-certifications">
+        <div class="cert-badge">SSL Secured</div>
+        <div class="cert-badge">ISO 27001</div>
+        <div class="cert-badge">Bar Council Approved</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/918948143948?text=Hello%20Advocate%20Sir%2C%20I%20need%20legal%20help" class="wp-float" title="Chat on WhatsApp" target="_blank">
+    <svg style="width:28px;height:28px;fill:white;" viewBox="0 0 24 24">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <script>
+    // Scroll progress
+    window.addEventListener('scroll', () => {
+      const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      document.getElementById('scrollProgress').style.width = ((winScroll / height) * 100) + '%';
+    });
+
+    // Mobile Drawer
+    (function () {
+      const burgerBtn = document.getElementById('burgerBtn');
+      const mobileDrawer = document.getElementById('mobileDrawer');
+      const drawerClose = document.getElementById('drawerClose');
+      const drawerBackdrop = document.getElementById('drawerBackdrop');
+      if (!burgerBtn || !mobileDrawer) return;
+      function openDrawer() { burgerBtn.classList.add('open'); mobileDrawer.classList.add('open'); drawerBackdrop.classList.add('open'); document.body.style.overflow = 'hidden'; }
+      function closeDrawer() { burgerBtn.classList.remove('open'); mobileDrawer.classList.remove('open'); drawerBackdrop.classList.remove('open'); document.body.style.overflow = ''; }
+      burgerBtn.addEventListener('click', openDrawer);
+      drawerClose.addEventListener('click', closeDrawer);
+      drawerBackdrop.addEventListener('click', closeDrawer);
+      mobileDrawer.querySelectorAll('.drawer-links a').forEach(a => a.addEventListener('click', closeDrawer));
+    })();
+
+    // Scrollspy
+    window.addEventListener('DOMContentLoaded', () => {
+      const sections = document.querySelectorAll('.section-block[id]');
+      const navLinks = document.querySelectorAll('.toc-links a');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === `#${id}`));
+          }
+        });
+      }, { rootMargin: '-20% 0px -60% 0px', threshold: 0 });
+      sections.forEach(s => observer.observe(s));
+    });
+  </script>
+</body>
+</html>
