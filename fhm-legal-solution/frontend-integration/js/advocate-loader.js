@@ -180,7 +180,7 @@ function renderContact(adv) {
 
   document.getElementById('wp-float').href = waLink(adv.whatsapp || adv.phone, adv.name);
 
-  document.getElementById('footer-text').textContent = `© 2026 FHM-Legal-Solution · ${adv.name}`;
+  document.getElementById('footer-text').textContent = `© 2026 FHM-Legal-Solution · ${adv.name} · Developed by Ektedar Ahmad`;
 }
 
 async function loadAdvocateProfile() {
